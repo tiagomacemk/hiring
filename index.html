@@ -339,20 +339,45 @@
             text-align: center;
         }
 
-        .stat-item .number {
-            font-size: 42px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #F26745, #FFD230);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            margin-bottom: 8px;
+        .testimonials {
+            max-width: 700px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
-        .stat-item .label {
+        .testimonial-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(242, 103, 69, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .testimonial-card .quote {
+            font-size: 15px;
+            color: #ccc;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-card .author strong {
+            display: block;
             font-size: 14px;
-            color: #929292;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .testimonial-card .author span {
+            font-size: 13px;
+            color: #F26745;
         }
 
         /* CTA Section */
@@ -473,9 +498,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .stats-grid {
+            .testimonials {
                 grid-template-columns: 1fr;
-                gap: 32px;
+                gap: 16px;
             }
 
             .cta-button {
@@ -511,8 +536,8 @@
         <!-- Hero -->
         <div class="hero">
             <div class="badge">We're Hiring</div>
-            <h1>Join Our Team as an <span>Account Manager</span></h1>
-            <p>We help high-ticket coaches and consultants fill their calendars with qualified discovery calls. We need someone who can own the client relationship.</p>
+            <h1>Tired of Being Just a Number at Your Agency? <span>We're Different.</span></h1>
+            <p>We're looking for an Account Manager who actually cares about client results. Someone who wants to own relationships, not just manage spreadsheets.</p>
             <a href="#apply" class="cta-button-hero">Apply Now</a>
         </div>
 
@@ -522,8 +547,8 @@
         <div class="video-section fade-in">
             <div class="container">
                 <div class="step-label">Step 1</div>
-                <h2>Watch This Short Video</h2>
-                <p class="subtitle">Learn what the role looks like day-to-day and what we're looking for.</p>
+                <h2>Hear It Directly From Our Founder</h2>
+                <p class="subtitle">Tiago breaks down what the role actually looks like and the kind of person who thrives here.</p>
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/iWOwfZwMy5w" allowfullscreen></iframe>
                 </div>
@@ -535,33 +560,33 @@
         <!-- About Section -->
         <div class="about-section fade-in">
             <div class="container">
-                <h2>What You'd Be Doing</h2>
-                <p class="section-subtitle">This is a hands-on role. You own the client relationship end to end.</p>
+                <h2>This Role Is For You If...</h2>
+                <p class="section-subtitle">You're great at what you do. You just need the right environment to prove it.</p>
                 <div class="description">
-                    <p>You'd be the primary point of contact for 8-12 US-based clients. Coaching businesses doing $500K-$5M/year. Real clients, real budgets, real results.</p>
-                    <p>Run the calls, keep them informed, flag problems before they blow up, and work with our creative and media buying team to keep performance moving.</p>
-                    <p>You'd work directly with the founder. No middle managers. No corporate layers. Just the work.</p>
+                    <p>You've done account management before. You know how to keep clients happy, flag issues before they blow up, and translate performance data into language a business owner actually understands.</p>
+                    <p>But maybe you're stuck at an agency where you manage 30+ accounts and nobody knows your name. Or you're freelancing and spending half your time chasing invoices instead of doing the work you love.</p>
+                    <p>Here, you'd manage 8-12 US-based clients. High-ticket coaching businesses doing $500K-$5M/year. You'd be their go-to person. You'd run the calls, coordinate with our media buying and creative teams, and make sure results keep moving. And you'd work directly with the founder. No layers. No politics.</p>
                 </div>
                 <div class="highlights">
                     <div class="highlight-card">
                         <div class="icon">&#127758;</div>
                         <h4>Fully Remote</h4>
-                        <p>Work from anywhere. EST hours, Monday to Friday, 8 AM - 4 PM.</p>
+                        <p>Work from anywhere you want. EST hours (8 AM - 4 PM), Monday to Friday.</p>
                     </div>
                     <div class="highlight-card">
                         <div class="icon">&#128101;</div>
-                        <h4>Small Team</h4>
-                        <p>8+ people. Everyone matters. No one hides.</p>
+                        <h4>You Won't Be Invisible</h4>
+                        <p>8+ people. Everyone has a name here. Your work gets seen.</p>
                     </div>
                     <div class="highlight-card">
                         <div class="icon">&#127919;</div>
-                        <h4>Real Clients</h4>
-                        <p>US-based founders spending real money on ads. High-ticket, high-stakes.</p>
+                        <h4>Clients Who Value You</h4>
+                        <p>US-based founders running real businesses. They respect the people helping them grow.</p>
                     </div>
                     <div class="highlight-card">
                         <div class="icon">&#128200;</div>
-                        <h4>Career Growth</h4>
-                        <p>We're scaling fast. Your career scales with us.</p>
+                        <h4>Grow With Us</h4>
+                        <p>We're scaling to $100K/month. Your career trajectory matches ours.</p>
                     </div>
                 </div>
             </div>
@@ -569,22 +594,24 @@
 
         <div class="section-divider"></div>
 
-        <!-- Social Proof / Stats -->
+        <!-- Social Proof / Client Quotes -->
         <div class="who-section fade-in">
-            <h2>Macedo Marketing in Numbers</h2>
-            <p class="section-subtitle">We're not a startup experimenting. We're an agency delivering results every day.</p>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="number">50+</div>
-                    <div class="label">Clients served</div>
+            <h2>What Our Clients Say</h2>
+            <p class="section-subtitle">These are the kind of clients you'd be working with. Founders who value what we do.</p>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p class="quote">"Can we please bring the ad spend down to $100 a day? Our sales team is inundated with leads to follow up and they need some time to catch up."</p>
+                    <div class="author">
+                        <strong>Josh Oastler</strong>
+                        <span>One Corp Australia</span>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="number">78%</div>
-                    <div class="label">Avg. CPL reduction</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">8+</div>
-                    <div class="label">Team members</div>
+                <div class="testimonial-card">
+                    <p class="quote">"Cost per lead is crazy good at the moment. Our sales team is back on Monday so we can start to increase again."</p>
+                    <div class="author">
+                        <strong>Josh Oastler</strong>
+                        <span>One Corp Australia - 78% CPL reduction in 4 months</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -594,8 +621,8 @@
         <!-- CTA Section -->
         <div class="cta-section fade-in" id="apply">
             <div class="step-label">Step 2</div>
-            <h2>Ready to Apply?</h2>
-            <p>Takes about 10 minutes. If you're the right fit, we'll be in touch within a few days.</p>
+            <h2>Sound Like You?</h2>
+            <p>The application takes about 10 minutes. No trick questions. We just want to understand who you are and how you think. If there's a match, we'll be in touch within a few days.</p>
             <!-- REPLACE: Add your Getformly form URL below -->
             <a href="#" class="cta-button">Apply Now</a>
         </div>
