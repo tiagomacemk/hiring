@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We're Hiring a Graphic Designer | Macedo Marketing</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #0D0D0D;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-glow .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+        }
+
+        .bg-glow .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: #F26745;
+            top: -200px;
+            right: -100px;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .bg-glow .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: #F26745;
+            bottom: -150px;
+            left: -100px;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        .bg-glow .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: #FFD230;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float3 18s ease-in-out infinite;
+            opacity: 0.08;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-60px, 40px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(50px, -30px); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.3); }
+        }
+
+        /* Content sits above background */
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            padding: 32px 20px;
+            text-align: center;
+        }
+
+        .header img {
+            height: 70px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(242, 103, 69, 0.12);
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(242, 103, 69, 0.25);
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            max-width: 750px;
+            margin: 0 auto 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #F26745, #FFD230);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: #929292;
+            font-size: 18px;
+            max-width: 550px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero .cta-button-hero {
+            display: inline-block;
+            background-color: #F26745;
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 42px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 30px rgba(242, 103, 69, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .hero .cta-button-hero:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(242, 103, 69, 0.5);
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(242,103,69,0.2), transparent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .step-label {
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .video-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .video-section .subtitle {
+            color: #929292;
+            font-size: 16px;
+            margin-bottom: 36px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 50px rgba(0,0,0,0.4);
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 20px;
+        }
+
+        .about-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .about-section .section-subtitle {
+            color: #929292;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-section .description {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 16px;
+            color: #b0b0b0;
+        }
+
+        .about-section .description p {
+            margin-bottom: 16px;
+        }
+
+        .highlights {
+            max-width: 700px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .highlight-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(242, 103, 69, 0.3);
+            box-shadow: 0 8px 30px rgba(242, 103, 69, 0.08);
+        }
+
+        .highlight-card .icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .highlight-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .highlight-card p {
+            font-size: 14px;
+            color: #929292;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Portfolio Preview Section */
+        .portfolio-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .portfolio-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-section .section-subtitle {
+            color: #929292;
+            font-size: 16px;
+            margin-bottom: 36px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            background: rgba(242, 103, 69, 0.1);
+            color: #F26745;
+            text-decoration: none;
+            padding: 14px 36px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 8px;
+            border: 1px solid rgba(242, 103, 69, 0.3);
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            background: rgba(242, 103, 69, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(242, 103, 69, 0.15);
+        }
+
+        .portfolio-formats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .format-item {
+            text-align: center;
+        }
+
+        .format-item .format-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .format-item .format-label {
+            font-size: 14px;
+            color: #929292;
+            font-weight: 600;
+        }
+
+        /* Who We Are Section */
+        .who-section {
+            padding: 80px 20px;
+        }
+
+        .who-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .who-section .section-subtitle {
+            color: #929292;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonials {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(242, 103, 69, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .testimonial-card .quote {
+            font-size: 15px;
+            color: #ccc;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .author-initials {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(242, 103, 69, 0.15);
+            border: 2px solid rgba(242, 103, 69, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #F26745;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card .author-info strong {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .testimonial-card .author-info span {
+            font-size: 13px;
+            color: #F26745;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: #929292;
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F26745;
+            color: #fff;
+            text-decoration: none;
+            padding: 18px 56px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 30px rgba(242, 103, 69, 0.35);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            background-color: #e05535;
+            box-shadow: 0 8px 40px rgba(242, 103, 69, 0.55);
+            transform: translateY(-3px);
+        }
+
+        /* Pulse animation on CTA */
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 0 0 rgba(242, 103, 69, 0.4);
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(242, 103, 69, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(242, 103, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(242, 103, 69, 0); }
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer img {
+            height: 40px;
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #F26745;
+        }
+
+        .footer .disclaimer {
+            max-width: 700px;
+            margin: 20px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer .disclaimer p {
+            font-size: 11px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 20px 50px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .portfolio-formats {
+                gap: 20px;
+            }
+
+            .cta-button {
+                padding: 16px 40px;
+                font-size: 16px;
+            }
+
+            .video-section h2,
+            .about-section h2,
+            .who-section h2,
+            .portfolio-section h2,
+            .cta-section h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated background orbs -->
+    <div class="bg-glow">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="content">
+
+        <!-- Header -->
+        <div class="header">
+            <img src="../logo-mm-icon-white.png" alt="Macedo Marketing">
+        </div>
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="badge">We're Hiring</div>
+            <h1>Make Ads People Actually <span>Stop Scrolling For.</span></h1>
+            <p>We're looking for a Graphic Designer who obsesses over the details, loves experimenting with new ideas, and gets a rush when their creative outperforms. Static ads, carousels, animations, video edits -- for real brands spending real budgets.</p>
+            <a href="#" class="cta-button-hero">Apply Now</a>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Video Section -->
+        <div class="video-section fade-in">
+            <div class="container">
+                <div class="step-label">Step 1</div>
+                <h2>Hear It Directly From Our Founder</h2>
+                <p class="subtitle">Tiago walks you through what the role looks like day-to-day and the kind of creative mind that thrives here.</p>
+                <div class="video-wrapper">
+                    <!-- PLACEHOLDER: Replace with actual video URL -->
+                    <div class="video-placeholder">Video coming soon</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- About Section -->
+        <div class="about-section fade-in">
+            <div class="container">
+                <h2>This Role Is For You If...</h2>
+                <p class="section-subtitle">You don't just make things pretty. You make things that perform.</p>
+                <div class="description">
+                    <p>You've designed ad creatives before -- maybe for an agency, maybe freelancing, maybe for your own projects. You know the difference between a graphic that looks nice and one that actually stops the scroll and drives clicks.</p>
+                    <p>Here, you'd be our go-to creative brain. You'll design static ads, carousels, and animations for eCommerce, coaching, and lead gen brands running serious Meta ad budgets. You'll work closely with our media buyers and account managers, and your work will be tested and measured every single day. When something you made crushes it, you'll know.</p>
+                    <p>We move fast, we try new things constantly, and we want someone who gets excited by that -- not overwhelmed.</p>
+                </div>
+                <div class="highlights">
+                    <div class="highlight-card">
+                        <div class="icon">&#127912;</div>
+                        <h4>Creative Freedom</h4>
+                        <p>You'll have real input on creative direction. Pitch ideas, test concepts, push boundaries. No pixel-pushing factory work.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#9889;</div>
+                        <h4>AI-Powered Workflow</h4>
+                        <p>We use cutting-edge AI tools to speed up production. You'll learn and use tools most designers haven't even heard of yet.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#127758;</div>
+                        <h4>Fully Remote</h4>
+                        <p>Work from anywhere. We need overlap with EST hours (12 PM - 4 PM), Monday to Friday.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#128200;</div>
+                        <h4>See Your Impact</h4>
+                        <p>Your creatives run as real ads with real budgets. You'll see the data -- ROAS, CTR, conversions. No guessing if your work matters.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#128101;</div>
+                        <h4>Small Team, Big Trust</h4>
+                        <p>8+ people. You're not invisible here. Your ideas get heard, your name is on the work, and the founder knows who you are.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#127775;</div>
+                        <h4>Diverse Creative Work</h4>
+                        <p>Static ads, carousels, motion graphics, video edits. Different brands, different industries, different challenges every week.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Portfolio Preview Section -->
+        <div class="portfolio-section fade-in">
+            <div class="container">
+                <h2>See the Work You'd Be Creating</h2>
+                <p class="section-subtitle">This is the caliber of creative we produce for our clients. Static ads, carousels, and video -- across eCommerce, SaaS, coaching, and more.</p>
+                <div class="portfolio-formats">
+                    <div class="format-item">
+                        <div class="format-icon">&#128444;</div>
+                        <div class="format-label">Static Ads</div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-icon">&#128218;</div>
+                        <div class="format-label">Carousels</div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-icon">&#127916;</div>
+                        <div class="format-label">Video Ads</div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-icon">&#10024;</div>
+                        <div class="format-label">Animations</div>
+                    </div>
+                </div>
+                <a href="https://macedomarketing.com/portfolio/" target="_blank" class="portfolio-link">Browse Our Portfolio &rarr;</a>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Social Proof / Client Quotes -->
+        <div class="who-section fade-in">
+            <h2>What Our Clients Say</h2>
+            <p class="section-subtitle">These are the brands you'd be designing for. Founders who care about great creative and understand its value.</p>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p class="quote">"The creatives they produce are next level. Every round of ads feels fresh, on-brand, and actually converts."</p>
+                    <div class="author">
+                        <div class="author-initials">JO</div>
+                        <div class="author-info">
+                            <strong>Josh O.</strong>
+                            <span>One Corp Australia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"We smashed our revenue goals. The design work stands out in the feed and the team genuinely cares about what they put out."</p>
+                    <div class="author">
+                        <div class="author-initials">RT</div>
+                        <div class="author-info">
+                            <strong>Rory Tonkin</strong>
+                            <span>Hard To Kill Fitness</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"ROAS of 30+. The creative strategy and visual execution is unlike any agency we've worked with before."</p>
+                    <div class="author">
+                        <div class="author-initials">AK</div>
+                        <div class="author-info">
+                            <strong>Arjun Kumar</strong>
+                            <span>Taxd</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- CTA Section -->
+        <div class="cta-section fade-in" id="apply">
+            <div class="step-label">Step 2</div>
+            <h2>Ready to Make Work You're Proud Of?</h2>
+            <p>The application takes about 15 minutes. No trick questions -- we want to see how you think, what you've made, and what drives you. If there's a fit, we'll be in touch within a few days.</p>
+            <!-- REPLACE: Add your form URL below -->
+            <a href="#" class="cta-button">Apply Now</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <img src="../logo-mm-icon-white.png" alt="Macedo Marketing"><br>
+            <p>&copy; 2026 Macedo Marketing. All rights reserved.</p>
+            <p><a href="https://macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a> | <a href="https://macedomarketing.com">macedomarketing.com</a></p>
+            <p style="font-size:11px;color:#555;margin-top:12px;">Macedo Marketing is an equal opportunity employer. We do not discriminate based on race, color, religion, sex, national origin, age, disability, or any other legally protected status.</p>
+            <div class="disclaimer">
+                <p>This site is not a part of the YouTube, Bing, TikTok, Google or Facebook website; ByteDance Ltd., Google Inc, Microsoft INC or Meta Inc. Additionally, this site is NOT endorsed by YouTube, Google, Bing or Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scroll animation script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
