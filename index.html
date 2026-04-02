@@ -340,11 +340,11 @@
         }
 
         .testimonials {
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
         }
 
         .testimonial-card {
@@ -368,14 +368,28 @@
             margin-bottom: 18px;
         }
 
-        .testimonial-card .author strong {
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .author-photo {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(242, 103, 69, 0.3);
+        }
+
+        .testimonial-card .author-info strong {
             display: block;
             font-size: 14px;
             color: #fff;
             font-weight: 700;
         }
 
-        .testimonial-card .author span {
+        .testimonial-card .author-info span {
             font-size: 13px;
             color: #F26745;
         }
@@ -500,7 +514,7 @@
 
             .testimonials {
                 grid-template-columns: 1fr;
-                gap: 16px;
+                gap: 12px;
             }
 
             .cta-button {
@@ -599,17 +613,33 @@
             <p class="section-subtitle">These are the kind of clients you'd be working with. Founders who value what we do.</p>
             <div class="testimonials">
                 <div class="testimonial-card">
-                    <p class="quote">"Can we please bring the ad spend down to $100 a day? Our sales team is inundated with leads to follow up and they need some time to catch up."</p>
+                    <p class="quote">"Can we please bring the ad spend down? Our sales team is inundated with leads and they need time to catch up."</p>
                     <div class="author">
-                        <strong>Josh Oastler</strong>
-                        <span>One Corp Australia</span>
+                        <img src="https://img.youtube.com/vi/C3n-4RjOdRQ/mqdefault.jpg" alt="Josh" class="author-photo">
+                        <div class="author-info">
+                            <strong>Josh O.</strong>
+                            <span>One Corp Australia</span>
+                        </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="quote">"Cost per lead is crazy good at the moment. Our sales team is back on Monday so we can start to increase again."</p>
+                    <p class="quote">"We have been able to absolutely smash our revenue goals. The team genuinely cares about our results."</p>
                     <div class="author">
-                        <strong>Josh Oastler</strong>
-                        <span>One Corp Australia - 78% CPL reduction in 4 months</span>
+                        <img src="https://img.youtube.com/vi/uFVQx_Z5er8/mqdefault.jpg" alt="Client" class="author-photo">
+                        <div class="author-info">
+                            <strong>Hard To Kill Fitness</strong>
+                            <span>Client since 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"We hit a ROAS of 30+. The level of attention and strategy is unlike any agency we've worked with before."</p>
+                    <div class="author">
+                        <img src="https://img.youtube.com/vi/fUCWcH3Lj18/mqdefault.jpg" alt="Taxd" class="author-photo">
+                        <div class="author-info">
+                            <strong>Taxd</strong>
+                            <span>30+ ROAS achieved</span>
+                        </div>
                     </div>
                 </div>
             </div>
