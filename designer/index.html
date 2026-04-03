@@ -309,50 +309,33 @@
         }
 
         /* Portfolio Preview Section */
-        .carousel-wrapper {
+        .masonry-wrapper {
             width: 100%;
-            overflow: hidden;
-            margin-top: 32px;
+            max-width: 1100px;
+            margin: 32px auto 0;
+            padding: 0 20px;
+            columns: 4;
+            column-gap: 12px;
         }
 
-        .carousel-track {
-            display: flex;
-            gap: 12px;
-            width: max-content;
-        }
-
-        .carousel-row-1 {
-            animation: scrollLeft 40s linear infinite;
-        }
-
-        .carousel-row-2 {
-            animation: scrollRight 35s linear infinite;
-            margin-top: 12px;
-        }
-
-        .carousel-track img,
-        .carousel-track video {
-            height: 200px;
-            width: auto;
+        .masonry-wrapper .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 12px;
             border-radius: 10px;
-            object-fit: cover;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .carousel-track img:hover,
-        .carousel-track video:hover {
-            transform: scale(1.05);
+        .masonry-wrapper .masonry-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(242, 103, 69, 0.15);
         }
 
-        @keyframes scrollLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        @keyframes scrollRight {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
+        .masonry-wrapper img,
+        .masonry-wrapper video {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
         }
 
         .portfolio-section {
@@ -642,9 +625,9 @@
                 gap: 20px;
             }
 
-            .carousel-track img,
-            .carousel-track video {
-                height: 140px;
+            .masonry-wrapper {
+                columns: 2;
+                padding: 0 12px;
             }
 
             .cta-button {
@@ -756,49 +739,27 @@
                 <h2>The Work You'd Be Creating</h2>
                 <p class="section-subtitle">This is the caliber of creative we produce every day. If this excites you, keep scrolling.</p>
             </div>
-            <div class="carousel-wrapper">
-                <div class="carousel-track carousel-row-1">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Respira_TOF_Bundle_E1_01_ENG.webp" alt="Respira ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HTK-programs_01.webp" alt="HTK ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Dustro_Headline_GrossAngle.webp" alt="Dustro ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/PP_C4_Gift-25_1203-V3.webp" alt="Poppy's ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Exofreeze_JP_Speedometer-25_0304-V1.webp" alt="Exofreeze ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_Win_C1_01.jpg" alt="ES ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HomeDesignAI-1x1-47.webp" alt="HomeDesign ad">
-                    <!-- Duplicate for seamless loop -->
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Respira_TOF_Bundle_E1_01_ENG.webp" alt="Respira ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX ad">
-                </div>
-                <div class="carousel-track carousel-row-2">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C2_PointOut-26_0213-V1.webp" alt="RR ad">
-                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video>
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_JP_9x16_SplitEase-24_1225-V3.jpg" alt="GlamBeauty ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/ES_C4_BreakGlass-25_0725-V1.webp" alt="ES ad">
-                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Dustro_C4_MythFact-25_0828-1.mp4" type="video/mp4"></video>
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/JFM_2026_JAN_TOF_C3_V2.webp" alt="JFM ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/DD_C1_Search-25_1014-V1.webp" alt="DD ad">
-                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation-1.mp4" type="video/mp4"></video>
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_POPPYS_TOF_C4_V1.webp" alt="Poppys ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/GONZALO_20232812_02.webp" alt="Gonzalo ad">
-                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Taxd_Comparisonad.mp4" type="video/mp4"></video>
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/LS_C2_Peridot-25_0729-V3b.webp" alt="LS ad">
-                    <!-- Duplicate for seamless loop -->
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C2_PointOut-26_0213-V1.webp" alt="RR ad">
-                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video>
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_JP_9x16_SplitEase-24_1225-V3.jpg" alt="GlamBeauty ad">
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/ES_C4_BreakGlass-25_0725-V1.webp" alt="ES ad">
-                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Dustro_C4_MythFact-25_0828-1.mp4" type="video/mp4"></video>
-                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/JFM_2026_JAN_TOF_C3_V2.webp" alt="JFM ad">
-                </div>
+            <div class="masonry-wrapper">
+                <!-- Column 1 pattern: square, vertical, square -->
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely"></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_JP_9x16_SplitEase-24_1225-V3.jpg" alt="GlamBeauty"></div>
+                <div class="masonry-item"><video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_POPPYS_TOF_C4_V1.webp" alt="Poppys"></div>
+                <!-- Column 2 pattern: vertical, square, video -->
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf"></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud"></div>
+                <div class="masonry-item"><video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Dustro_C4_MythFact-25_0828-1.mp4" type="video/mp4"></video></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C2_PointOut-26_0213-V1.webp" alt="RR"></div>
+                <!-- Column 3 pattern: square, square, vertical -->
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY"></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Dustro_Headline_GrossAngle.webp" alt="Dustro"></div>
+                <div class="masonry-item"><video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation-1.mp4" type="video/mp4"></video></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_Win_C1_01.jpg" alt="ES"></div>
+                <!-- Column 4 pattern: video, square, square -->
+                <div class="masonry-item"><video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Taxd_Comparisonad.mp4" type="video/mp4"></video></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX"></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/HTK-programs_01.webp" alt="HTK"></div>
+                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/HomeDesignAI-1x1-47.webp" alt="HomeDesign"></div>
             </div>
         </div>
 
