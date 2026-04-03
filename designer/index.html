@@ -758,6 +758,56 @@
             </div>
         </div>
 
+        <!-- Collapsible Job Description -->
+        <div class="fade-in" style="text-align: center; padding: 20px 20px 40px;">
+            <button id="jd-toggle" onclick="document.getElementById('jd-content').classList.toggle('jd-open'); this.textContent = this.textContent.includes('View') ? 'Hide Full Job Description' : 'View Full Job Description'" style="background: none; border: 1px solid rgba(242,103,69,0.3); color: #F26745; font-family: 'Nunito Sans', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 32px; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">View Full Job Description</button>
+            <div id="jd-content" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease; max-width: 700px; margin: 0 auto;">
+                <div style="padding: 32px 0; text-align: left;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">What You'll Do</h3>
+                            <ul style="color: #b0b0b0; font-size: 14px; line-height: 2; list-style: none; padding: 0;">
+                                <li>Design static ad creatives for Meta (Facebook/Instagram)</li>
+                                <li>Create carousel ads with compelling visual storytelling</li>
+                                <li>Produce motion graphics and simple animations</li>
+                                <li>Edit short-form video content for ads</li>
+                                <li>Follow detailed creative briefs from our strategist</li>
+                                <li>Iterate on designs based on ad performance data</li>
+                                <li>Maintain brand consistency across multiple client accounts</li>
+                                <li>Meet daily and weekly creative output deadlines</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">What We're Looking For</h3>
+                            <ul style="color: #b0b0b0; font-size: 14px; line-height: 2; list-style: none; padding: 0;">
+                                <li>2+ years designing ad creatives or marketing assets</li>
+                                <li>Strong portfolio showing performance-driven design</li>
+                                <li>Proficiency in Figma, Photoshop, or similar tools</li>
+                                <li>Experience with motion/animation is a plus</li>
+                                <li>Comfortable with AI design tools and willing to learn new ones</li>
+                                <li>Ability to produce high volume without sacrificing quality</li>
+                                <li>Strong attention to detail (typography, spacing, alignment)</li>
+                                <li>Reliable, meets deadlines, communicates proactively</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 12px;">Details</h3>
+                        <div style="display: flex; gap: 40px; flex-wrap: wrap; color: #b0b0b0; font-size: 14px;">
+                            <div><strong style="color: #fff;">Type:</strong> Full-time</div>
+                            <div><strong style="color: #fff;">Location:</strong> Remote (worldwide)</div>
+                            <div><strong style="color: #fff;">Hours:</strong> 4h overlap (8AM-12PM EST), rest flexible</div>
+                            <div><strong style="color: #fff;">Compensation:</strong> $1,000-$2,000/month (based on experience)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .jd-open { max-height: 800px !important; }
+            #jd-toggle:hover { background: rgba(242,103,69,0.1); }
+        </style>
+
         <div class="section-divider"></div>
 
         <!-- Portfolio Carousel Section -->
