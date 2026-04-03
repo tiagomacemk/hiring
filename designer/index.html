@@ -309,6 +309,50 @@
         }
 
         /* Portfolio Preview Section */
+        .carousel-wrapper {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 32px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 12px;
+            width: max-content;
+        }
+
+        .carousel-row-1 {
+            animation: scrollLeft 40s linear infinite;
+        }
+
+        .carousel-row-2 {
+            animation: scrollRight 35s linear infinite;
+            margin-top: 12px;
+        }
+
+        .carousel-track img {
+            height: 200px;
+            width: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-track img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes scrollRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
         .portfolio-section {
             padding: 80px 20px;
             text-align: center;
@@ -596,6 +640,10 @@
                 gap: 20px;
             }
 
+            .carousel-track img {
+                height: 140px;
+            }
+
             .cta-button {
                 padding: 16px 40px;
                 font-size: 16px;
@@ -699,30 +747,53 @@
 
         <div class="section-divider"></div>
 
-        <!-- Portfolio Preview Section -->
+        <!-- Portfolio Carousel Section -->
         <div class="portfolio-section fade-in">
             <div class="container">
-                <h2>See the Work You'd Be Creating</h2>
-                <p class="section-subtitle">This is the caliber of creative we produce for our clients. Static ads, carousels, and video -- across eCommerce, SaaS, coaching, and more.</p>
-                <div class="portfolio-formats">
-                    <div class="format-item">
-                        <div class="format-icon">&#128444;</div>
-                        <div class="format-label">Static Ads</div>
-                    </div>
-                    <div class="format-item">
-                        <div class="format-icon">&#128218;</div>
-                        <div class="format-label">Carousels</div>
-                    </div>
-                    <div class="format-item">
-                        <div class="format-icon">&#127916;</div>
-                        <div class="format-label">Video Ads</div>
-                    </div>
-                    <div class="format-item">
-                        <div class="format-icon">&#10024;</div>
-                        <div class="format-label">Animations</div>
-                    </div>
+                <h2>The Work You'd Be Creating</h2>
+                <p class="section-subtitle">This is the caliber of creative we produce every day. If this excites you, keep scrolling.</p>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel-track carousel-row-1">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Respira_TOF_Bundle_E1_01_ENG.webp" alt="Respira ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HTK-programs_01.webp" alt="HTK ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Dustro_Headline_GrossAngle.webp" alt="Dustro ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/PP_C4_Gift-25_1203-V3.webp" alt="Poppy's ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Exofreeze_JP_Speedometer-25_0304-V1.webp" alt="Exofreeze ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_Win_C1_01.jpg" alt="ES ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HomeDesignAI-1x1-47.webp" alt="HomeDesign ad">
+                    <!-- Duplicate for seamless loop -->
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Respira_TOF_Bundle_E1_01_ENG.webp" alt="Respira ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX ad">
                 </div>
-                <a href="https://macedomarketing.com/portfolio/" target="_blank" class="portfolio-link">Browse Our Portfolio &rarr;</a>
+                <div class="carousel-track carousel-row-2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Cafely_Carousel-25_0414-04.webp" alt="Cafely carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Exofreeze-Carousel_Offer-1.webp" alt="Exofreeze carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/JFM_Carousel.webp" alt="JFM carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Carousel_Bracelets_6slides.webp" alt="Bracelets carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/TECTECTEC_Carousel_reviews_01.webp" alt="TecTecTec carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Carousel-with-reviews_00.webp" alt="Reviews carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C2_PointOut-26_0213-V1.webp" alt="RR ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_JP_9x16_SplitEase-24_1225-V3.jpg" alt="GlamBeauty ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/JFM_2026_JAN_TOF_C3_V2.webp" alt="JFM ad">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/DD_C1_Search-25_1014-V1.webp" alt="DD ad">
+                    <!-- Duplicate for seamless loop -->
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Cafely_Carousel-25_0414-04.webp" alt="Cafely carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Exofreeze-Carousel_Offer-1.webp" alt="Exofreeze carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/JFM_Carousel.webp" alt="JFM carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Carousel_Bracelets_6slides.webp" alt="Bracelets carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/TECTECTEC_Carousel_reviews_01.webp" alt="TecTecTec carousel">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Carousel-with-reviews_00.webp" alt="Reviews carousel">
+                </div>
             </div>
         </div>
 
