@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We're Hiring an Account Manager | Macedo Marketing</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #0D0D0D;
+            color: #f0f0f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── Floating depth particles ── */
+        .depth-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .depth-dot {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: driftUp linear infinite;
+        }
+
+        .depth-dot:nth-child(1) { width: 4px; height: 4px; background: #F26745; left: 12%; animation-duration: 18s; animation-delay: 0s; }
+        .depth-dot:nth-child(2) { width: 3px; height: 3px; background: #FFD230; left: 28%; animation-duration: 22s; animation-delay: 4s; }
+        .depth-dot:nth-child(3) { width: 5px; height: 5px; background: #F26745; left: 55%; animation-duration: 20s; animation-delay: 2s; }
+        .depth-dot:nth-child(4) { width: 3px; height: 3px; background: #FFD230; left: 75%; animation-duration: 24s; animation-delay: 6s; }
+        .depth-dot:nth-child(5) { width: 4px; height: 4px; background: #F26745; left: 90%; animation-duration: 19s; animation-delay: 1s; }
+        .depth-dot:nth-child(6) { width: 2px; height: 2px; background: #FFD230; left: 42%; animation-duration: 21s; animation-delay: 8s; }
+
+        @keyframes driftUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.15; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        /* ── Content wrapper ── */
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Header ── */
+        .header {
+            padding: 28px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header img {
+            height: 70px;
+        }
+
+        .header-cta {
+            display: inline-block;
+            color: #F26745;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid #F26745;
+            padding: 10px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .header-cta:hover {
+            background: #F26745;
+            color: #fff;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            padding: 80px 40px 100px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Gradient mesh background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 30%, rgba(242, 103, 69, 0.25) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 80% at 80% 70%, rgba(255, 210, 48, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 60% 20%, rgba(242, 103, 69, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 70% 40% at 10% 80%, rgba(255, 210, 48, 0.08) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, #0D0D0D, transparent);
+            z-index: 1;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 580px;
+        }
+
+        .hero .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(242, 103, 69, 0.1);
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(242, 103, 69, 0.3);
+            margin-bottom: 28px;
+            animation: badgePulse 3s ease-in-out infinite;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #F26745;
+            animation: dotBlink 2s ease-in-out infinite;
+        }
+
+        @keyframes dotBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(242, 103, 69, 0.15); }
+            50% { box-shadow: 0 0 20px 4px rgba(242, 103, 69, 0.1); }
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #F26745 0%, #FFD230 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: #a0a0a0;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 36px;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Decorative shapes in hero */
+        .hero-shape {
+            position: absolute;
+            border-radius: 20px;
+            border: 2px solid rgba(242, 103, 69, 0.15);
+            animation: shapeFloat 12s ease-in-out infinite;
+        }
+
+        .hero-shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -20px;
+            right: -20px;
+            transform: rotate(15deg);
+        }
+
+        .hero-shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -30px;
+            left: 10px;
+            border-color: rgba(255, 210, 48, 0.12);
+            animation-delay: -4s;
+            animation-duration: 15s;
+        }
+
+        .hero-shape-3 {
+            width: 120px;
+            height: 120px;
+            top: 40%;
+            right: 10%;
+            border-color: rgba(242, 103, 69, 0.1);
+            animation-delay: -8s;
+            animation-duration: 10s;
+            border-radius: 50%;
+        }
+
+        @keyframes shapeFloat {
+            0%, 100% { transform: rotate(15deg) translate(0, 0); }
+            33% { transform: rotate(18deg) translate(10px, -15px); }
+            66% { transform: rotate(12deg) translate(-8px, 10px); }
+        }
+
+        /* Stats row inside hero visual */
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-stat {
+            text-align: center;
+            padding: 28px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            min-width: 130px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+        }
+
+        .hero-stat:hover {
+            transform: translateY(-6px);
+            border-color: rgba(242, 103, 69, 0.3);
+        }
+
+        .hero-stat .number {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F26745, #FFD230);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-stat .label {
+            font-size: 13px;
+            color: #888;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        /* ── CTA button with animated glow border ── */
+        .cta-glow {
+            position: relative;
+            display: inline-block;
+            padding: 3px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #F26745, #FFD230, #F26745, #FFD230);
+            background-size: 300% 300%;
+            animation: glowShift 4s ease-in-out infinite;
+        }
+
+        .cta-glow::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #F26745, #FFD230, #F26745);
+            background-size: 300% 300%;
+            animation: glowShift 4s ease-in-out infinite;
+            filter: blur(16px);
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        @keyframes glowShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .cta-glow a {
+            display: block;
+            background: #0D0D0D;
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 44px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-glow a:hover {
+            background: #151515;
+        }
+
+        /* ── Section shared ── */
+        .section-label {
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(242, 103, 69, 0.2), transparent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ── Video Section - Asymmetric ── */
+        .video-section {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .video-text {
+            padding-right: 20px;
+        }
+
+        .video-text h2 {
+            font-size: clamp(26px, 3vw, 34px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .video-text p {
+            color: #929292;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(242, 103, 69, 0.12), 0 8px 30px rgba(0, 0, 0, 0.4);
+            background: #1a1a1a;
+            border: 1px solid rgba(242, 103, 69, 0.15);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ── What You'll Do - Icon Grid ── */
+        .role-section {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .role-header {
+            text-align: left;
+            max-width: 500px;
+            margin-bottom: 60px;
+        }
+
+        .role-header h2 {
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .role-header p {
+            color: #929292;
+            font-size: 16px;
+        }
+
+        .role-description {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .role-description p {
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .role-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 32px 24px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, #F26745, #FFD230);
+            border-radius: 0 0 4px 0;
+            transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .role-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(242, 103, 69, 0.2);
+            box-shadow: 0 16px 40px rgba(242, 103, 69, 0.08);
+        }
+
+        .role-card:hover::before {
+            height: 100%;
+        }
+
+        .role-card .card-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .role-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .role-card p {
+            font-size: 14px;
+            color: #929292;
+            line-height: 1.5;
+        }
+
+        /* Creative grid: make first card span 2 columns on desktop */
+        .role-card:first-child {
+            grid-column: span 2;
+        }
+
+        /* ── Testimonials ── */
+        .testimonials-section {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-header {
+            text-align: right;
+            max-width: 500px;
+            margin-left: auto;
+            margin-bottom: 60px;
+        }
+
+        .testimonials-header h2 {
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .testimonials-header p {
+            color: #929292;
+            font-size: 16px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-left: 3px solid #F26745;
+            border-radius: 4px 14px 14px 4px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .testimonial-card:nth-child(2) {
+            border-left-color: #FFD230;
+            transform: translateY(24px);
+        }
+
+        .testimonial-card:nth-child(3) {
+            border-left-color: #F26745;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 0 30px rgba(242, 103, 69, 0.1),
+                0 16px 40px rgba(0, 0, 0, 0.2);
+            border-left-color: #FFD230;
+        }
+
+        .testimonial-card:nth-child(2):hover {
+            transform: translateY(20px);
+            border-left-color: #F26745;
+        }
+
+        .testimonial-card .quote {
+            font-size: 15px;
+            color: #ccc;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .author-initials {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(242, 103, 69, 0.12);
+            border: 2px solid rgba(242, 103, 69, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: #F26745;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card .author-info strong {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .testimonial-card .author-info span {
+            font-size: 13px;
+            color: #F26745;
+        }
+
+        /* ── Final CTA ── */
+        .cta-section {
+            padding: 120px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 50%, rgba(242, 103, 69, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .cta-section > p {
+            color: #929292;
+            font-size: 16px;
+            max-width: 520px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer img {
+            height: 40px;
+            opacity: 0.4;
+            margin-bottom: 12px;
+        }
+
+        .footer p {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #F26745;
+        }
+
+        .footer .disclaimer {
+            max-width: 700px;
+            margin: 24px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .footer .disclaimer p {
+            font-size: 11px;
+            color: #3a3a3a;
+            line-height: 1.5;
+        }
+
+        /* ── Scroll animations ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.from-left {
+            transform: translateX(-40px);
+        }
+
+        .reveal.from-right {
+            transform: translateX(40px);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* Stagger children */
+        .stagger-children > .reveal:nth-child(1) { transition-delay: 0s; }
+        .stagger-children > .reveal:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children > .reveal:nth-child(3) { transition-delay: 0.2s; }
+        .stagger-children > .reveal:nth-child(4) { transition-delay: 0.3s; }
+        .stagger-children > .reveal:nth-child(5) { transition-delay: 0.4s; }
+
+        /* ── Accent line decoration ── */
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #F26745, #FFD230);
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+
+        .accent-line.right {
+            margin-left: auto;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-visual {
+                justify-content: flex-start;
+            }
+
+            .hero-shape {
+                display: none;
+            }
+
+            .video-section {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 60px 20px;
+            }
+
+            .role-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .role-card:first-child {
+                grid-column: span 2;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card:nth-child(2) {
+                transform: translateY(0);
+            }
+
+            .testimonial-card:nth-child(2):hover {
+                transform: translateY(-4px);
+            }
+
+            .testimonials-header {
+                text-align: left;
+                margin-left: 0;
+            }
+
+            .accent-line.right {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 20px;
+            }
+
+            .header-cta {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 40px 20px 60px;
+                min-height: auto;
+            }
+
+            .hero-stats {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            .hero-stat {
+                min-width: 100px;
+                padding: 20px 16px;
+            }
+
+            .hero-stat .number {
+                font-size: 28px;
+            }
+
+            .role-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .role-card:first-child {
+                grid-column: span 1;
+            }
+
+            .role-section,
+            .testimonials-section {
+                padding: 60px 20px;
+            }
+
+            .cta-section {
+                padding: 80px 20px;
+            }
+        }
+
+        /* ── Parallax depth on scroll (applied via JS) ── */
+        .parallax-slow {
+            will-change: transform;
+        }
+
+        /* ── Reduced motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating depth particles -->
+    <div class="depth-layer">
+        <div class="depth-dot"></div>
+        <div class="depth-dot"></div>
+        <div class="depth-dot"></div>
+        <div class="depth-dot"></div>
+        <div class="depth-dot"></div>
+        <div class="depth-dot"></div>
+    </div>
+
+    <div class="content">
+
+        <!-- Header -->
+        <div class="header">
+            <img src="../logo-mm-icon-white.png" alt="Macedo Marketing">
+            <a href="https://form.getformly.com/f/jsLHqk" class="header-cta">Apply Now</a>
+        </div>
+
+        <!-- Hero with gradient mesh -->
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <div class="badge"><span class="badge-dot"></span> We're Hiring</div>
+                    <h1>Tired of Being Just a Number at Your Agency? <span class="gradient-text">We're Different.</span></h1>
+                    <p>We're looking for an Account Manager who actually cares about client results. Someone who wants to own relationships, not just manage spreadsheets. eCommerce, coaching, lead gen.</p>
+                    <div class="cta-glow">
+                        <a href="https://form.getformly.com/f/jsLHqk">Apply Now</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-shape hero-shape-1 parallax-slow"></div>
+                    <div class="hero-shape hero-shape-2 parallax-slow"></div>
+                    <div class="hero-shape hero-shape-3 parallax-slow"></div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="number">8+</div>
+                            <div class="label">Team Size</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="number">US</div>
+                            <div class="label">Clients</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="number">30+</div>
+                            <div class="label">Peak ROAS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Video Section - Asymmetric -->
+        <section class="video-section">
+            <div class="video-text reveal from-left">
+                <div class="section-label">Step 1</div>
+                <div class="accent-line"></div>
+                <h2>Hear It Directly From Our Founder</h2>
+                <p>Tiago breaks down what the role actually looks like and the kind of person who thrives here.</p>
+            </div>
+            <div class="video-wrapper reveal from-right">
+                <iframe src="https://www.youtube.com/embed/iWOwfZwMy5w" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- What You'll Do -->
+        <section class="role-section">
+            <div class="role-header reveal">
+                <div class="section-label">The Role</div>
+                <div class="accent-line"></div>
+                <h2>This Role Is For You If...</h2>
+                <p>You're great at what you do. You just need the right environment to prove it.</p>
+            </div>
+            <div class="role-description reveal">
+                <p>You've managed client relationships before. You know how to flag issues before they blow up and keep results moving.</p>
+                <p>Here, you'd be the go-to person for a focused portfolio of US-based clients running serious ad budgets. You'd run the calls, work with our media buying and creative teams, and report directly to the founder.</p>
+            </div>
+            <div class="role-grid stagger-children">
+                <div class="role-card reveal">
+                    <span class="card-icon">&#127758;</span>
+                    <h4>Fully Remote</h4>
+                    <p>Work from anywhere you want. EST hours (8 AM - 4 PM), Monday to Friday.</p>
+                </div>
+                <div class="role-card reveal">
+                    <span class="card-icon">&#128101;</span>
+                    <h4>You Won't Be Invisible</h4>
+                    <p>8+ people. Everyone has a name here. Your work gets seen.</p>
+                </div>
+                <div class="role-card reveal">
+                    <span class="card-icon">&#127919;</span>
+                    <h4>Clients Who Value You</h4>
+                    <p>US-based businesses running real ad budgets. They respect the people helping them grow.</p>
+                </div>
+                <div class="role-card reveal">
+                    <span class="card-icon">&#128200;</span>
+                    <h4>Grow With Us</h4>
+                    <p>We're growing fast. Your career trajectory matches ours.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="testimonials-header reveal">
+                <div class="section-label">Social Proof</div>
+                <div class="accent-line right"></div>
+                <h2>What Our Clients Say</h2>
+                <p>These are the kind of clients you'd be working with. Founders who value what we do.</p>
+            </div>
+            <div class="testimonial-grid stagger-children">
+                <div class="testimonial-card reveal">
+                    <p class="quote">"Proactive, transparent, and delivered exactly what they said they would."</p>
+                    <div class="author">
+                        <div class="author-initials">JO</div>
+                        <div class="author-info">
+                            <strong>Josh O.</strong>
+                            <span>One Corp Australia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="quote">"We have been able to absolutely smash our revenue goals. The team genuinely cares about our results."</p>
+                    <div class="author">
+                        <div class="author-initials">RT</div>
+                        <div class="author-info">
+                            <strong>Rory Tonkin</strong>
+                            <span>Hard To Kill Fitness</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="quote">"We hit a ROAS of 30+. The level of attention and strategy is unlike any agency we've worked with before."</p>
+                    <div class="author">
+                        <div class="author-initials">AK</div>
+                        <div class="author-info">
+                            <strong>Arjun Kumar</strong>
+                            <span>Taxd</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Final CTA -->
+        <section class="cta-section reveal" id="apply">
+            <div class="section-label">Step 2</div>
+            <h2>Sound Like You?</h2>
+            <p>The application takes about 15 minutes. No trick questions. We just want to understand who you are and how you think. If there's a match, we'll be in touch within a few days.</p>
+            <div class="cta-glow">
+                <a href="https://form.getformly.com/f/jsLHqk">Apply Now</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            <img src="../logo-mm-icon-white.png" alt="Macedo Marketing"><br>
+            <p>&copy; 2026 Macedo Marketing. All rights reserved.</p>
+            <p><a href="https://macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a> | <a href="https://macedomarketing.com">macedomarketing.com</a></p>
+            <p style="font-size:11px;color:#555;margin-top:12px;">Macedo Marketing is an equal opportunity employer. We do not discriminate based on race, color, religion, sex, national origin, age, disability, or any other legally protected status.</p>
+            <div class="disclaimer">
+                <p>This site is not a part of the YouTube, Bing, TikTok, Google or Facebook website; ByteDance Ltd., Google Inc, Microsoft INC or Meta Inc. Additionally, this site is NOT endorsed by YouTube, Google, Bing or Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ── IntersectionObserver for scroll reveals ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ── Parallax depth on scroll ──
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    document.querySelectorAll('.parallax-slow').forEach((el, i) => {
+                        const speed = 0.03 + (i * 0.015);
+                        const yOffset = scrollY * speed;
+                        const rotation = 15 + (scrollY * 0.01 * (i % 2 === 0 ? 1 : -1));
+                        el.style.transform = `rotate(${rotation}deg) translateY(${yOffset}px)`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+</body>
+</html>
