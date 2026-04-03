@@ -144,7 +144,7 @@
             line-height: 1.7;
         }
 
-        .hero .cta-button-hero {
+        .cta-button-hero {
             display: inline-block;
             background-color: #F26745;
             color: #fff;
@@ -159,7 +159,7 @@
             transition: all 0.3s ease;
         }
 
-        .hero .cta-button-hero:hover {
+        .cta-button-hero:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 40px rgba(242, 103, 69, 0.5);
         }
@@ -311,7 +311,7 @@
         /* Portfolio Preview Section */
         .vertical-scroll-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 12px;
             height: 500px;
             overflow: hidden;
@@ -336,6 +336,11 @@
         .vertical-col-right {
             animation: scrollUp 100s linear infinite;
             margin-top: -30%;
+        }
+
+        .vertical-col-center {
+            animation: scrollUp 90s linear infinite;
+            margin-top: -45%;
         }
 
         @keyframes scrollUp {
@@ -641,6 +646,11 @@
             .vertical-scroll-wrapper {
                 height: 400px;
                 max-width: 100%;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .vertical-col-center {
+                display: none;
             }
 
             .cta-button {
@@ -775,6 +785,23 @@
                     <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_Win_C1_01.jpg" alt="ES">
                     <img src="https://macedomarketing.com/wp-content/uploads/2026/03/PP_C4_Gift-25_1203-V3.webp" alt="Poppys">
                     <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video>
+                </div>
+                <div class="vertical-col vertical-col-center">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C3_V1.webp" alt="MIMY 2">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C4_Grid-25_0129-V1.webp" alt="RR">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Cafely_Headline-Ad_New-Angles_01.webp" alt="Cafely 2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-4-ProblemSolution_V1-2.webp" alt="RifRuf 2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_BALANCE_A3_02_alt.webp" alt="ES Balance">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Ephemeris_AnimCollage_ver3_square.mp4" type="video/mp4"></video>
+                    <!-- Duplicate -->
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C3_V1.webp" alt="MIMY 2">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C4_Grid-25_0129-V1.webp" alt="RR">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Cafely_Headline-Ad_New-Angles_01.webp" alt="Cafely 2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-4-ProblemSolution_V1-2.webp" alt="RifRuf 2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_BALANCE_A3_02_alt.webp" alt="ES Balance">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Ephemeris_AnimCollage_ver3_square.mp4" type="video/mp4"></video>
                 </div>
                 <div class="vertical-col vertical-col-right">
                     <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud">
