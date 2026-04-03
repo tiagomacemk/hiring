@@ -309,33 +309,41 @@
         }
 
         /* Portfolio Preview Section */
-        .masonry-wrapper {
+        .slider-wrapper {
             width: 100%;
-            max-width: 1100px;
-            margin: 32px auto 0;
-            padding: 0 20px;
-            columns: 4;
-            column-gap: 12px;
-        }
-
-        .masonry-wrapper .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 12px;
-            border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 32px;
         }
 
-        .masonry-wrapper .masonry-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(242, 103, 69, 0.15);
+        .slider-track {
+            display: flex;
+            gap: 12px;
+            width: max-content;
+            animation: slideLeft 30s linear infinite;
         }
 
-        .masonry-wrapper img,
-        .masonry-wrapper video {
-            width: 100%;
-            display: block;
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes slideLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .slider-track img,
+        .slider-track video {
+            height: 220px;
+            width: auto;
             border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .slider-track img:hover,
+        .slider-track video:hover {
+            transform: scale(1.05);
         }
 
         .portfolio-section {
@@ -625,9 +633,9 @@
                 gap: 20px;
             }
 
-            .masonry-wrapper {
-                columns: 2;
-                padding: 0 12px;
+            .slider-track img,
+            .slider-track video {
+                height: 160px;
             }
 
             .cta-button {
@@ -682,6 +690,10 @@
                     <div class="video-placeholder">Video coming soon</div>
                 </div>
             </div>
+        </div>
+
+        <div style="text-align: center; padding: 30px 20px 10px;">
+            <a href="#" class="cta-button-hero" style="font-size: 14px; padding: 12px 32px;">Apply Now</a>
         </div>
 
         <div class="section-divider"></div>
@@ -739,29 +751,40 @@
                 <h2>The Work You'd Be Creating</h2>
                 <p class="section-subtitle">This is the caliber of creative we produce every day. If this excites you, keep scrolling.</p>
             </div>
-            <div class="masonry-wrapper">
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY"></div>
-                <div class="masonry-item"><video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Taxd_Comparisonad.mp4" type="video/mp4"></video></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Respira_TOF_Bundle_E1_01_ENG.webp" alt="Respira"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/HTK-programs_01.webp" alt="HTK"></div>
-                <div class="masonry-item"><video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Dustro_Headline_GrossAngle.webp" alt="Dustro"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_Win_C1_01.jpg" alt="ES"></div>
-                <div class="masonry-item"><video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Dustro_C4_MythFact-25_0828-1.mp4" type="video/mp4"></video></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/PP_C4_Gift-25_1203-V3.webp" alt="Poppys"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C4_Grid-25_0129-V1.webp" alt="RR Grid"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/HomeDesignAI-1x1-47.webp" alt="HomeDesign"></div>
-                <div class="masonry-item"><video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation-1.mp4" type="video/mp4"></video></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C3_V1.webp" alt="MIMY 2"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/Exofreeze_JP_Speedometer-25_0304-V1.webp" alt="Exofreeze"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_BALANCE_A3_02_alt.webp" alt="ES Balance"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/Cafely_Headline-Ad_New-Angles_01.webp" alt="Cafely 2"></div>
-                <div class="masonry-item"><img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-4-ProblemSolution_V1-2.webp" alt="RifRuf 2"></div>
+            <div class="slider-wrapper">
+                <div class="slider-track">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Taxd_Comparisonad.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HTK-programs_01.webp" alt="HTK">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Dustro_Headline_GrossAngle.webp" alt="Dustro">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Dustro_C4_MythFact-25_0828-1.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_Win_C1_01.jpg" alt="ES">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HomeDesignAI-1x1-47.webp" alt="HomeDesign">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation-1.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Respira_TOF_Bundle_E1_01_ENG.webp" alt="Respira">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Exofreeze_JP_Speedometer-25_0304-V1.webp" alt="Exofreeze">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/PP_C4_Gift-25_1203-V3.webp" alt="Poppys">
+                    <!-- Duplicate for seamless loop -->
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Taxd_Comparisonad.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HTK-programs_01.webp" alt="HTK">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Dustro_Headline_GrossAngle.webp" alt="Dustro">
+                </div>
             </div>
+        </div>
+
+        <div style="text-align: center; padding: 30px 20px 10px;">
+            <p style="color: #929292; font-size: 15px; margin-bottom: 16px;">Like what you see? We want to see what you can do.</p>
+            <a href="#" class="cta-button-hero" style="font-size: 14px; padding: 12px 32px;">Apply Now</a>
         </div>
 
         <div class="section-divider"></div>
