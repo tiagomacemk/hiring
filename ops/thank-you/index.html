@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Received | Macedo Marketing</title>
+    <link rel="icon" href="../../favicon.png" type="image/png">
+    <!-- Meta Pixel Code (Hiring) -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2336809396803762');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2336809396803762&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #0D0D0D;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-glow .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.12;
+        }
+
+        .bg-glow .orb-1 {
+            width: 500px; height: 500px;
+            background: #F26745;
+            top: -150px; right: -80px;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .bg-glow .orb-2 {
+            width: 400px; height: 400px;
+            background: #F26745;
+            bottom: -100px; left: -60px;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-40px, 30px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(40px, -20px); }
+        }
+
+        .content { position: relative; z-index: 1; }
+
+        .header { padding: 32px 20px; text-align: center; }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(242,103,69,0.2), transparent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+        /* Confirmation */
+        .confirm-section {
+            padding: 70px 20px 50px;
+            text-align: center;
+        }
+
+        .checkmark {
+            width: 72px; height: 72px;
+            background: linear-gradient(135deg, #F26745, #e05535);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-size: 32px;
+            box-shadow: 0 8px 30px rgba(242, 103, 69, 0.3);
+        }
+
+        .confirm-section h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .confirm-section h1 span { color: #F26745; }
+
+        .confirm-section .subtitle {
+            color: #929292;
+            font-size: 17px;
+            max-width: 540px;
+            margin: 0 auto 20px;
+            line-height: 1.7;
+        }
+
+        .confirm-section .honest-note {
+            display: inline-block;
+            background: rgba(242, 103, 69, 0.07);
+            border: 1px solid rgba(242, 103, 69, 0.18);
+            border-radius: 12px;
+            padding: 20px 28px;
+            max-width: 560px;
+            font-size: 15px;
+            color: #b0b0b0;
+            line-height: 1.7;
+            text-align: left;
+            margin-top: 8px;
+        }
+
+        .confirm-section .honest-note strong { color: #fff; }
+
+        /* What happens next */
+        .steps-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .steps-section h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .steps-grid {
+            max-width: 680px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .step-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 28px 18px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 38px; height: 38px;
+            background: rgba(242, 103, 69, 0.12);
+            border: 1px solid rgba(242, 103, 69, 0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            color: #F26745;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .step-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-card p {
+            font-size: 13px;
+            color: #929292;
+            line-height: 1.5;
+        }
+
+        /* Inbox notice */
+        .inbox-notice {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .inbox-notice p {
+            color: #929292;
+            font-size: 14px;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .inbox-notice .label {
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        /* Case studies */
+        .proof-section {
+            padding: 60px 20px;
+        }
+
+        .proof-section h2 {
+            font-size: 26px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .proof-section .subtitle {
+            color: #929292;
+            font-size: 15px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .case-studies {
+            max-width: 680px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .case-study-thumb {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.06);
+            display: block;
+            text-decoration: none;
+        }
+
+        .case-study-thumb:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(242, 103, 69, 0.15);
+            border-color: rgba(242, 103, 69, 0.3);
+        }
+
+        .case-study-thumb img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        .case-study-thumb .play-btn {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px; height: 48px;
+            background: rgba(242, 103, 69, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .case-study-thumb:hover .play-btn {
+            background: #F26745;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-btn::after {
+            content: '';
+            display: block;
+            width: 0; height: 0;
+            border-style: solid;
+            border-width: 7px 0 7px 13px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 3px;
+        }
+
+        .case-study-thumb .thumb-label {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 22px 12px 10px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        /* Follow links */
+        .follow-section {
+            padding: 40px 20px 60px;
+            text-align: center;
+        }
+
+        .follow-section p {
+            color: #929292;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .follow-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .follow-link {
+            display: inline-block;
+            color: #F26745;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 9px 20px;
+            border: 1px solid rgba(242, 103, 69, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .follow-link:hover {
+            background: rgba(242, 103, 69, 0.1);
+            border-color: #F26745;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer p { color: #555; font-size: 13px; }
+
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover { color: #F26745; }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .confirm-section h1 { font-size: 28px; }
+            .steps-grid { grid-template-columns: 1fr; gap: 12px; }
+            .case-studies { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <div class="content">
+
+        <!-- Header -->
+        <div class="header">
+            <img src="../../logo-svg-3.svg" alt="Macedo Marketing" style="width:175px; display:block; margin:0 auto;">
+        </div>
+
+        <!-- Confirmation -->
+        <div class="confirm-section fade-in">
+            <div class="checkmark">&#10003;</div>
+            <h1>Application <span>Received.</span></h1>
+            <p class="subtitle">We read every application personally. If your background is a strong match, you'll hear from us within 3-5 business days.</p>
+            <div class="honest-note">
+                <strong>A note from Tiago:</strong> We're a growing agency that's been performing well for our clients. But operationally, we're not where we want to be yet. That's exactly why this role exists. If you joined us, you'd be building real structure in a business that genuinely needs it — not maintaining a machine someone else already built.
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- What happens next -->
+        <div class="steps-section fade-in">
+            <h2>What Happens Next</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>We Review</h4>
+                    <p>Every application is reviewed personally. We look at your answers, not just your CV.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Short Task</h4>
+                    <p>If shortlisted, we'll send you one short follow-up task. It takes 10-15 minutes and tells us a lot.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Interview</h4>
+                    <p>Strong candidates move to a structured interview with Tiago directly.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Inbox notice -->
+        <div class="inbox-notice fade-in">
+            <p class="label">Keep an eye on your inbox</p>
+            <p>All communication comes from <strong style="color:#fff;">virtualassistant@macedomarketing.com</strong> or <strong style="color:#fff;">tiago@macedomarketing.com</strong>. Check your spam folder if you don't hear from us.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Case studies -->
+        <div class="proof-section fade-in">
+            <h2>What We Do For Our Clients</h2>
+            <p class="subtitle">The work you'd be keeping consistent and organized.</p>
+            <div class="case-studies">
+                <a href="https://www.youtube.com/watch?v=C3n-4RjOdRQ" target="_blank" class="case-study-thumb">
+                    <img src="https://img.youtube.com/vi/C3n-4RjOdRQ/maxresdefault.jpg" alt="One Corp Case Study">
+                    <div class="play-btn"></div>
+                    <div class="thumb-label">78% CPL Reduction in 4 Months</div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=ALok1V6TpdU" target="_blank" class="case-study-thumb">
+                    <img src="https://img.youtube.com/vi/ALok1V6TpdU/maxresdefault.jpg" alt="$30K to $100K">
+                    <div class="play-btn"></div>
+                    <div class="thumb-label">$30K/mo to $100K/mo in 90 Days</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Follow links -->
+        <div class="follow-section fade-in">
+            <p>Get to know the business while you wait.</p>
+            <div class="follow-links">
+                <a href="https://www.youtube.com/@tiagomacedomarketing" target="_blank" class="follow-link">YouTube</a>
+                <a href="https://www.linkedin.com/in/tiagormacedo/" target="_blank" class="follow-link">Tiago's LinkedIn</a>
+                <a href="https://macedomarketing.com" target="_blank" class="follow-link">Our Website</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <img src="../../logo-svg-3.svg" alt="Macedo Marketing" style="width:175px; display:block; margin:0 auto; margin-bottom:10px;"><br>
+            <p>&copy; 2026 Macedo Marketing. All rights reserved.</p>
+            <p><a href="https://macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a> | <a href="https://macedomarketing.com">macedomarketing.com</a></p>
+            <p style="font-size:11px;color:#555;margin-top:12px;">Macedo Marketing is an equal opportunity employer. We do not discriminate based on race, color, religion, sex, national origin, age, disability, or any other legally protected status.</p>
+            <div style="max-width:700px;margin:20px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);">
+                <p style="font-size:11px;color:#444;line-height:1.5;">This site is not a part of the YouTube, Bing, TikTok, Google or Facebook website; ByteDance Ltd., Google Inc, Microsoft INC or Meta Inc. Additionally, this site is NOT endorsed by YouTube, Google, Bing or Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
