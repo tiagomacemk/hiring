@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We're Hiring a Head of Operations | Macedo Marketing</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <!-- Meta Pixel Code (Hiring) -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2336809396803762');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2336809396803762&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #0D0D0D;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-glow .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+        }
+
+        .bg-glow .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: #F26745;
+            top: -200px;
+            right: -100px;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .bg-glow .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: #F26745;
+            bottom: -150px;
+            left: -100px;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        .bg-glow .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: #FFD230;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float3 18s ease-in-out infinite;
+            opacity: 0.08;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-60px, 40px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(50px, -30px); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.3); }
+        }
+
+        /* Content sits above background */
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            padding: 32px 20px;
+            text-align: center;
+        }
+
+        .header img {
+            height: 70px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(242, 103, 69, 0.12);
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(242, 103, 69, 0.25);
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #F26745, #FFD230);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: #929292;
+            font-size: 18px;
+            max-width: 580px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .cta-button-hero {
+            display: inline-block;
+            background-color: #F26745;
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 42px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 30px rgba(242, 103, 69, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-hero:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(242, 103, 69, 0.5);
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(242,103,69,0.2), transparent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Role at a glance */
+        .role-details {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+            color: #929292;
+            font-size: 14px;
+        }
+
+        .role-details .detail-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .role-details .detail-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #F26745;
+        }
+
+        .role-details .detail-value {
+            font-size: 14px;
+            color: #ccc;
+            font-weight: 600;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .step-label {
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .video-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .video-section .subtitle {
+            color: #929292;
+            font-size: 16px;
+            margin-bottom: 36px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 50px rgba(0,0,0,0.4);
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #555;
+            font-size: 15px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 20px;
+        }
+
+        .about-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .about-section .section-subtitle {
+            color: #929292;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-section .description {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 16px;
+            color: #b0b0b0;
+        }
+
+        .about-section .description p {
+            margin-bottom: 16px;
+        }
+
+        .highlights {
+            max-width: 700px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .highlight-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(242, 103, 69, 0.3);
+            box-shadow: 0 8px 30px rgba(242, 103, 69, 0.08);
+        }
+
+        .highlight-card .icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .highlight-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .highlight-card p {
+            font-size: 14px;
+            color: #929292;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Who We Are Section */
+        .who-section {
+            padding: 80px 20px;
+        }
+
+        .who-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .who-section .section-subtitle {
+            color: #929292;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonials {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(242, 103, 69, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .testimonial-card .quote {
+            font-size: 15px;
+            color: #ccc;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .author-initials {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(242, 103, 69, 0.15);
+            border: 2px solid rgba(242, 103, 69, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #F26745;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card .author-info strong {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .testimonial-card .author-info span {
+            font-size: 13px;
+            color: #F26745;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: #929292;
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F26745;
+            color: #fff;
+            text-decoration: none;
+            padding: 18px 56px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 30px rgba(242, 103, 69, 0.35);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            background-color: #e05535;
+            box-shadow: 0 8px 40px rgba(242, 103, 69, 0.55);
+            transform: translateY(-3px);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 0 0 rgba(242, 103, 69, 0.4);
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(242, 103, 69, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(242, 103, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(242, 103, 69, 0); }
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer img {
+            height: 40px;
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #F26745;
+        }
+
+        .footer .disclaimer {
+            max-width: 700px;
+            margin: 20px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer .disclaimer p {
+            font-size: 11px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 20px 50px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .cta-button {
+                padding: 16px 40px;
+                font-size: 16px;
+            }
+
+            .video-section h2,
+            .about-section h2,
+            .who-section h2,
+            .cta-section h2 {
+                font-size: 26px;
+            }
+
+            .role-details {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated background orbs -->
+    <div class="bg-glow">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="content">
+
+        <!-- Header -->
+        <div class="header">
+            <img src="../logo-svg-3.svg" alt="Macedo Marketing" style="width:175px; display:block; margin:0 auto;">
+        </div>
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="badge">We're Hiring</div>
+            <h1>You Build Systems That Work. <span>We Need Someone to Own Ours.</span></h1>
+            <p>We're a fast-growing paid ads agency looking for a Head of Operations. Someone who thinks in processes, holds teams accountable, and finds it satisfying when everything runs exactly as it should.</p>
+            <a href="https://form.getformly.com/f/Y8s0Me" class="cta-button-hero">Apply Now</a>
+            <div class="role-details">
+                <div class="detail-item">
+                    <span class="detail-label">Location</span>
+                    <span class="detail-value">Fully Remote</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Type</span>
+                    <span class="detail-value">Full-Time</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Salary</span>
+                    <span class="detail-value">$3,000-$4,000/mo</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Reports To</span>
+                    <span class="detail-value">CEO</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Video Section -->
+        <div class="video-section fade-in">
+            <div class="container">
+                <div class="step-label">Step 1</div>
+                <h2>Hear It Directly From Our Founder</h2>
+                <p class="subtitle">Tiago explains what this role actually involves and the kind of person who will thrive here.</p>
+                <div class="video-wrapper">
+                    <!-- REPLACE: Add Loom/YouTube embed URL when video is recorded -->
+                    <div class="video-placeholder">
+                        <p style="font-size:13px; letter-spacing:1px; text-transform:uppercase; color:#F26745; font-weight:700; margin-bottom:8px;">Video Coming Soon</p>
+                        <p>Tiago's intro video will appear here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div style="text-align: center; padding: 20px 0;">
+            <a href="https://form.getformly.com/f/Y8s0Me" class="cta-button-hero">Apply Now</a>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- This Role Is For You If -->
+        <div class="about-section fade-in">
+            <div class="container">
+                <h2>This Role Is For You If...</h2>
+                <p class="section-subtitle">You don't need to be told twice. You build it right the first time.</p>
+                <div class="description">
+                    <p>You've spent years in operations, probably in an agency or service business. You understand how client delivery works. You know what breaks when a team scales without structure. You have clear opinions about how things should run, and you have the track record to back them up.</p>
+                    <p>Here, you would own everything that sits between the CEO and the team. All delivery. All accountability. All systems. Escalations stop with you. Decisions that don't need the CEO don't reach him.</p>
+                </div>
+                <div class="highlights">
+                    <div class="highlight-card">
+                        <div class="icon">&#9881;&#65039;</div>
+                        <h4>Real Ownership</h4>
+                        <p>Not a coordinator role. You own the operation. Your decisions stick.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#128101;</div>
+                        <h4>A Team That Does the Work</h4>
+                        <p>Account Managers, Creative Strategists, Media Buyers, Automation Specialist. Professionals. Your job is structure and accountability, not doing everything yourself.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#129302;</div>
+                        <h4>AI-First Environment</h4>
+                        <p>We use AI as a genuine operating layer. You'll have latitude to bring tools, build automations, and shape how the business runs.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#128200;</div>
+                        <h4>Long-Term Role</h4>
+                        <p>We hire for permanence. If the fit is right and results are strong, this role grows with the business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job Description -->
+        <div class="fade-in" style="padding: 20px 20px 40px;">
+            <div style="max-width: 750px; margin: 0 auto;">
+                <div style="padding: 32px 0; text-align: left;">
+
+                    <p style="color: #b0b0b0; font-size: 15px; line-height: 1.7; margin-bottom: 24px;">Your mission: free the CEO completely from day-to-day operations so he can stay focused on sales and growth. Client delivery runs with precision. The team always knows what good looks like. Operational issues get resolved before they become client problems.</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">What You'll Own</h3>
+                            <ul style="color: #b0b0b0; font-size: 14px; line-height: 2; list-style: none; padding: 0;">
+                                <li>• Directly manage all team leads</li>
+                                <li>• Run weekly check-ins and hold performance accountability</li>
+                                <li>• Own ClickUp as the single source of truth</li>
+                                <li>• Ensure SOPs exist for every repeatable process</li>
+                                <li>• Handle all client escalations without CEO involvement</li>
+                                <li>• Monitor delivery quality across all accounts</li>
+                                <li>• Lead the team's adoption of AI and automation tools</li>
+                                <li>• Make data-backed hiring recommendations before capacity breaks</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">Who You Are</h3>
+                            <ul style="color: #b0b0b0; font-size: 14px; line-height: 2; list-style: none; padding: 0;">
+                                <li>• 3-5 years of operations management in an agency or service business</li>
+                                <li>• Proven team leadership with 5+ direct reports</li>
+                                <li>• You build systems once and they hold</li>
+                                <li>• You hold people accountable directly and clearly</li>
+                                <li>• You make decisions from data, not gut feelings</li>
+                                <li>• You're genuinely AI-first with real examples to prove it</li>
+                                <li>• You flag problems before they become fires</li>
+                                <li>• Working knowledge of digital marketing and ad delivery cycles</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">Do Not Apply If</h3>
+                        <ul style="color: #b0b0b0; font-size: 14px; line-height: 2; list-style: none; padding: 0;">
+                            <li>• You need every process defined before you can start</li>
+                            <li>• You have never directly managed a team and owned their results</li>
+                            <li>• You have no experience in an agency or client-facing service business</li>
+                            <li>• You are not actively using AI tools in your current work</li>
+                            <li>• You cannot commit to 40 hours per week full-time</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">Why Join Us</h3>
+                        <ul style="color: #b0b0b0; font-size: 14px; line-height: 2.2; list-style: none; padding: 0;">
+                            <li><strong style="color: #fff;">Full operational authority.</strong> Not a support role. You own delivery, team management, and systems. Your judgment is trusted.</li>
+                            <li><strong style="color: #fff;">No corporate layers.</strong> Direct access to the CEO. Fast decisions. Clear chain of command.</li>
+                            <li><strong style="color: #fff;">High standards, low drama.</strong> We care about performance and building things that last.</li>
+                            <li><strong style="color: #fff;">100% remote.</strong> Async-first communication. No meetings for the sake of meetings.</li>
+                            <li><strong style="color: #fff;">Performance bonuses.</strong> Base salary with upside as you prove results.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 12px;">Details</h3>
+                        <div style="display: flex; gap: 40px; flex-wrap: wrap; color: #b0b0b0; font-size: 14px;">
+                            <div><strong style="color: #fff;">Type:</strong> Full-time Independent Contractor</div>
+                            <div><strong style="color: #fff;">Location:</strong> Remote (worldwide)</div>
+                            <div><strong style="color: #fff;">Hours:</strong> Flexible, with overlap for US, Canada, and Australia</div>
+                            <div><strong style="color: #fff;">Reports to:</strong> CEO (Tiago Macedo)</div>
+                            <div><strong style="color: #fff;">Salary:</strong> $3,000-$4,000/month base + performance bonuses</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div style="text-align: center; padding: 20px 0;">
+            <a href="https://form.getformly.com/f/Y8s0Me" class="cta-button-hero">Apply Now</a>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Client Testimonials -->
+        <div class="who-section fade-in">
+            <h2>What Our Clients Say</h2>
+            <p class="section-subtitle">These are the clients you'd be responsible for keeping happy. Founders who value what we do.</p>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p class="quote">"Proactive, transparent, and delivered exactly what they said they would."</p>
+                    <div class="author">
+                        <div class="author-initials">JO</div>
+                        <div class="author-info">
+                            <strong>Josh O.</strong>
+                            <span>One Corp Australia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"We have been able to absolutely smash our revenue goals. The team genuinely cares about our results."</p>
+                    <div class="author">
+                        <div class="author-initials">RT</div>
+                        <div class="author-info">
+                            <strong>Rory Tonkin</strong>
+                            <span>Hard To Kill Fitness</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"We hit a ROAS of 30+. The level of attention and strategy is unlike any agency we've worked with before."</p>
+                    <div class="author">
+                        <div class="author-initials">AK</div>
+                        <div class="author-info">
+                            <strong>Arjun Kumar</strong>
+                            <span>Taxd</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Final CTA Section -->
+        <div class="cta-section fade-in" id="apply">
+            <div class="step-label">Step 2</div>
+            <h2>Sound Like You?</h2>
+            <p>The application takes about 15 minutes. We want to understand your experience, how you think, and what kind of operator you are. If there's a match, we'll be in touch within a few days.</p>
+            <a href="https://form.getformly.com/f/Y8s0Me" class="cta-button">Apply Now</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <img src="../logo-svg-3.svg" alt="Macedo Marketing" style="width:175px; display:block; margin:0 auto;"><br>
+            <p>&copy; 2026 Macedo Marketing. All rights reserved.</p>
+            <p><a href="https://macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a> | <a href="https://macedomarketing.com">macedomarketing.com</a></p>
+            <p style="font-size:11px;color:#555;margin-top:12px;">Macedo Marketing is an equal opportunity employer. We do not discriminate based on race, color, religion, sex, national origin, age, disability, or any other legally protected status.</p>
+            <div class="disclaimer">
+                <p>This site is not a part of the YouTube, Bing, TikTok, Google or Facebook website; ByteDance Ltd., Google Inc, Microsoft INC or Meta Inc. Additionally, this site is NOT endorsed by YouTube, Google, Bing or Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scroll animation script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
