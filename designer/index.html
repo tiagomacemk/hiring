@@ -590,43 +590,36 @@
             line-height: 1.45;
         }
 
-        .founder-photo-wrap {
+        .founder-video-wrap {
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            min-height: 430px;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.26);
         }
 
-        .founder-photo-wrap img {
+        .founder-video-wrap iframe {
             width: 100%;
-            height: 100%;
-            min-height: 430px;
-            object-fit: cover;
+            aspect-ratio: 16 / 9;
             display: block;
+            border: 0;
         }
 
-        .founder-caption {
-            position: absolute;
-            left: 18px;
-            right: 18px;
-            bottom: 18px;
-            background: rgba(0,0,0,0.72);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 14px;
-            padding: 14px 16px;
-            backdrop-filter: blur(10px);
+        .founder-video-caption {
+            padding: 16px 18px;
+            background: rgba(0,0,0,0.38);
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
-        .founder-caption strong {
+        .founder-video-caption strong {
             display: block;
             color: #fff;
             font-size: 15px;
             margin-bottom: 2px;
         }
 
-        .founder-caption span {
+        .founder-video-caption span {
             color: #F26745;
             font-size: 13px;
             font-weight: 700;
@@ -1101,19 +1094,20 @@
                     <div class="eyebrow">About Macedo Marketing</div>
                     <h2>Small team. High standards. Real ownership.</h2>
                     <p>Macedo Marketing is a performance marketing agency led by Tiago Macedo. We help ambitious businesses grow through paid ads, sharp creative, and clear execution — but the way we work matters just as much as the results.</p>
-                    <p>We value people who take ownership, communicate directly, move fast, and care about doing work they can be proud of. No hiding behind excuses. No corporate theatre. Just a focused team trying to get better every week.</p>
+                    <p>We care about reliable performance, calm thinking, and people who take responsibility before they are asked. No hiding behind excuses. No corporate theatre. Just a focused team trying to get better every week.</p>
                     <div class="values-list">
-                        <div class="value-pill"><strong>Ownership</strong><span>Own the outcome, not just the task.</span></div>
-                        <div class="value-pill"><strong>Candor</strong><span>Say the truth early, clearly, and respectfully.</span></div>
-                        <div class="value-pill"><strong>High standards</strong><span>Details matter because clients trust us with growth.</span></div>
-                        <div class="value-pill"><strong>Initiative</strong><span>Spot problems, bring solutions, and keep moving.</span></div>
+                        <div class="value-pill"><strong>Consistent Performance</strong><span>Reliability over excitement. Systems that work month after month.</span></div>
+                        <div class="value-pill"><strong>Extreme Ownership</strong><span>No excuses. We take full responsibility and fix what isn't working.</span></div>
+                        <div class="value-pill"><strong>Clear Thinking</strong><span>We stay calm and data-driven when the stakes and budgets are high.</span></div>
+                        <div class="value-pill"><strong>High Standards</strong><span>We hold ourselves to a higher bar than any client ever would.</span></div>
+                        <div class="value-pill"><strong>Proactive Action</strong><span>We anticipate risks and bring solutions before they become problems.</span></div>
                     </div>
                 </div>
-                <div class="founder-photo-wrap">
-                    <img src="https://macedomarketing.com/wp-content/themes/macedomarketing/images/tiago-background-min.png" alt="Tiago Macedo, founder of Macedo Marketing">
-                    <div class="founder-caption">
-                        <strong>Tiago Macedo</strong>
-                        <span>Founder, Macedo Marketing</span>
+                <div class="founder-video-wrap">
+                    <iframe src="https://www.youtube.com/embed/50d5cK39Eik" title="Macedo Marketing Intro 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="founder-video-caption">
+                        <strong>Meet Tiago and Macedo Marketing</strong>
+                        <span>A quick intro to who we are and how we work.</span>
                     </div>
                 </div>
             </div>
