@@ -520,6 +520,172 @@
             color: #F26745;
         }
 
+
+        /* Founder / Values Section */
+        .about-us-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 22px;
+            padding: 34px;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 34px;
+            align-items: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.24);
+        }
+
+        .about-us-copy {
+            text-align: left;
+        }
+
+        .about-us-copy .eyebrow {
+            color: #F26745;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .about-us-copy h2 {
+            text-align: left;
+            font-size: 34px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .about-us-copy p {
+            color: #b8b8b8;
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .value-pill {
+            background: rgba(0,0,0,0.24);
+            border: 1px solid rgba(242, 103, 69, 0.18);
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .value-pill strong {
+            display: block;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .value-pill span {
+            color: #8f8f8f;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .founder-photo-wrap {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            min-height: 430px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .founder-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            min-height: 430px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .founder-caption {
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            background: rgba(0,0,0,0.72);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 14px 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .founder-caption strong {
+            display: block;
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .founder-caption span {
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .testimonial-card {
+            display: block;
+            padding: 0;
+            overflow: hidden;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .testimonial-card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            opacity: 0.9;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .testimonial-card:hover img {
+            transform: scale(1.04);
+            opacity: 1;
+        }
+
+        .testimonial-card .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 54px;
+            height: 54px;
+            background: rgba(242, 103, 69, 0.94);
+            border-radius: 50%;
+            box-shadow: 0 4px 24px rgba(242, 103, 69, 0.45);
+        }
+
+        .testimonial-card .play-btn::after {
+            content: '';
+            position: absolute;
+            left: 21px;
+            top: 16px;
+            width: 0;
+            height: 0;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            border-left: 17px solid #fff;
+        }
+
+        .testimonial-card .thumb-label {
+            padding: 16px 18px 18px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+            line-height: 1.35;
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 80px 20px;
@@ -927,41 +1093,53 @@
 
         <div class="section-divider"></div>
 
-        <!-- Social Proof / Client Quotes -->
+
+        <!-- About Macedo Marketing -->
         <div class="who-section fade-in">
-            <h2>What Our Clients Say</h2>
-            <p class="section-subtitle">These are the brands you'd be designing for. Founders who care about great creative and understand its value.</p>
+            <div class="about-us-card">
+                <div class="about-us-copy">
+                    <div class="eyebrow">About Macedo Marketing</div>
+                    <h2>Small team. High standards. Real ownership.</h2>
+                    <p>Macedo Marketing is a performance marketing agency led by Tiago Macedo. We help ambitious businesses grow through paid ads, sharp creative, and clear execution — but the way we work matters just as much as the results.</p>
+                    <p>We value people who take ownership, communicate directly, move fast, and care about doing work they can be proud of. No hiding behind excuses. No corporate theatre. Just a focused team trying to get better every week.</p>
+                    <div class="values-list">
+                        <div class="value-pill"><strong>Ownership</strong><span>Own the outcome, not just the task.</span></div>
+                        <div class="value-pill"><strong>Candor</strong><span>Say the truth early, clearly, and respectfully.</span></div>
+                        <div class="value-pill"><strong>High standards</strong><span>Details matter because clients trust us with growth.</span></div>
+                        <div class="value-pill"><strong>Initiative</strong><span>Spot problems, bring solutions, and keep moving.</span></div>
+                    </div>
+                </div>
+                <div class="founder-photo-wrap">
+                    <img src="https://macedomarketing.com/wp-content/themes/macedomarketing/images/tiago-background-min.png" alt="Tiago Macedo, founder of Macedo Marketing">
+                    <div class="founder-caption">
+                        <strong>Tiago Macedo</strong>
+                        <span>Founder, Macedo Marketing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <!-- Client Testimonials -->
+        <div class="who-section fade-in">
+            <h2>What Our Clients Are Saying</h2>
+            <p class="section-subtitle">Three client interviews that show the kind of results, trust, and standards behind the work.</p>
             <div class="testimonials">
-                <div class="testimonial-card">
-                    <p class="quote">"The creatives they produce are next level. Every round of ads feels fresh, on-brand, and actually converts."</p>
-                    <div class="author">
-                        <div class="author-initials">JO</div>
-                        <div class="author-info">
-                            <strong>Josh O.</strong>
-                            <span>One Corp Australia</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="quote">"We smashed our revenue goals. The design work stands out in the feed and the team genuinely cares about what they put out."</p>
-                    <div class="author">
-                        <div class="author-initials">RT</div>
-                        <div class="author-info">
-                            <strong>Rory Tonkin</strong>
-                            <span>Hard To Kill Fitness</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="quote">"ROAS of 30+. The creative strategy and visual execution is unlike any agency we've worked with before."</p>
-                    <div class="author">
-                        <div class="author-initials">AK</div>
-                        <div class="author-info">
-                            <strong>Arjun Kumar</strong>
-                            <span>Taxd</span>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://youtu.be/XK0jDodO-VA" target="_blank" class="testimonial-card">
+                    <img src="https://img.youtube.com/vi/XK0jDodO-VA/maxresdefault.jpg" alt="Josh from One Corp Australia client interview">
+                    <div class="play-btn"></div>
+                    <div class="thumb-label">Josh, One Corp Australia</div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=fUCWcH3Lj18" target="_blank" class="testimonial-card">
+                    <img src="https://img.youtube.com/vi/fUCWcH3Lj18/maxresdefault.jpg" alt="Taxd client interview">
+                    <div class="play-btn"></div>
+                    <div class="thumb-label">30+ ROAS for Taxd</div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=uFVQx_Z5er8" target="_blank" class="testimonial-card">
+                    <img src="https://img.youtube.com/vi/uFVQx_Z5er8/maxresdefault.jpg" alt="Hard To Kill Fitness client interview">
+                    <div class="play-btn"></div>
+                    <div class="thumb-label">Hard To Kill Fitness</div>
+                </a>
             </div>
         </div>
 
