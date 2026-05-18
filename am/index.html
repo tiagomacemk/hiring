@@ -486,10 +486,26 @@
         }
 
         .value-pill strong {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             color: #fff;
             font-size: 14px;
             margin-bottom: 4px;
+        }
+
+        .value-pill .value-emoji {
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 26px;
+            border-radius: 8px;
+            background: rgba(242, 103, 69, 0.13);
+            border: 1px solid rgba(242, 103, 69, 0.22);
+            font-size: 15px;
+            line-height: 1;
         }
 
         .value-pill span {
@@ -707,11 +723,14 @@
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: clamp(27px, 8vw, 32px);
+                max-width: calc(100vw - 40px);
+                overflow-wrap: break-word;
             }
 
             .hero p {
                 font-size: 16px;
+                max-width: calc(100vw - 40px);
             }
 
             .highlights {
@@ -926,11 +945,11 @@
                     <p>Macedo Marketing is a performance marketing agency led by Tiago Macedo. We help ambitious businesses grow through paid ads, sharp creative, and clear execution — but the way we work matters just as much as the results.</p>
                     <p>We care about reliable performance, calm thinking, and people who take responsibility before they are asked. No hiding behind excuses. No corporate theatre. Just a focused team trying to get better every week.</p>
                     <div class="values-list">
-                        <div class="value-pill"><strong>Consistent Performance</strong><span>Reliability over excitement. Systems that work month after month.</span></div>
-                        <div class="value-pill"><strong>Extreme Ownership</strong><span>No excuses. We take full responsibility and fix what isn't working.</span></div>
-                        <div class="value-pill"><strong>Clear Thinking</strong><span>We stay calm and data-driven when the stakes and budgets are high.</span></div>
-                        <div class="value-pill"><strong>High Standards</strong><span>We hold ourselves to a higher bar than any client ever would.</span></div>
-                        <div class="value-pill"><strong>Proactive Action</strong><span>We anticipate risks and bring solutions before they become problems.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">📈</span>Consistent Performance</strong><span>Reliability over excitement. Systems that work month after month.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">🛠️</span>Extreme Ownership</strong><span>No excuses. We take full responsibility and fix what isn't working.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">🧠</span>Clear Thinking</strong><span>We stay calm and data-driven when the stakes and budgets are high.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">⭐</span>High Standards</strong><span>We hold ourselves to a higher bar than any client ever would.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">⚡</span>Proactive Action</strong><span>We anticipate risks and bring solutions before they become problems.</span></div>
                     </div>
                 </div>
                 <div class="founder-video-wrap">
