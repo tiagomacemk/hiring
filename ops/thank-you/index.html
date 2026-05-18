@@ -263,21 +263,22 @@
             font-size: 14px;
         }
 
-        .founder-video {
+        .founder-photo {
             overflow: hidden;
             border-radius: 18px;
             border: 1px solid rgba(255,255,255,0.08);
             background: rgba(0,0,0,0.28);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.24);
         }
 
-        .founder-video iframe {
+        .founder-photo img {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
             display: block;
-            border: 0;
         }
 
-        .founder-video-caption {
+        .founder-photo-caption {
             padding: 14px 16px;
             border-top: 1px solid rgba(255,255,255,0.08);
             color: #F26745;
@@ -475,7 +476,6 @@
                 gap: 22px;
             }
             .founder-copy h2 { font-size: 25px; }
-            .founder-video iframe { min-height: 210px; }
             .case-studies { grid-template-columns: 1fr; }
         }
     </style>
@@ -544,9 +544,9 @@
                         <div class="founder-point"><span>🚀</span><div>If there’s a fit, this is a place where you can take real ownership instead of just completing tasks.</div></div>
                     </div>
                 </div>
-                <div class="founder-video">
-                    <iframe src="https://www.youtube.com/embed/50d5cK39Eik" title="Macedo Marketing Intro 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <div class="founder-video-caption">A quick intro to who we are and how we work.</div>
+                <div class="founder-photo">
+                    <img src="../../tiago-founder.jpg" alt="Tiago Macedo, founder of Macedo Marketing">
+                    <div class="founder-photo-caption">Tiago Macedo, Founder of Macedo Marketing</div>
                 </div>
             </div>
         </div>
