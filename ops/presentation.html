@@ -160,8 +160,9 @@ html, body {
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; flex: 1; }
 .testimonial-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease; }
 .testimonial-card:hover { background: rgba(255,255,255,0.08); border-color: var(--brand); transform: translateY(-4px); }
-.testimonial-video { width: 100%; aspect-ratio: 16/9; background: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 48px; position: relative; overflow: hidden; }
-.testimonial-play { position: absolute; width: 64px; height: 64px; background: var(--brand); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; z-index: 2; opacity: 0.9; }
+.testimonial-video { width: 100%; aspect-ratio: 16/9; background: #1a1a1a; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.testimonial-video img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+.testimonial-play { position: absolute; width: 64px; height: 64px; background: var(--brand); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; z-index: 2; box-shadow: 0 4px 24px rgba(242,103,69,0.5); }
 .testimonial-info { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
 .testimonial-name { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 4px; }
 .testimonial-company { font-size: 14px; color: var(--brand); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
@@ -233,7 +234,7 @@ html, body {
         </div>
       </div>
       <div>
-        <img src="tiago-founder.jpg" alt="Tiago, CEO at Macedo Marketing" class="about-photo">
+        <img src="../tiago-founder.jpg" alt="Tiago, CEO at Macedo Marketing" class="about-photo">
       </div>
     </div>
   </div>
@@ -334,6 +335,7 @@ html, body {
     <div class="testimonials-grid">
       <a href="https://youtu.be/XK0jDodO-VA" target="_blank" class="testimonial-card" style="text-decoration: none;">
         <div class="testimonial-video">
+          <img src="https://img.youtube.com/vi/XK0jDodO-VA/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/XK0jDodO-VA/hqdefault.jpg'" alt="Josh One Corp Australia">
           <span class="testimonial-play">▶</span>
         </div>
         <div class="testimonial-info">
@@ -345,6 +347,7 @@ html, body {
       </a>
       <a href="https://www.youtube.com/watch?v=ALok1V6TpdU" target="_blank" class="testimonial-card" style="text-decoration: none;">
         <div class="testimonial-video">
+          <img src="https://img.youtube.com/vi/ALok1V6TpdU/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/ALok1V6TpdU/hqdefault.jpg'" alt="Vijay Singh">
           <span class="testimonial-play">▶</span>
         </div>
         <div class="testimonial-info">
@@ -356,6 +359,7 @@ html, body {
       </a>
       <a href="https://www.youtube.com/watch?v=tCAQm8wHhg8" target="_blank" class="testimonial-card" style="text-decoration: none;">
         <div class="testimonial-video">
+          <img src="https://img.youtube.com/vi/tCAQm8wHhg8/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/tCAQm8wHhg8/hqdefault.jpg'" alt="Sofia Skinny Theory">
           <span class="testimonial-play">▶</span>
         </div>
         <div class="testimonial-info">
