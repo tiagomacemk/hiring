@@ -368,7 +368,7 @@ html, body {
   <!-- SLIDE 1: COVER -->
   <div class="slide active s-cover" data-idx="0">
     <div class="cover-photo">
-      <img src="../tiago-laptop.jpg" alt="Tiago Macedo at work">
+      <img src="../assets/tiago/tiago-cover.jpg" alt="Tiago Macedo working">
     </div>
     <div class="cover-top">
       <span class="cover-tag">We're Hiring · Full Time · Remote</span>
@@ -398,12 +398,12 @@ html, body {
         <div class="about-stats">
           <div class="about-stat"><div class="num">5+</div><div class="label">Years in business</div><div class="note">Established agency, not a startup</div></div>
           <div class="about-stat"><div class="num">100%</div><div class="label">Remote-first</div><div class="note">Async, global team</div></div>
-          <div class="about-stat"><div class="num">10+</div><div class="label">Active clients</div><div class="note">7–10 figure brands</div></div>
+          <div class="about-stat"><div class="num">Founder-led</div><div class="label">Delivery culture</div><div class="note">High standards, direct ownership</div></div>
           <div class="about-stat"><div class="num">AI-first</div><div class="label">Working style</div><div class="note">Tools-on, not theory</div></div>
         </div>
       </div>
       <div>
-        <img src="../tiago-founder.jpg" alt="Tiago, CEO at Macedo Marketing" class="about-photo">
+        <img src="../assets/tiago/tiago-about.jpg" alt="Tiago Macedo, CEO at Macedo Marketing" class="about-photo">
       </div>
     </div>
   </div>
@@ -606,7 +606,7 @@ html, body {
   <!-- SLIDE 9: APPLY -->
   <div class="slide s-apply" data-idx="9">
     <div class="apply-photo">
-      <img src="../tiago-founder.jpg" alt="Tiago Macedo">
+      <img src="../assets/tiago/tiago-final.jpg" alt="Tiago Macedo working from laptop">
     </div>
     <div class="chrome">
       <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Apply Now</span></div>
@@ -634,7 +634,9 @@ html, body {
   const slides = document.querySelectorAll('.slide');
   const nav = document.getElementById('nav');
   const counter = document.getElementById('counter');
+  const params = new URLSearchParams(window.location.search);
   let current = Math.min(Math.max(parseInt(localStorage.getItem('opsDeckSlide') || '0', 10) || 0, 0), slides.length - 1);
+  if (params.get('clean') === '1') current = 0;
   slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
 
   slides.forEach((_, i) => {
@@ -655,7 +657,7 @@ html, body {
     localStorage.setItem('opsDeckSlide', String(current));
   }
   counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
-  if (new URLSearchParams(window.location.search).get('clean') === '1') {
+  if (params.get('clean') === '1') {
     nav.classList.add('hidden');
     counter.classList.add('hidden');
   }
