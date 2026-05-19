@@ -92,8 +92,9 @@ html, body {
 .cover-mm { font-size: 16px; font-weight: 800; color: #fff; letter-spacing: 0.18em; text-transform: uppercase; }
 
 /* SLIDE 2: ABOUT MACEDO */
-.s-about { background: #fff; padding: 140px 120px 100px; display: flex; flex-direction: column; }
+.s-about { background: #fff; padding: 140px 120px 100px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
 .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; margin-top: 50px; flex: 1; align-items: start; }
+.about-photo { width: 100%; height: 380px; object-fit: cover; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
 .about-left h3 { font-size: 44px; font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 28px; }
 .about-left h3 em { font-style: normal; color: var(--brand); }
 .about-left p { font-size: 22px; font-weight: 500; color: var(--ink-soft); line-height: 1.55; margin-bottom: 20px; }
@@ -120,6 +121,7 @@ html, body {
 .s-own { background: #fff; padding: 140px 120px 100px; display: flex; flex-direction: column; }
 .own-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 50px; flex: 1; }
 .own-card { background: var(--surface); padding: 36px 36px; border-top: 4px solid var(--brand); display: flex; flex-direction: column; }
+.own-card .icon { width: 44px; height: 44px; margin-bottom: 14px; opacity: 0.8; color: var(--brand); flex-shrink: 0; }
 .own-card .num { font-size: 14px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand); margin-bottom: 16px; }
 .own-card h4 { font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1.25; letter-spacing: -0.015em; margin-bottom: 14px; }
 .own-card p { font-size: 16px; font-weight: 500; color: var(--ink-soft); line-height: 1.5; }
@@ -144,10 +146,25 @@ html, body {
 .why-card.brand { background: var(--brand); color: #fff; }
 .why-card.surface { background: var(--surface); border-top: 4px solid var(--brand); color: var(--ink); }
 .why-card.outline { background: #fff; border: 2px solid var(--dark); color: var(--ink); }
+.why-card .icon { width: 48px; height: 48px; margin-bottom: 16px; opacity: 0.9; flex-shrink: 0; }
+.why-card.brand .icon, .why-card.dark .icon { color: #fff; }
+.why-card.surface .icon, .why-card.outline .icon { color: var(--brand); }
 .why-card .label { font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; opacity: 0.7; }
 .why-card h4 { font-size: 28px; font-weight: 900; line-height: 1.2; letter-spacing: -0.015em; margin-bottom: 12px; }
 .why-card p { font-size: 15px; font-weight: 500; line-height: 1.5; opacity: 0.8; }
 .why-card.brand .label, .why-card.dark .label { opacity: 0.8; }
+
+/* SLIDE 6.5: TESTIMONIALS */
+.s-testimonials { background: var(--dark); padding: 140px 120px 100px; display: flex; flex-direction: column; }
+.s-testimonials .h2 { color: #fff; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px; flex: 1; }
+.testimonial-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; cursor: pointer; transition: all 0.3s ease; }
+.testimonial-card:hover { background: rgba(255,255,255,0.08); border-color: var(--brand); transform: translateY(-4px); }
+.testimonial-video { width: 100%; aspect-ratio: 16/9; background: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 48px; position: relative; overflow: hidden; }
+.testimonial-play { position: absolute; width: 64px; height: 64px; background: var(--brand); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; z-index: 2; opacity: 0.9; }
+.testimonial-info { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.testimonial-name { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.testimonial-company { font-size: 14px; color: var(--brand); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* SLIDE 7: COMPENSATION */
 .s-comp { background: var(--dark); padding: 140px 120px 100px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
@@ -190,7 +207,7 @@ html, body {
     </div>
     <div class="cover-bottom">
       <span class="cover-mm">Macedo Marketing</span>
-      <span class="cover-meta">Macedo Marketing · 2026 · 01 / 08</span>
+      <span class="cover-meta">Macedo Marketing · 2026 · 01 / 09</span>
     </div>
     <div class="cover-accent"></div>
   </div>
@@ -208,12 +225,15 @@ html, body {
         <h3>We help businesses scale through <em>paid ads, sharp creative, and clear execution.</em></h3>
         <p>No corporate theatre. No agency layers. Small team, high standards, real ownership culture.</p>
         <p>We're scaling fast — and we need someone to run delivery so the founder can keep focusing on growth.</p>
+        <div class="about-stats">
+          <div class="about-stat"><div class="num">5+</div><div class="label">Years in business</div><div class="note">Established agency, not a startup</div></div>
+          <div class="about-stat"><div class="num">100%</div><div class="label">Remote-first</div><div class="note">Async, global team</div></div>
+          <div class="about-stat"><div class="num">10+</div><div class="label">Active clients</div><div class="note">7–10 figure brands</div></div>
+          <div class="about-stat"><div class="num">AI-first</div><div class="label">Working style</div><div class="note">Tools-on, not theory</div></div>
+        </div>
       </div>
-      <div class="about-stats">
-        <div class="about-stat"><div class="num">5+</div><div class="label">Years in business</div><div class="note">Established agency, not a startup</div></div>
-        <div class="about-stat"><div class="num">100%</div><div class="label">Remote-first</div><div class="note">Async, global team</div></div>
-        <div class="about-stat"><div class="num">10+</div><div class="label">Active clients</div><div class="note">7–10 figure brands</div></div>
-        <div class="about-stat"><div class="num">AI-first</div><div class="label">Working style</div><div class="note">Tools-on, not theory</div></div>
+      <div>
+        <img src="tiago-founder.jpg" alt="Tiago, CEO at Macedo Marketing" class="about-photo">
       </div>
     </div>
   </div>
@@ -246,12 +266,12 @@ html, body {
     <span class="kicker">What You'll Own</span>
     <h2 class="h2" style="margin-top: 18px;">Six things land on your desk — and <em style="color: var(--brand); font-style: normal;">stay there.</em></h2>
     <div class="own-grid">
-      <div class="own-card"><div class="num">01</div><h4>Team Leadership</h4><p>Directly manage Account Managers, Creative Strategists, Media Buyers, and our Automation Specialist. Weekly check-ins, performance accountability, real conversations.</p></div>
-      <div class="own-card"><div class="num">02</div><h4>ClickUp & Systems</h4><p>Own ClickUp as the single source of truth. Ensure SOPs exist for every repeatable process. Build systems once that hold without you babysitting them.</p></div>
-      <div class="own-card"><div class="num">03</div><h4>Client Escalations</h4><p>Handle every client escalation without CEO involvement. You're the buffer between team friction and founder time.</p></div>
-      <div class="own-card"><div class="num">04</div><h4>Delivery Quality</h4><p>Monitor delivery quality across every account. Flag risks before they become fires. Set the bar and hold it.</p></div>
-      <div class="own-card"><div class="num">05</div><h4>AI & Automation</h4><p>Lead AI/automation adoption across the team. Identify where humans burn time on rework and replace it with systems.</p></div>
-      <div class="own-card"><div class="num">06</div><h4>Hiring Triggers</h4><p>Make data-backed hiring recommendations before capacity breaks. You see capacity issues coming and act early.</p></div>
+      <div class="own-card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div class="num">01</div><h4>Team Leadership</h4><p>Directly manage Account Managers, Creative Strategists, Media Buyers, and our Automation Specialist. Weekly check-ins, performance accountability, real conversations.</p></div>
+      <div class="own-card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><div class="num">02</div><h4>ClickUp & Systems</h4><p>Own ClickUp as the single source of truth. Ensure SOPs exist for every repeatable process. Build systems once that hold without you babysitting them.</p></div>
+      <div class="own-card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zM12 8v4l3 2"/></svg><div class="num">03</div><h4>Client Escalations</h4><p>Handle every client escalation without CEO involvement. You're the buffer between team friction and founder time.</p></div>
+      <div class="own-card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg><div class="num">04</div><h4>Delivery Quality</h4><p>Monitor delivery quality across every account. Flag risks before they become fires. Set the bar and hold it.</p></div>
+      <div class="own-card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><path d="M12 1v6m0 6v6"/><path d="M4.22 4.22l4.24 4.24m2.12 2.12l4.24 4.24"/><path d="M1 12h6m6 0h6"/><path d="M4.22 19.78l4.24-4.24m2.12-2.12l4.24-4.24"/><path d="M19.78 19.78l-4.24-4.24m-2.12-2.12l-4.24-4.24"/><path d="M19.78 4.22l-4.24 4.24m-2.12 2.12l-4.24 4.24"/></svg><div class="num">05</div><h4>AI & Automation</h4><p>Lead AI/automation adoption across the team. Identify where humans burn time on rework and replace it with systems.</p></div>
+      <div class="own-card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m7-7H5"/><circle cx="12" cy="12" r="10"/></svg><div class="num">06</div><h4>Hiring Triggers</h4><p>Make data-backed hiring recommendations before capacity breaks. You see capacity issues coming and act early.</p></div>
     </div>
   </div>
 
@@ -296,18 +316,63 @@ html, body {
     <span class="kicker">Why Join</span>
     <h2 class="h2" style="margin-top: 18px;">What makes this <em style="color: var(--brand); font-style: normal;">different</em> from your last ops role.</h2>
     <div class="why-grid">
-      <div class="why-card brand"><div class="label">Authority</div><h4>Full operational authority.</h4><p>Not a coordinator. Not a support role. You own delivery, team management, and systems. Your decisions stick.</p></div>
-      <div class="why-card dark"><div class="label">Access</div><h4>Direct line to the CEO.</h4><p>No corporate layers. No politics. You bring problems and solutions directly to Tiago.</p></div>
-      <div class="why-card surface"><div class="label">Culture</div><h4>High standards. Low drama.</h4><p>Calm thinking, personal responsibility, extreme ownership. We don't do corporate theatre.</p></div>
-      <div class="why-card outline"><div class="label">Flexibility</div><h4>100% remote, async-first.</h4><p>Work from anywhere. Flexible hours with overlap for US, Canada, and Australia time zones.</p></div>
+      <div class="why-card brand"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-5z"/></svg><div class="label">Authority</div><h4>Full operational authority.</h4><p>Not a coordinator. Not a support role. You own delivery, team management, and systems. Your decisions stick.</p></div>
+      <div class="why-card dark"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg><div class="label">Access</div><h4>Direct line to the CEO.</h4><p>No corporate layers. No politics. You bring problems and solutions directly to Tiago.</p></div>
+      <div class="why-card surface"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><div class="label">Culture</div><h4>High standards. Low drama.</h4><p>Calm thinking, personal responsibility, extreme ownership. We don't do corporate theatre.</p></div>
+      <div class="why-card outline"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><div class="label">Flexibility</div><h4>100% remote, async-first.</h4><p>Work from anywhere. Flexible hours with overlap for US, Canada, and Australia time zones.</p></div>
     </div>
   </div>
 
-  <!-- SLIDE 7: COMPENSATION -->
-  <div class="slide s-comp" data-idx="6">
+  <!-- SLIDE 7: TESTIMONIALS -->
+  <div class="slide s-testimonials" data-idx="6">
+    <div class="chrome">
+      <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Proof</span></div>
+      <span class="chrome-meta light">07 / 09 · What clients say</span>
+    </div>
+    <span class="kicker">What Our Clients Say</span>
+    <h2 class="h2 light" style="margin-top: 18px;">Don't just take our word for it. <span style="color: var(--brand);">Here's what our partners say.</span></h2>
+    <div class="testimonials-grid">
+      <a href="https://youtu.be/XK0jDodO-VA" target="_blank" class="testimonial-card" style="text-decoration: none;">
+        <div class="testimonial-video">
+          <span class="testimonial-play">▶</span>
+        </div>
+        <div class="testimonial-info">
+          <div>
+            <div class="testimonial-name">Josh</div>
+            <div class="testimonial-company">One Corp Australia</div>
+          </div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=ALok1V6TpdU" target="_blank" class="testimonial-card" style="text-decoration: none;">
+        <div class="testimonial-video">
+          <span class="testimonial-play">▶</span>
+        </div>
+        <div class="testimonial-info">
+          <div>
+            <div class="testimonial-name">Vijay Singh</div>
+            <div class="testimonial-company">Client Partner</div>
+          </div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=tCAQm8wHhg8" target="_blank" class="testimonial-card" style="text-decoration: none;">
+        <div class="testimonial-video">
+          <span class="testimonial-play">▶</span>
+        </div>
+        <div class="testimonial-info">
+          <div>
+            <div class="testimonial-name">Sofia</div>
+            <div class="testimonial-company">Skinny Theory</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: COMPENSATION -->
+  <div class="slide s-comp" data-idx="7">
     <div class="chrome">
       <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Comp</span></div>
-      <span class="chrome-meta light">07 / 08 · Compensation</span>
+      <span class="chrome-meta light">08 / 09 · Compensation</span>
     </div>
     <span class="kicker">Compensation</span>
     <h2 class="h2 light" style="margin-top: 18px;">Competitive base. <span style="color: var(--brand);">Real upside</span> tied to results.</h2>
@@ -326,11 +391,11 @@ html, body {
     </div>
   </div>
 
-  <!-- SLIDE 8: APPLY -->
-  <div class="slide s-apply" data-idx="7">
+  <!-- SLIDE 9: APPLY -->
+  <div class="slide s-apply" data-idx="8">
     <div class="chrome">
       <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Apply Now</span></div>
-      <span class="chrome-meta light">08 / 08 · Take the next step</span>
+      <span class="chrome-meta light">09 / 09 · Take the next step</span>
     </div>
     <div class="apply-top">
       <span class="apply-tag">Ready to Apply?</span>
