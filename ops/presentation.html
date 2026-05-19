@@ -135,14 +135,25 @@ html, body {
 /* SLIDE 5: WHO WE'RE LOOKING FOR */
 .s-who { background: var(--dark); padding: 140px 120px 100px; display: flex; flex-direction: column; }
 .s-who .h2 { color: #fff; }
-.who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; flex: 1; }
-.who-col h4 { font-size: 18px; font-weight: 800; color: var(--brand); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 24px; }
-.who-list { display: flex; flex-direction: column; gap: 16px; }
-.who-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; background: rgba(255,255,255,0.04); border-left: 3px solid var(--brand); }
-.who-item.bad { border-left-color: var(--red); }
-.who-item .mark { font-size: 24px; font-weight: 900; color: var(--brand); line-height: 1.2; flex-shrink: 0; }
-.who-item.bad .mark { color: var(--red); }
-.who-item .txt { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.4; }
+.who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 50px; flex: 1; }
+.who-col { display: flex; flex-direction: column; }
+.who-col-header { display: flex; align-items: center; gap: 14px; padding: 18px 24px; margin-bottom: 16px; border-radius: 6px; }
+.who-col-header.good { background: rgba(242,103,69,0.12); border: 1px solid rgba(242,103,69,0.25); }
+.who-col-header.bad { background: rgba(207,46,46,0.12); border: 1px solid rgba(207,46,46,0.3); }
+.who-col-header .col-icon { font-size: 22px; font-weight: 900; flex-shrink: 0; }
+.who-col-header.good .col-icon { color: var(--brand); }
+.who-col-header.bad .col-icon { color: var(--red); }
+.who-col-header h4 { font-size: 16px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin: 0; }
+.who-col-header.good h4 { color: var(--brand); }
+.who-col-header.bad h4 { color: #e05555; }
+.who-list { display: flex; flex-direction: column; gap: 10px; }
+.who-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; border-radius: 4px; }
+.who-item.good { background: rgba(242,103,69,0.07); border-left: 4px solid var(--brand); }
+.who-item.bad { background: rgba(207,46,46,0.07); border-left: 4px solid var(--red); }
+.who-item .mark { font-size: 20px; font-weight: 900; line-height: 1.3; flex-shrink: 0; width: 24px; text-align: center; }
+.who-item.good .mark { color: var(--brand); }
+.who-item.bad .mark { color: #e05555; }
+.who-item .txt { font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.4; }
 
 /* SLIDE 6: WHY JOIN */
 .s-why { background: #fff; padding: 140px 120px 100px; display: flex; flex-direction: column; }
@@ -280,7 +291,9 @@ html, body {
   /* Who */
   .s-who { padding: 60px 24px 48px !important; }
   .who-grid { grid-template-columns: 1fr !important; gap: 16px !important; margin-top: 20px !important; }
-  .who-col h4 { font-size: 13px !important; margin-bottom: 14px !important; }
+  .who-col-header { padding: 12px 16px !important; margin-bottom: 10px !important; }
+  .who-col-header h4 { font-size: 12px !important; }
+  .who-col-header .col-icon { font-size: 16px !important; }
   .who-item { padding: 10px 14px !important; gap: 10px !important; }
   .who-item .mark { font-size: 16px !important; }
   .who-item .txt { font-size: 13px !important; }
@@ -416,17 +429,17 @@ html, body {
     <h2 class="h2 light" style="margin-top: 18px;">There's a specific person built for this. <span style="color: var(--brand);">It might be you.</span></h2>
     <div class="who-grid">
       <div class="who-col">
-        <h4>Apply if you are…</h4>
+        <div class="who-col-header good"><span class="col-icon">✓</span><h4>Apply if you are…</h4></div>
         <div class="who-list">
-          <div class="who-item"><span class="mark">✓</span><span class="txt"><b>3–5+ years</b> running operations in an agency or service business</span></div>
-          <div class="who-item"><span class="mark">✓</span><span class="txt">You've directly managed <b>5+ reports</b> and owned their results</span></div>
-          <div class="who-item"><span class="mark">✓</span><span class="txt">You build systems once and they <b>hold without you babysitting them</b></span></div>
-          <div class="who-item"><span class="mark">✓</span><span class="txt">You're <b>genuinely AI-first</b> — with examples to prove it</span></div>
-          <div class="who-item"><span class="mark">✓</span><span class="txt">You flag problems <b>before they become fires</b></span></div>
+          <div class="who-item good"><span class="mark">✓</span><span class="txt"><b>3–5+ years</b> running operations in an agency or service business</span></div>
+          <div class="who-item good"><span class="mark">✓</span><span class="txt">You've directly managed <b>5+ reports</b> and owned their results</span></div>
+          <div class="who-item good"><span class="mark">✓</span><span class="txt">You build systems once and they <b>hold without you babysitting them</b></span></div>
+          <div class="who-item good"><span class="mark">✓</span><span class="txt">You're <b>genuinely AI-first</b> — with examples to prove it</span></div>
+          <div class="who-item good"><span class="mark">✓</span><span class="txt">You flag problems <b>before they become fires</b></span></div>
         </div>
       </div>
       <div class="who-col">
-        <h4>Don't apply if…</h4>
+        <div class="who-col-header bad"><span class="col-icon">✗</span><h4>Don't apply if…</h4></div>
         <div class="who-list">
           <div class="who-item bad"><span class="mark">✗</span><span class="txt">You need every process <b>defined before</b> you can start</span></div>
           <div class="who-item bad"><span class="mark">✗</span><span class="txt">You've <b>never directly managed</b> a team and owned outcomes</span></div>
