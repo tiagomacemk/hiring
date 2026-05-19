@@ -143,9 +143,6 @@ html, body {
 .ninety-card ul { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-top: auto; }
 .ninety-card li { font-size: 19px; font-weight: 650; color: var(--ink-soft); line-height: 1.4; position: relative; padding-left: 28px; }
 .ninety-card li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 10px; height: 10px; background: var(--brand); border-radius: 50%; }
-.presenter-hint { position: fixed; top: 14px; right: 18px; z-index: 1200; padding: 8px 12px; border-radius: 999px; background: rgba(5,6,8,0.66); color: rgba(255,255,255,0.72); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(10px); opacity: .7; }
-.presenter-hint.hide { display: none; }
-@media (hover: hover) { .presenter-hint:hover { opacity: 1; } }
 
 /* SLIDE 6: WHO WE'RE LOOKING FOR */
 .s-who { background: var(--dark); padding: 140px 120px 100px; display: flex; flex-direction: column; }
@@ -309,7 +306,6 @@ html, body {
   .ninety-card ul { gap: 8px !important; }
   .ninety-card li { font-size: 12px !important; padding-left: 18px !important; }
   .ninety-card li::before { width: 7px !important; height: 7px !important; }
-  .presenter-hint { display: none !important; }
 
   /* Who */
   .s-who { padding: 60px 24px 48px !important; }
@@ -359,7 +355,6 @@ html, body {
 </style>
 </head>
 <body>
-<div class="presenter-hint" id="presenterHint">← / → navigate · F fullscreen · H hide controls</div>
 
 <div class="stage" id="stage">
 
@@ -632,7 +627,6 @@ html, body {
   const slides = document.querySelectorAll('.slide');
   const nav = document.getElementById('nav');
   const counter = document.getElementById('counter');
-  const presenterHint = document.getElementById('presenterHint');
   let current = Math.min(Math.max(parseInt(localStorage.getItem('opsDeckSlide') || '0', 10) || 0, 0), slides.length - 1);
   slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
 
@@ -654,6 +648,10 @@ html, body {
     localStorage.setItem('opsDeckSlide', String(current));
   }
   counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+  if (new URLSearchParams(window.location.search).get('clean') === '1') {
+    nav.classList.add('hidden');
+    counter.classList.add('hidden');
+  }
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
@@ -665,7 +663,6 @@ html, body {
       e.preventDefault();
       nav.classList.toggle('hidden');
       counter.classList.toggle('hidden');
-      presenterHint?.classList.toggle('hide');
     }
   });
 
