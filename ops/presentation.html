@@ -224,6 +224,13 @@ html, body {
 .apply-cta-arrow { width: 32px; height: 32px; border-right: 3px solid #fff; border-top: 3px solid #fff; transform: rotate(45deg); margin-left: 8px; }
 .apply-meta { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.14em; text-transform: uppercase; }
 
+@media (min-width: 1024px) {
+  .stage > .slide {
+    position: absolute;
+    inset: 0;
+  }
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 1023px) {
   html, body { overflow-y: auto; overflow-x: hidden; height: auto; background: #050608; }
