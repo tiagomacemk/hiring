@@ -204,6 +204,122 @@ html, body {
 .apply-cta-arrow { width: 32px; height: 32px; border-right: 3px solid #fff; border-top: 3px solid #fff; transform: rotate(45deg); margin-left: 8px; }
 .apply-meta { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.14em; text-transform: uppercase; }
 
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 1023px) {
+  html, body { overflow-y: auto; overflow-x: hidden; height: auto; background: #050608; }
+
+  .stage {
+    position: relative !important;
+    top: 0 !important; left: 0 !important;
+    transform: none !important;
+    width: 100vw !important; height: auto !important;
+    box-shadow: none;
+  }
+
+  .slide {
+    position: relative !important;
+    inset: auto !important;
+    width: 100vw !important; height: auto !important;
+    min-height: 100svh;
+    opacity: 0 !important;
+    display: none !important;
+    padding: 72px 24px 52px !important;
+    transition: none !important;
+    overflow: hidden;
+  }
+  .slide.active { display: flex !important; opacity: 1 !important; }
+
+  .chrome { position: relative !important; top: auto !important; left: auto !important; right: auto !important; padding: 0 !important; margin-bottom: 20px !important; }
+  .h2 { font-size: 28px !important; margin-top: 10px !important; line-height: 1.2 !important; }
+  .kicker { font-size: 11px !important; }
+  .nav-dot { width: 20px !important; height: 5px !important; }
+
+  /* Cover */
+  .s-cover { padding: 60px 24px 48px !important; justify-content: flex-end !important; min-height: 100svh; }
+  .cover-photo { width: 100% !important; height: 55% !important; top: 0 !important; }
+  .cover-photo::before { background: linear-gradient(to bottom, transparent 30%, var(--dark) 80%) !important; }
+  .cover-tag { font-size: 10px !important; padding: 8px 16px !important; margin-bottom: 20px !important; }
+  .cover-h { font-size: 54px !important; margin-bottom: 16px !important; }
+  .cover-sub { font-size: 15px !important; max-width: 100% !important; }
+  .cover-bottom { flex-direction: row !important; margin-top: 28px; }
+  .cover-mm img { height: 22px !important; }
+  .cover-mm span { font-size: 12px !important; }
+  .cover-meta { font-size: 11px !important; }
+  .cover-top { position: relative; z-index: 2; margin-top: auto; }
+
+  /* About */
+  .s-about { padding: 60px 24px 48px !important; }
+  .about-grid { grid-template-columns: 1fr !important; gap: 24px !important; margin-top: 20px !important; }
+  .about-photo { height: 220px !important; }
+  .about-left h3 { font-size: 20px !important; margin-bottom: 12px !important; }
+  .about-left p { font-size: 14px !important; margin-bottom: 10px !important; }
+  .about-stats { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  .about-stat { padding: 14px 14px !important; }
+  .about-stat .num { font-size: 28px !important; margin-bottom: 4px !important; }
+  .about-stat .label { font-size: 11px !important; }
+  .about-stat .note { font-size: 10px !important; }
+
+  /* Role */
+  .s-role { padding: 60px 24px 48px !important; }
+  .role-mission { padding: 20px 22px !important; margin-top: 20px !important; }
+  .role-mission .mission-text { font-size: 18px !important; }
+  .role-bottom { grid-template-columns: 1fr !important; gap: 10px !important; margin-top: 20px !important; }
+  .role-pill { padding: 14px 18px !important; }
+  .role-pill .value { font-size: 17px !important; }
+  .role-pill .sub { font-size: 12px !important; }
+
+  /* What You'll Own */
+  .s-own { padding: 60px 24px 48px !important; }
+  .own-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin-top: 20px !important; }
+  .own-card { padding: 16px !important; }
+  .own-card .icon { width: 26px !important; height: 26px !important; margin-bottom: 6px !important; }
+  .own-card .num { font-size: 10px !important; margin-bottom: 6px !important; }
+  .own-card h4 { font-size: 13px !important; margin-bottom: 6px !important; }
+  .own-card p { font-size: 11px !important; line-height: 1.4 !important; }
+
+  /* Who */
+  .s-who { padding: 60px 24px 48px !important; }
+  .who-grid { grid-template-columns: 1fr !important; gap: 16px !important; margin-top: 20px !important; }
+  .who-col h4 { font-size: 13px !important; margin-bottom: 14px !important; }
+  .who-item { padding: 10px 14px !important; gap: 10px !important; }
+  .who-item .mark { font-size: 16px !important; }
+  .who-item .txt { font-size: 13px !important; }
+
+  /* Why Join */
+  .s-why { padding: 60px 24px 48px !important; }
+  .why-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin-top: 20px !important; }
+  .why-card { padding: 18px !important; min-height: 0 !important; }
+  .why-card .icon { width: 26px !important; height: 26px !important; margin-bottom: 8px !important; }
+  .why-card .label { font-size: 9px !important; margin-bottom: 8px !important; }
+  .why-card h4 { font-size: 15px !important; margin-bottom: 6px !important; }
+  .why-card p { font-size: 11px !important; line-height: 1.4 !important; }
+
+  /* Testimonials */
+  .s-testimonials { padding: 60px 24px 48px !important; }
+  .testimonials-grid { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 20px !important; }
+  .testimonial-name { font-size: 15px !important; }
+  .testimonial-company { font-size: 12px !important; }
+  .testimonial-info { padding: 16px !important; }
+
+  /* Comp */
+  .s-comp { padding: 60px 24px 48px !important; }
+  .comp-grid { grid-template-columns: 1fr !important; gap: 20px !important; margin-top: 20px !important; }
+  .comp-left h3 { font-size: 24px !important; margin-bottom: 14px !important; }
+  .comp-left p { font-size: 14px !important; margin-bottom: 10px !important; }
+  .comp-perk { padding: 12px 16px !important; }
+  .comp-perk .value { font-size: 15px !important; }
+
+  /* Apply */
+  .s-apply { padding: 60px 24px 48px !important; justify-content: flex-end !important; }
+  .apply-photo { width: 100% !important; height: 50% !important; top: 0 !important; }
+  .apply-photo::before { background: linear-gradient(to bottom, transparent 20%, var(--dark) 75%) !important; }
+  .apply-tag { font-size: 10px !important; margin-bottom: 20px !important; }
+  .apply-h { font-size: 54px !important; margin-bottom: 16px !important; }
+  .apply-sub { font-size: 15px !important; max-width: 100% !important; }
+  .apply-cta-row { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
+  .apply-cta { padding: 14px 24px !important; font-size: 13px !important; }
+  .apply-top { position: relative; z-index: 2; margin-top: auto; }
+}
 </style>
 </head>
 <body>
@@ -466,7 +582,10 @@ html, body {
     if (e.key === 'End') { e.preventDefault(); go(slides.length - 1); }
   });
 
+  function isMobile() { return window.innerWidth < 1024; }
+
   function fit() {
+    if (isMobile()) return;
     const stage = document.getElementById('stage');
     const sx = window.innerWidth / 1920;
     const sy = window.innerHeight / 1080;
@@ -475,6 +594,14 @@ html, body {
   }
   window.addEventListener('resize', fit);
   fit();
+
+  // Touch swipe
+  let tx = 0;
+  document.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 40) go(current + (dx < 0 ? 1 : -1));
+  }, { passive: true });
 })();
 </script>
 
