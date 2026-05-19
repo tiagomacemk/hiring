@@ -75,6 +75,7 @@ html, body {
 .nav-dot { width: 16px; height: 4px; background: rgba(255,255,255,0.25); cursor: pointer; transition: background 0.2s; }
 .nav-dot.active { background: var(--brand); }
 .counter { position: fixed; bottom: 14px; right: 24px; font-size: 12px; color: rgba(255,255,255,0.4); z-index: 1000; letter-spacing: 0.08em; font-weight: 600; }
+.hidden { display: none !important; }
 
 /* SLIDE 1: COVER */
 .s-cover { background: var(--dark); display: flex; flex-direction: column; justify-content: space-between; padding: 96px 120px; position: relative; overflow: hidden; }
@@ -132,27 +133,38 @@ html, body {
 .own-card h4 { font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1.25; letter-spacing: -0.015em; margin-bottom: 14px; }
 .own-card p { font-size: 16px; font-weight: 500; color: var(--ink-soft); line-height: 1.5; }
 
-/* SLIDE 5: WHO WE'RE LOOKING FOR */
+/* SLIDE 5: FIRST 90 DAYS */
+.s-ninety { background: #fff; padding: 140px 120px 100px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.s-ninety::after { content: ''; position: absolute; right: -180px; bottom: -220px; width: 620px; height: 620px; background: radial-gradient(circle, rgba(242,103,69,0.11) 0%, transparent 62%); filter: blur(70px); pointer-events: none; }
+.ninety-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 56px; flex: 1; position: relative; z-index: 2; }
+.ninety-card { background: var(--surface); border: 1px solid var(--border); border-top: 6px solid var(--brand); padding: 42px 40px; display: flex; flex-direction: column; min-height: 520px; }
+.ninety-card .period { font-size: 18px; font-weight: 900; color: var(--brand); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 24px; }
+.ninety-card h4 { font-size: 34px; font-weight: 900; line-height: 1.12; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 24px; }
+.ninety-card ul { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-top: auto; }
+.ninety-card li { font-size: 19px; font-weight: 650; color: var(--ink-soft); line-height: 1.4; position: relative; padding-left: 28px; }
+.ninety-card li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 10px; height: 10px; background: var(--brand); border-radius: 50%; }
+.presenter-hint { position: fixed; top: 14px; right: 18px; z-index: 1200; padding: 8px 12px; border-radius: 999px; background: rgba(5,6,8,0.66); color: rgba(255,255,255,0.72); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(10px); opacity: .7; }
+.presenter-hint.hide { display: none; }
+@media (hover: hover) { .presenter-hint:hover { opacity: 1; } }
+
+/* SLIDE 6: WHO WE'RE LOOKING FOR */
 .s-who { background: var(--dark); padding: 140px 120px 100px; display: flex; flex-direction: column; }
 .s-who .h2 { color: #fff; }
 .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 50px; flex: 1; }
 .who-col { display: flex; flex-direction: column; }
-.who-col-header { display: flex; align-items: center; gap: 14px; padding: 18px 24px; margin-bottom: 16px; border-radius: 6px; }
-.who-col-header.good { background: rgba(242,103,69,0.12); border: 1px solid rgba(242,103,69,0.25); }
-.who-col-header.bad { background: rgba(207,46,46,0.12); border: 1px solid rgba(207,46,46,0.3); }
-.who-col-header .col-icon { font-size: 22px; font-weight: 900; flex-shrink: 0; }
-.who-col-header.good .col-icon { color: var(--brand); }
-.who-col-header.bad .col-icon { color: var(--red); }
-.who-col-header h4 { font-size: 16px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin: 0; }
-.who-col-header.good h4 { color: var(--brand); }
-.who-col-header.bad h4 { color: #e05555; }
-.who-list { display: flex; flex-direction: column; gap: 10px; }
-.who-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; border-radius: 4px; }
-.who-item.good { background: rgba(242,103,69,0.07); border-left: 4px solid var(--brand); }
-.who-item.bad { background: rgba(207,46,46,0.07); border-left: 4px solid var(--red); }
+.who-col { border-radius: 8px; overflow: hidden; }
+.who-col-header { display: flex; align-items: center; gap: 14px; padding: 20px 26px; margin-bottom: 0; border-radius: 0; }
+.who-col-header.good { background: #22c55e; }
+.who-col-header.bad { background: #ef4444; }
+.who-col-header .col-icon { font-size: 22px; font-weight: 900; color: #fff; flex-shrink: 0; }
+.who-col-header h4 { font-size: 15px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin: 0; color: #fff; }
+.who-list { display: flex; flex-direction: column; gap: 8px; padding: 14px; background: rgba(255,255,255,0.03); }
+.who-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 18px; border-radius: 4px; }
+.who-item.good { background: rgba(34,197,94,0.10); border-left: 4px solid #22c55e; }
+.who-item.bad { background: rgba(239,68,68,0.10); border-left: 4px solid #ef4444; }
 .who-item .mark { font-size: 20px; font-weight: 900; line-height: 1.3; flex-shrink: 0; width: 24px; text-align: center; }
-.who-item.good .mark { color: var(--brand); }
-.who-item.bad .mark { color: #e05555; }
+.who-item.good .mark { color: #22c55e; }
+.who-item.bad .mark { color: #ef4444; }
 .who-item .txt { font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.4; }
 
 /* SLIDE 6: WHY JOIN */
@@ -288,6 +300,17 @@ html, body {
   .own-card h4 { font-size: 13px !important; margin-bottom: 6px !important; }
   .own-card p { font-size: 11px !important; line-height: 1.4 !important; }
 
+  /* First 90 Days */
+  .s-ninety { padding: 60px 24px 48px !important; }
+  .ninety-grid { grid-template-columns: 1fr !important; gap: 12px !important; margin-top: 20px !important; }
+  .ninety-card { min-height: 0 !important; padding: 18px !important; }
+  .ninety-card .period { font-size: 10px !important; margin-bottom: 8px !important; }
+  .ninety-card h4 { font-size: 18px !important; margin-bottom: 12px !important; }
+  .ninety-card ul { gap: 8px !important; }
+  .ninety-card li { font-size: 12px !important; padding-left: 18px !important; }
+  .ninety-card li::before { width: 7px !important; height: 7px !important; }
+  .presenter-hint { display: none !important; }
+
   /* Who */
   .s-who { padding: 60px 24px 48px !important; }
   .who-grid { grid-template-columns: 1fr !important; gap: 16px !important; margin-top: 20px !important; }
@@ -336,6 +359,7 @@ html, body {
 </style>
 </head>
 <body>
+<div class="presenter-hint" id="presenterHint">← / → navigate · F fullscreen · H hide controls</div>
 
 <div class="stage" id="stage">
 
@@ -351,7 +375,7 @@ html, body {
     </div>
     <div class="cover-bottom">
       <div class="cover-mm"><img src="../logo-mm-icon-white.png" alt="Macedo Marketing"><span>Macedo Marketing</span></div>
-      <span class="cover-meta">2026 · 01 / 09</span>
+      <span class="cover-meta">2026 · 01 / 10</span>
     </div>
     <div class="cover-accent"></div>
   </div>
@@ -360,7 +384,7 @@ html, body {
   <div class="slide s-about" data-idx="1">
     <div class="chrome">
       <div class="chrome-logos"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">About Us</span></div>
-      <span class="chrome-meta">02 / 08 · Who we are</span>
+      <span class="chrome-meta">02 / 10 · Who we are</span>
     </div>
     <span class="kicker">Who we are</span>
     <h2 class="h2" style="margin-top: 18px;">A performance agency built for <em style="color: var(--brand); font-style: normal;">ambitious operators.</em></h2>
@@ -386,7 +410,7 @@ html, body {
   <div class="slide s-role" data-idx="2">
     <div class="chrome">
       <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">The Role</span></div>
-      <span class="chrome-meta light">03 / 08 · Mission</span>
+      <span class="chrome-meta light">03 / 10 · Mission</span>
     </div>
     <span class="kicker">The Role</span>
     <h2 class="h2 light" style="margin-top: 18px;">This isn't a coordinator job.<br>It's <span style="color: var(--brand);">real operational authority.</span></h2>
@@ -405,7 +429,7 @@ html, body {
   <div class="slide s-own" data-idx="3">
     <div class="chrome">
       <div class="chrome-logos"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Responsibilities</span></div>
-      <span class="chrome-meta">04 / 08 · What you'll own</span>
+      <span class="chrome-meta">04 / 10 · What you'll own</span>
     </div>
     <span class="kicker">What You'll Own</span>
     <h2 class="h2" style="margin-top: 18px;">Six things land on your desk — and <em style="color: var(--brand); font-style: normal;">stay there.</em></h2>
@@ -419,11 +443,50 @@ html, body {
     </div>
   </div>
 
-  <!-- SLIDE 5: WHO WE'RE LOOKING FOR -->
-  <div class="slide s-who" data-idx="4">
+  <!-- SLIDE 5: FIRST 90 DAYS -->
+  <div class="slide s-ninety" data-idx="4">
+    <div class="chrome">
+      <div class="chrome-logos"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">First 90 Days</span></div>
+      <span class="chrome-meta">05 / 10 · What success looks like</span>
+    </div>
+    <span class="kicker">First 90 Days</span>
+    <h2 class="h2" style="margin-top: 18px;">This role is measured by <em style="color: var(--brand); font-style: normal;">operational lift</em> — not busywork.</h2>
+    <div class="ninety-grid">
+      <div class="ninety-card">
+        <div class="period">Days 1–30</div>
+        <h4>Learn the machine.</h4>
+        <ul>
+          <li>Map the team, accounts, SOPs, and delivery rhythm.</li>
+          <li>Find where Tiago is still the bottleneck.</li>
+          <li>Stabilize ClickUp and the weekly operating cadence.</li>
+        </ul>
+      </div>
+      <div class="ninety-card">
+        <div class="period">Days 31–60</div>
+        <h4>Start removing friction.</h4>
+        <ul>
+          <li>Own team accountability and client escalation flow.</li>
+          <li>Turn repeat problems into simple systems.</li>
+          <li>Surface capacity risks before they hit clients.</li>
+        </ul>
+      </div>
+      <div class="ninety-card">
+        <div class="period">Days 61–90</div>
+        <h4>Run operations without founder drag.</h4>
+        <ul>
+          <li>Delivery runs on rhythm, not reminders.</li>
+          <li>Team leads know what is expected and by when.</li>
+          <li>Tiago is pulled into fewer day-to-day decisions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: WHO WE'RE LOOKING FOR -->
+  <div class="slide s-who" data-idx="5">
     <div class="chrome">
       <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Profile</span></div>
-      <span class="chrome-meta light">05 / 08 · Who you are</span>
+      <span class="chrome-meta light">06 / 10 · Who you are</span>
     </div>
     <span class="kicker">Who We're Looking For</span>
     <h2 class="h2 light" style="margin-top: 18px;">There's a specific person built for this. <span style="color: var(--brand);">It might be you.</span></h2>
@@ -452,10 +515,10 @@ html, body {
   </div>
 
   <!-- SLIDE 6: WHY JOIN -->
-  <div class="slide s-why" data-idx="5">
+  <div class="slide s-why" data-idx="6">
     <div class="chrome">
       <div class="chrome-logos"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Why Join</span></div>
-      <span class="chrome-meta">06 / 08 · Why join</span>
+      <span class="chrome-meta">07 / 10 · Why join</span>
     </div>
     <span class="kicker">Why Join</span>
     <h2 class="h2" style="margin-top: 18px;">What makes this <em style="color: var(--brand); font-style: normal;">different</em> from your last ops role.</h2>
@@ -468,10 +531,10 @@ html, body {
   </div>
 
   <!-- SLIDE 7: TESTIMONIALS -->
-  <div class="slide s-testimonials" data-idx="6">
+  <div class="slide s-testimonials" data-idx="7">
     <div class="chrome">
       <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Proof</span></div>
-      <span class="chrome-meta light">07 / 09 · What clients say</span>
+      <span class="chrome-meta light">08 / 10 · What clients say</span>
     </div>
     <span class="kicker">What Our Clients Say</span>
     <h2 class="h2 light" style="margin-top: 18px;">Don't just take our word for it. <span style="color: var(--brand);">Here's what our partners say.</span></h2>
@@ -516,10 +579,10 @@ html, body {
   </div>
 
   <!-- SLIDE 8: COMPENSATION -->
-  <div class="slide s-comp" data-idx="7">
+  <div class="slide s-comp" data-idx="8">
     <div class="chrome">
       <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Comp</span></div>
-      <span class="chrome-meta light">08 / 09 · Compensation</span>
+      <span class="chrome-meta light">09 / 10 · Compensation</span>
     </div>
     <span class="kicker">Compensation</span>
     <h2 class="h2 light" style="margin-top: 18px;">Competitive base. <span style="color: var(--brand);">Real upside</span> tied to results.</h2>
@@ -539,13 +602,13 @@ html, body {
   </div>
 
   <!-- SLIDE 9: APPLY -->
-  <div class="slide s-apply" data-idx="8">
+  <div class="slide s-apply" data-idx="9">
     <div class="apply-photo">
       <img src="../tiago-founder.jpg" alt="Tiago Macedo">
     </div>
     <div class="chrome">
       <div class="chrome-logos light"><span class="mm-text">Macedo Marketing</span><span class="divider"></span><span class="tag">Apply Now</span></div>
-      <span class="chrome-meta light">09 / 09 · Take the next step</span>
+      <span class="chrome-meta light">10 / 10 · Take the next step</span>
     </div>
     <div class="apply-top">
       <span class="apply-tag">Ready to Apply?</span>
@@ -562,18 +625,20 @@ html, body {
 </div>
 
 <div class="nav" id="nav"></div>
-<div class="counter" id="counter">01 / 08</div>
+<div class="counter" id="counter">01 / 10</div>
 
 <script>
 (function() {
   const slides = document.querySelectorAll('.slide');
   const nav = document.getElementById('nav');
   const counter = document.getElementById('counter');
-  let current = 0;
+  const presenterHint = document.getElementById('presenterHint');
+  let current = Math.min(Math.max(parseInt(localStorage.getItem('opsDeckSlide') || '0', 10) || 0, 0), slides.length - 1);
+  slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
 
   slides.forEach((_, i) => {
     const dot = document.createElement('div');
-    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    dot.className = 'nav-dot' + (i === current ? ' active' : '');
     dot.addEventListener('click', () => go(i));
     nav.appendChild(dot);
   });
@@ -586,13 +651,22 @@ html, body {
     slides[current].classList.add('active');
     nav.children[current].classList.add('active');
     counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+    localStorage.setItem('opsDeckSlide', String(current));
   }
+  counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
     if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
     if (e.key === 'Home') { e.preventDefault(); go(0); }
     if (e.key === 'End') { e.preventDefault(); go(slides.length - 1); }
+    if (e.key.toLowerCase() === 'f') { e.preventDefault(); document.documentElement.requestFullscreen?.(); }
+    if (e.key.toLowerCase() === 'h') {
+      e.preventDefault();
+      nav.classList.toggle('hidden');
+      counter.classList.toggle('hidden');
+      presenterHint?.classList.toggle('hide');
+    }
   });
 
   function isMobile() { return window.innerWidth < 1024; }
