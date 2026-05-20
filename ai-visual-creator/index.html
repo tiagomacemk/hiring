@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We're Hiring an AI Visual Creator | Macedo Marketing</title>
-    <meta name="description" content="Macedo Marketing is hiring an AI Visual Creator to turn ad angles into scroll-stopping static ad imagery using AI image tools.">
     <link rel="icon" href="../favicon.png" type="image/png">
     <!-- Meta Pixel Code (Hiring) -->
     <script>
@@ -23,262 +22,1195 @@
     src="https://www.facebook.com/tr?id=2336809396803762&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Nunito Sans', sans-serif;
-            background: #0D0D0D;
+            background-color: #0D0D0D;
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
         }
-        .bg-glow { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-        .orb { position: absolute; border-radius: 999px; filter: blur(120px); opacity: .16; }
-        .orb-1 { width: 620px; height: 620px; background: #F26745; top: -220px; right: -140px; }
-        .orb-2 { width: 520px; height: 520px; background: #FFD230; bottom: -220px; left: -160px; opacity: .09; }
-        .orb-3 { width: 380px; height: 380px; background: #F26745; top: 45%; left: 52%; opacity: .07; }
-        .content { position: relative; z-index: 1; }
-        .header { padding: 30px 20px 10px; text-align: center; }
-        .header img { height: 76px; width: auto; }
-        .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-        .narrow { width: min(840px, calc(100% - 40px)); margin: 0 auto; }
-        .hero { padding: 66px 20px 72px; text-align: center; }
-        .badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(242,103,69,.12); color: #F26745;
-            border: 1px solid rgba(242,103,69,.28); border-radius: 999px;
-            padding: 8px 18px; font-size: 13px; font-weight: 800;
-            letter-spacing: 1.7px; text-transform: uppercase; margin-bottom: 26px;
-        }
-        h1 { font-size: clamp(42px, 7vw, 76px); line-height: .98; letter-spacing: -2px; font-weight: 900; max-width: 970px; margin: 0 auto 24px; }
-        h1 span, .gradient { background: linear-gradient(135deg, #F26745, #FFD230); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero p { color: #C8C8C8; font-size: clamp(17px, 2.2vw, 21px); max-width: 720px; margin: 0 auto 34px; }
-        .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; align-items: center; }
-        .cta-button, .secondary-button {
-            display: inline-block; text-decoration: none; border-radius: 10px; font-weight: 900;
-            text-transform: uppercase; letter-spacing: 1px; transition: all .25s ease;
-        }
-        .cta-button { background: #F26745; color: #fff; padding: 17px 38px; box-shadow: 0 8px 34px rgba(242,103,69,.34); }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 14px 42px rgba(242,103,69,.48); }
-        .secondary-button { color: #fff; border: 1px solid rgba(255,255,255,.18); padding: 16px 28px; background: rgba(255,255,255,.05); }
-        .secondary-button:hover { border-color: rgba(242,103,69,.55); background: rgba(242,103,69,.12); }
-        .quick-details { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 44px auto 0; max-width: 920px; }
-        .detail-card { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.09); border-radius: 16px; padding: 18px; text-align: left; }
-        .detail-card strong { display: block; color: #fff; font-size: 15px; margin-bottom: 4px; }
-        .detail-card span { color: #929292; font-size: 14px; }
-        .section { padding: 82px 0; }
-        .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(242,103,69,.22), transparent); width: min(680px, calc(100% - 40px)); margin: 0 auto; }
-        .eyebrow { color: #F26745; font-size: 13px; font-weight: 900; letter-spacing: 2.4px; text-transform: uppercase; margin-bottom: 14px; }
-        h2 { font-size: clamp(32px, 5vw, 48px); line-height: 1.08; letter-spacing: -1px; margin-bottom: 18px; }
-        .lead { color: #C8C8C8; font-size: 18px; max-width: 760px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: stretch; margin-top: 34px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
-        .card { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.09); border-radius: 20px; padding: 28px; }
-        .card h3 { font-size: 22px; line-height: 1.2; margin-bottom: 10px; }
-        .card p, .card li { color: #C8C8C8; }
-        .card ul { padding-left: 20px; margin-top: 12px; }
-        .visual-pipeline { margin-top: 34px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
-        .pipeline-step { position: relative; background: linear-gradient(180deg, rgba(242,103,69,.14), rgba(255,255,255,.045)); border: 1px solid rgba(242,103,69,.2); border-radius: 18px; padding: 20px 16px; min-height: 160px; }
-        .pipeline-step .num { color: #FFD230; font-size: 13px; font-weight: 900; letter-spacing: 1.5px; margin-bottom: 18px; }
-        .pipeline-step h3 { font-size: 18px; line-height: 1.15; margin-bottom: 8px; }
-        .pipeline-step p { color: #AFAFAF; font-size: 14px; }
 
-        .founder-video { max-width: 860px; margin: 34px auto 0; border-radius: 22px; overflow: hidden; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); box-shadow: 0 20px 60px rgba(0,0,0,.28); }
-        .founder-video iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
-        .sample-wall { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; margin-top: 34px; align-items: stretch; }
-        .sample-visual { position: relative; min-height: 360px; overflow: hidden; border-radius: 24px; border: 1px solid rgba(242,103,69,.22); background: radial-gradient(circle at 20% 20%, rgba(255,210,48,.32), transparent 24%), radial-gradient(circle at 80% 28%, rgba(242,103,69,.34), transparent 28%), linear-gradient(135deg, #171717, #090909); }
-        .sample-visual::before { content: ""; position: absolute; inset: 34px; border: 1px solid rgba(255,255,255,.12); border-radius: 22px; transform: rotate(-3deg); background: rgba(255,255,255,.045); }
-        .sample-visual::after { content: ""; position: absolute; right: 46px; bottom: 42px; width: 190px; height: 190px; border-radius: 40% 60% 45% 55%; background: linear-gradient(135deg, #F26745, #FFD230); filter: blur(.2px); transform: rotate(10deg); opacity: .9; }
-        .sample-tag { position: absolute; z-index: 2; top: 38px; left: 38px; color: #FFD230; font-weight: 900; font-size: 13px; letter-spacing: 1.4px; text-transform: uppercase; }
-        .sample-hook { position: absolute; z-index: 2; left: 38px; bottom: 42px; max-width: 390px; font-size: clamp(28px, 4vw, 48px); line-height: 1; font-weight: 900; letter-spacing: -1px; }
-        .mini-concepts { display: grid; gap: 14px; }
-        .mini-concept { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.09); border-radius: 18px; padding: 20px; }
-        .mini-concept strong { display: block; margin-bottom: 6px; color: #fff; }
-        .mini-concept p { color: #C8C8C8; font-size: 15px; }
-        .values { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 32px; }
-        .value-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 20px; }
-        .value-card .icon { font-size: 25px; margin-bottom: 8px; }
-        .value-card h3 { font-size: 17px; line-height: 1.15; margin-bottom: 8px; }
-        .value-card p { color: #AFAFAF; font-size: 14px; }
-        .quote { background: linear-gradient(135deg, rgba(242,103,69,.16), rgba(255,210,48,.08)); border: 1px solid rgba(242,103,69,.24); border-radius: 24px; padding: 34px; margin-top: 34px; }
-        .quote p { color: #fff; font-size: 22px; line-height: 1.45; font-weight: 700; }
-        .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
-        .video-card { overflow: hidden; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.09); border-radius: 18px; }
-        .video-card iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
-        .video-card div { padding: 16px; }
-        .video-card h3 { font-size: 17px; margin-bottom: 4px; }
-        .video-card p { color: #AFAFAF; font-size: 14px; }
-        .final-cta { text-align: center; padding: 88px 20px 100px; }
-        .final-cta p { color: #C8C8C8; font-size: 18px; max-width: 660px; margin: 0 auto 30px; }
-        .fine-print { color: #777; font-size: 13px; margin-top: 18px; }
-        @media (max-width: 900px) {
-            .quick-details, .grid-2, .grid-3, .proof-grid, .sample-wall { grid-template-columns: 1fr 1fr; }
-            .visual-pipeline { grid-template-columns: 1fr; }
-            .values { grid-template-columns: 1fr 1fr; }
-            .score-row { grid-template-columns: 1fr; }
+        /* Animated background */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
         }
-        @media (max-width: 560px) {
-            .header img { height: 58px; }
-            .hero { padding: 58px 20px 54px; }
-            h1 { letter-spacing: -1.2px; }
-            .quick-details, .grid-2, .grid-3, .proof-grid, .values, .sample-wall { grid-template-columns: 1fr; }
-            .section { padding: 60px 0; }
-            .card, .quote { padding: 22px; }
-            .quote p { font-size: 19px; }
-            .cta-button, .secondary-button { width: 100%; max-width: 360px; text-align: center; }
+
+        .bg-glow .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+        }
+
+        .bg-glow .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: #F26745;
+            top: -200px;
+            right: -100px;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .bg-glow .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: #F26745;
+            bottom: -150px;
+            left: -100px;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        .bg-glow .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: #FFD230;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float3 18s ease-in-out infinite;
+            opacity: 0.08;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-60px, 40px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(50px, -30px); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.3); }
+        }
+
+        /* Content sits above background */
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            padding: 32px 20px;
+            text-align: center;
+        }
+
+        .header img {
+            height: 70px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(242, 103, 69, 0.12);
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(242, 103, 69, 0.25);
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            max-width: 750px;
+            margin: 0 auto 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #F26745, #FFD230);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: #929292;
+            font-size: 18px;
+            max-width: 550px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .cta-button-hero {
+            display: inline-block;
+            background-color: #F26745;
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 42px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 30px rgba(242, 103, 69, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-hero:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(242, 103, 69, 0.5);
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(242,103,69,0.2), transparent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .step-label {
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .video-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .video-section .subtitle {
+            color: #929292;
+            font-size: 16px;
+            margin-bottom: 36px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 50px rgba(0,0,0,0.4);
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 20px;
+        }
+
+        .about-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .about-section .section-subtitle {
+            color: #929292;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-section .description {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 16px;
+            color: #b0b0b0;
+        }
+
+        .about-section .description p {
+            margin-bottom: 16px;
+        }
+
+        .highlights {
+            max-width: 700px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .highlight-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(242, 103, 69, 0.3);
+            box-shadow: 0 8px 30px rgba(242, 103, 69, 0.08);
+        }
+
+        .highlight-card .icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .highlight-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .highlight-card p {
+            font-size: 14px;
+            color: #929292;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Portfolio Preview Section */
+        .vertical-scroll-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            height: 500px;
+            overflow: hidden;
+            margin-top: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        .vertical-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .vertical-col-left {
+            animation: scrollUp 80s linear infinite;
+            margin-top: -60%;
+        }
+
+        .vertical-col-right {
+            animation: scrollUp 100s linear infinite;
+            margin-top: -30%;
+        }
+
+        .vertical-col-center {
+            animation: scrollUp 90s linear infinite;
+            margin-top: -45%;
+        }
+
+        @keyframes scrollUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        .vertical-col img,
+        .vertical-col video {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .portfolio-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .portfolio-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-section .section-subtitle {
+            color: #929292;
+            font-size: 16px;
+            margin-bottom: 36px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            background: rgba(242, 103, 69, 0.1);
+            color: #F26745;
+            text-decoration: none;
+            padding: 14px 36px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 8px;
+            border: 1px solid rgba(242, 103, 69, 0.3);
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            background: rgba(242, 103, 69, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(242, 103, 69, 0.15);
+        }
+
+        .portfolio-formats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .format-item {
+            text-align: center;
+        }
+
+        .format-item .format-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .format-item .format-label {
+            font-size: 14px;
+            color: #929292;
+            font-weight: 600;
+        }
+
+        /* Who We Are Section */
+        .who-section {
+            padding: 80px 20px;
+        }
+
+        .who-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .who-section .section-subtitle {
+            color: #929292;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonials {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(242, 103, 69, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .testimonial-card .quote {
+            font-size: 15px;
+            color: #ccc;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .author-initials {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(242, 103, 69, 0.15);
+            border: 2px solid rgba(242, 103, 69, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #F26745;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card .author-info strong {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .testimonial-card .author-info span {
+            font-size: 13px;
+            color: #F26745;
+        }
+
+
+        /* Founder / Values Section */
+        .about-us-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 22px;
+            padding: 34px;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 34px;
+            align-items: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.24);
+        }
+
+        .about-us-copy {
+            text-align: left;
+        }
+
+        .about-us-copy .eyebrow {
+            color: #F26745;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .about-us-copy h2 {
+            text-align: left;
+            font-size: 34px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .about-us-copy p {
+            color: #b8b8b8;
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .value-pill {
+            background: rgba(0,0,0,0.24);
+            border: 1px solid rgba(242, 103, 69, 0.18);
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .value-pill strong {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .value-pill .value-emoji {
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 26px;
+            border-radius: 8px;
+            background: rgba(242, 103, 69, 0.13);
+            border: 1px solid rgba(242, 103, 69, 0.22);
+            font-size: 15px;
+            line-height: 1;
+        }
+
+        .value-pill span {
+            color: #8f8f8f;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .founder-video-wrap {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.26);
+        }
+
+        .founder-video-wrap iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: block;
+            border: 0;
+        }
+
+        .founder-video-caption {
+            padding: 16px 18px;
+            background: rgba(0,0,0,0.38);
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .founder-video-caption strong {
+            display: block;
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .founder-video-caption span {
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .testimonial-card {
+            display: block;
+            padding: 0;
+            overflow: hidden;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .testimonial-card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            opacity: 0.9;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .testimonial-card:hover img {
+            transform: scale(1.04);
+            opacity: 1;
+        }
+
+        .testimonial-card .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 54px;
+            height: 54px;
+            background: rgba(242, 103, 69, 0.94);
+            border-radius: 50%;
+            box-shadow: 0 4px 24px rgba(242, 103, 69, 0.45);
+        }
+
+        .testimonial-card .play-btn::after {
+            content: '';
+            position: absolute;
+            left: 21px;
+            top: 16px;
+            width: 0;
+            height: 0;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            border-left: 17px solid #fff;
+        }
+
+        .testimonial-card .thumb-label {
+            padding: 16px 18px 18px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+            line-height: 1.35;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: #929292;
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F26745;
+            color: #fff;
+            text-decoration: none;
+            padding: 18px 56px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 30px rgba(242, 103, 69, 0.35);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            background-color: #e05535;
+            box-shadow: 0 8px 40px rgba(242, 103, 69, 0.55);
+            transform: translateY(-3px);
+        }
+
+        /* Pulse animation on CTA */
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 0 0 rgba(242, 103, 69, 0.4);
+            animation: pulse 2.5s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(242, 103, 69, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(242, 103, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(242, 103, 69, 0); }
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer img {
+            height: 40px;
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #F26745;
+        }
+
+        .footer .disclaimer {
+            max-width: 700px;
+            margin: 20px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer .disclaimer p {
+            font-size: 11px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 20px 50px;
+            }
+
+            .hero h1 {
+                font-size: clamp(27px, 8vw, 32px);
+                max-width: calc(100vw - 40px);
+                overflow-wrap: break-word;
+            }
+
+            .hero p {
+                font-size: 16px;
+                max-width: calc(100vw - 40px);
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .portfolio-formats {
+                gap: 20px;
+            }
+
+            .vertical-scroll-wrapper {
+                height: 400px;
+                max-width: 100%;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .vertical-col-center {
+                display: none;
+            }
+
+            .cta-button {
+                padding: 16px 40px;
+                font-size: 16px;
+            }
+
+            .video-section h2,
+            .about-section h2,
+            .who-section h2,
+            .portfolio-section h2,
+            .cta-section h2 {
+                font-size: 26px;
+            }
+
+
+            .about-us-card {
+                grid-template-columns: 1fr;
+                padding: 22px;
+                gap: 24px;
+            }
+
+            .about-us-copy h2 {
+                font-size: 26px;
+            }
+
+            .values-list {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-video-wrap iframe {
+                min-height: 220px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="bg-glow" aria-hidden="true">
+
+    <!-- Animated background orbs -->
+    <div class="bg-glow">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
     </div>
 
     <div class="content">
-        <header class="header">
-            <img src="../logo-hires-white.png" alt="Macedo Marketing">
-        </header>
 
-        <main>
-            <section class="hero">
-                <div class="badge">AI Creative Role · Remote · Full-Time</div>
-                <h1>Turn ad angles into images that make people <span>stop scrolling.</span></h1>
-                <p>We're looking for an AI Visual Creator who can take a one-line ad hook and generate bold, original visual concepts that our strategists and designers can turn into performance ads.</p>
-                <div class="cta-row">
-                    <a href="https://mintsource.bamboohr.com/careers/163" class="cta-button">Apply Now</a>
-                    <a href="#founder" class="secondary-button">Hear From Tiago</a>
-                </div>
+        <!-- Header -->
+        <div class="header">
+            <img src="../logo-svg-3.svg" alt="Macedo Marketing" style="width:175px; display:block; margin:0 auto;">
+        </div>
 
-                <div class="quick-details">
-                    <div class="detail-card"><strong>Role</strong><span>AI Visual Creator, Static Ads</span></div>
-                    <div class="detail-card"><strong>Schedule</strong><span>9 AM-5 PM Eastern, Mon-Fri</span></div>
-                    <div class="detail-card"><strong>Output</strong><span>4 briefs/day, 12-18 images each</span></div>
-                    <div class="detail-card"><strong>Best fit</strong><span>AI-native visual thinker with taste</span></div>
-                </div>
-            </section>
+        <!-- Hero -->
+        <div class="hero">
+            <div class="badge">We're Hiring</div>
+            <h1>Turn Ad Angles Into Images People <span>Stop Scrolling For.</span></h1>
+            <p>We're looking for an AI Visual Creator who can take a one-line ad hook and generate bold visual directions our strategists and designers can turn into performance ads. Real brands, real budgets, high creative standards.</p>
+            <a href="https://mintsource.bamboohr.com/careers/163" class="cta-button-hero">Apply Now</a>
+        </div>
 
-            <div class="section-divider"></div>
+        <div class="section-divider"></div>
 
-            <section id="founder" class="section container" style="text-align: center;">
-                <div class="eyebrow">Step 1</div>
+        <!-- Video Section -->
+        <div class="video-section fade-in">
+            <div class="container">
+                <div class="step-label">Step 1</div>
                 <h2>Hear It Directly From Our Founder</h2>
-                <p class="lead" style="margin: 0 auto;">Tiago walks through the kind of creative mind that fits here and how this role supports the creative team.</p>
-                <div class="founder-video">
-                    <iframe src="https://www.youtube.com/embed/KDP9N68cDhw" title="Founder intro for Macedo Marketing hiring" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p class="subtitle">Tiago walks you through what the role looks like day-to-day and the kind of AI-native creative mind that thrives here.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/50d5cK39Eik" title="Macedo Marketing Intro 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-            </section>
-
-            <div style="text-align: center; padding: 0 20px 30px;">
-                <a href="https://mintsource.bamboohr.com/careers/163" class="cta-button">Apply Now</a>
             </div>
+        </div>
 
-            <div class="section-divider"></div>
+        <div style="text-align: center; padding: 30px 20px 10px;">
+            <a href="https://mintsource.bamboohr.com/careers/163" class="cta-button-hero">Apply Now</a>
+        </div>
 
-            <section class="section narrow">
-                <div class="eyebrow">The role</div>
-                <h2>This is not a generic designer job.</h2>
-                <p class="lead">Your job is to sit at the front of the creative pipeline. Strategists bring angles, hooks, and briefs. You turn them into striking AI-generated image directions. Designers then composite the best raw imagery into final ads.</p>
-                <div class="quote">
-                    <p>If your portfolio looks like generic AI stock art, this is not the role. If you can make a strange, funny, sharp visual metaphor that supports a direct-response hook, we want to see your work.</p>
+        <div class="section-divider"></div>
+
+        <!-- About Section -->
+        <div class="about-section fade-in">
+            <div class="container">
+                <h2>This Role Is For You If...</h2>
+                <p class="section-subtitle">You don't just generate pretty images. You create visual ideas that help ads perform.</p>
+                <div class="description">
+                    <p>You know the difference between a cool AI image and a visual direction that can become a strong ad. You've used AI tools for real creative work, not just experiments.</p>
+                    <p>You'll work with hooks, angles, and briefs for coaching, consulting, and lead gen brands running real Meta ad budgets. Your job is to give designers stronger raw material and sharper visual starting points.</p>
+                    <p>We move fast and deadlines are real. We need someone who's imaginative, organized, and comfortable producing volume without defaulting to generic AI stock art.</p>
                 </div>
-            </section>
-
-            <section class="section container">
-                <div class="eyebrow">How the work flows</div>
-                <h2>Every ad starts with a visual direction.</h2>
-                <p class="lead">We care about speed, taste, range, and clean handoff. The goal is not to make one beautiful image. The goal is to create enough strong raw concepts that the final ad has a real chance of winning.</p>
-                <div class="visual-pipeline">
-                    <div class="pipeline-step"><div class="num">01</div><h3>Brief</h3><p>You receive an angle, hook, audience, and brand context.</p></div>
-                    <div class="pipeline-step"><div class="num">02</div><h3>Concept</h3><p>You pitch several visual directions before generating volume.</p></div>
-                    <div class="pipeline-step"><div class="num">03</div><h3>Generate</h3><p>You produce 12-18 images per brief with controlled variation.</p></div>
-                    <div class="pipeline-step"><div class="num">04</div><h3>Iterate</h3><p>You refine quickly from strategist feedback without ego.</p></div>
-                    <div class="pipeline-step"><div class="num">05</div><h3>Handoff</h3><p>You organize selected outputs, prompt notes, and designer direction.</p></div>
-                </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-
-            <section class="section container">
-                <div class="eyebrow">What good work feels like</div>
-                <h2>We want visual concepts with a point of view.</h2>
-                <p class="lead">A useful AI image is not just polished. It makes the ad angle easier to understand, harder to ignore, or more emotionally obvious.</p>
-                <div class="sample-wall">
-                    <div class="sample-visual" aria-label="Abstract sample ad concept card">
-                        <div class="sample-tag">Sample direction</div>
-                        <div class="sample-hook">A full calendar is not the same as a full pipeline.</div>
+                <div class="highlights">
+                    <div class="highlight-card">
+                        <div class="icon">&#127912;</div>
+                        <h4>Creative Freedom</h4>
+                        <p>You'll pitch visual directions, test concepts, and push beyond obvious stock-photo ideas. This is concept work, not prompt-button work.</p>
                     </div>
-                    <div class="mini-concepts">
-                        <div class="mini-concept"><strong>Brief</strong><p>“Your calendar is full but your sales calls are wasting your time.”</p></div>
-                        <div class="mini-concept"><strong>Weak direction</strong><p>A generic coach smiling at a laptop with floating calendar icons.</p></div>
-                        <div class="mini-concept"><strong>Strong direction</strong><p>A packed calendar visually leaking low-quality leads, with one qualified call highlighted like a signal in the noise.</p></div>
-                        <div class="mini-concept"><strong>What we care about</strong><p>Contrast, metaphor, composition, and whether a designer could turn the raw image into a real ad.</p></div>
+                    <div class="highlight-card">
+                        <div class="icon">&#9889;</div>
+                        <h4>AI-Native Workflow</h4>
+                        <p>You'll use tools like Midjourney, Flux, DALL-E, Stable Diffusion, Higgsfield, Nano Banana, or whatever produces the best raw material.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#127758;</div>
+                        <h4>Remote, Full-Time</h4>
+                        <p>Work remotely with consistent Eastern Time availability. We need someone present, reliable, and easy for strategists to collaborate with.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#128200;</div>
+                        <h4>See Your Impact</h4>
+                        <p>Your visuals feed real ads with real budgets. You'll see which directions help the team create better-performing work.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#128101;</div>
+                        <h4>Small Team, Big Trust</h4>
+                        <p>You're not buried in a production line. Your ideas get seen, your taste matters, and your output directly supports the creative team.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="icon">&#127775;</div>
+                        <h4>High-Volume Visual Exploration</h4>
+                        <p>Different brands, angles, offers, and creative problems every week. You'll create range, not one repeated AI style.</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <section class="section container">
-                <div class="eyebrow">What you'll do</div>
-                <h2>You bring the first visual spark.</h2>
-                <div class="grid-3">
-                    <div class="card"><h3>Generate commercial-grade imagery</h3><p>Use Midjourney, Flux, DALL-E, Stable Diffusion, Higgsfield, Nano Banana, or similar tools to create raw visual assets for static ads.</p></div>
-                    <div class="card"><h3>Push unexpected concepts</h3><p>Humor, contrast, surrealism, metaphors, pattern breaks. We want visual ideas that make people pause, not safe stock-photo compositions.</p></div>
-                    <div class="card"><h3>Collaborate with strategists</h3><p>Move fast in real-time feedback loops. Understand the marketing point, then make the visual sharper with each round.</p></div>
-                    <div class="card"><h3>Work at production pace</h3><p>Once ramped, you should be comfortable with 4 briefs per day and 12-18 generated images per brief.</p></div>
-                    <div class="card"><h3>Build reusable systems</h3><p>Track prompts, selected outputs, reference images, and tool notes so the team can reuse what works.</p></div>
-                    <div class="card"><h3>Stay AI-forward</h3><p>Test new models, workflows, and techniques before they become obvious. Bring the team better ways to generate stronger creative.</p></div>
+        <!-- Job Description -->
+        <div class="fade-in" style="padding: 20px 20px 40px;">
+            <div style="max-width: 750px; margin: 0 auto;">
+                <div style="padding: 32px 0; text-align: left;">
+
+                    <p style="color: #b0b0b0; font-size: 15px; line-height: 1.7; margin-bottom: 24px;">Creative is the core of our results. We don't need random AI art. We need sharp visual directions that give designers better raw material, help the hook land faster, and make the final ad more likely to stop the scroll.</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">What You'll Do</h3>
+                            <ul style="color: #b0b0b0; font-size: 14px; line-height: 2; list-style: none; padding: 0;">
+                                <li>• Turn ad hooks and briefs into 3-5 strong visual directions</li>
+                                <li>• Generate commercial-grade AI image sets for static ad concepts</li>
+                                <li>• Produce enough variation for strategists and designers to choose from</li>
+                                <li>• Iterate quickly based on strategist feedback</li>
+                                <li>• Organize selected outputs, prompts, references, and tool notes</li>
+                                <li>• Avoid generic stock-looking images and obvious AI artifacts</li>
+                                <li>• Build reusable prompt/reference systems for recurring themes</li>
+                                <li>• Stay current on AI image tools, models, and creative workflows</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">This Will Be For You If</h3>
+                            <ul style="color: #b0b0b0; font-size: 14px; line-height: 2; list-style: none; padding: 0;">
+                                <li>• You use AI image tools for commercial or serious creative work</li>
+                                <li>• Your portfolio shows taste, range, and visual thinking</li>
+                                <li>• You understand an ad image has a job, not just an aesthetic</li>
+                                <li>• You can explain why an image would support a hook</li>
+                                <li>• You enjoy generating volume and exploring multiple directions</li>
+                                <li>• You're organized with prompts, outputs, and references</li>
+                                <li>• You take feedback quickly without defending weak work</li>
+                                <li>• You're fully committed. This is a full-time role, not a side gig.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">What We Expect</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div style="color: #b0b0b0; font-size: 14px;"><strong style="color: #fff;">Visual taste.</strong> You can tell premium from cheap, useful from generic, and intentional from random.</div>
+                            <div style="color: #b0b0b0; font-size: 14px;"><strong style="color: #fff;">Speed with range.</strong> You can produce multiple directions quickly without collapsing into one default style.</div>
+                            <div style="color: #b0b0b0; font-size: 14px;"><strong style="color: #fff;">Ad intuition.</strong> You think about hooks, attention, contrast, and whether a designer can turn it into a real ad.</div>
+                            <div style="color: #b0b0b0; font-size: 14px;"><strong style="color: #fff;">Clean organization.</strong> Prompts, outputs, references, favorites, and notes are easy for the team to use.</div>
+                            <div style="color: #b0b0b0; font-size: 14px;"><strong style="color: #fff;">Coachability.</strong> You take feedback well and improve the next round quickly.</div>
+                            <div style="color: #b0b0b0; font-size: 14px;"><strong style="color: #fff;">Ownership.</strong> You don't wait for perfect briefs. You clarify, propose, and move.</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 16px;">Why Join Us</h3>
+                        <ul style="color: #b0b0b0; font-size: 14px; line-height: 2.2; list-style: none; padding: 0;">
+                            <li><strong style="color: #fff;">Your work will perform and you'll know it.</strong> Real ad accounts, real budgets. You see the CTR, the ROAS, the results.</li>
+                            <li><strong style="color: #fff;">You'll grow faster here than almost anywhere else.</strong> Small team, real exposure, close to strategy and results.</li>
+                            <li><strong style="color: #fff;">Stable income. No client hunting. Ever.</strong> You focus on the craft. We handle everything else.</li>
+                            <li><strong style="color: #fff;">Direct access to the CEO.</strong> Your work is seen and your growth is something Tiago pays attention to personally.</li>
+                            <li><strong style="color: #fff;">Compensation that grows with you.</strong> Competitive, paid in USD. The better you perform, the more you earn.</li>
+                            <li><strong style="color: #fff;">Remote, consistent schedule.</strong> Fully remote with 9:00 AM-5:00 PM Eastern Time availability, Monday-Friday.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #F26745; margin-bottom: 12px;">Details</h3>
+                        <div style="display: flex; gap: 40px; flex-wrap: wrap; color: #b0b0b0; font-size: 14px;">
+                            <div><strong style="color: #fff;">Type:</strong> Full-time Independent Contractor (~40h/week)</div>
+                            <div><strong style="color: #fff;">Location:</strong> Remote (worldwide)</div>
+                            <div><strong style="color: #fff;">Reports to:</strong> Creative Strategist / Creative Lead</div>
+                        </div>
+                    </div>
+
+                    <p style="color: #666; font-size: 13px; margin-top: 24px; font-style: italic;">We don't expect perfection. We do expect ownership, honesty, and effort.</p>
                 </div>
-            </section>
+            </div>
+        </div>
+        <style>
+            .jd-open { max-height: 2000px !important; }
+            #jd-toggle:hover { background: rgba(242,103,69,0.1); }
+        </style>
 
-            <div class="section-divider"></div>
+        <div class="section-divider"></div>
 
-            <section class="section container">
-                <div class="eyebrow">About Macedo Marketing</div>
-                <h2>Small team. High standards. Real ownership.</h2>
-                <p class="lead">Macedo Marketing helps ambitious businesses grow with paid ads, sharper creative, and clearer execution. We are remote-first, direct, and serious about building systems that improve every month.</p>
-                <div class="values">
-                    <div class="value-card"><div class="icon">📈</div><h3>Consistent Performance</h3><p>Reliability over excitement. Systems that work month after month.</p></div>
-                    <div class="value-card"><div class="icon">🛠️</div><h3>Extreme Ownership</h3><p>No excuses. We take full responsibility and fix what isn't working.</p></div>
-                    <div class="value-card"><div class="icon">🧠</div><h3>Clear Thinking</h3><p>We stay calm and data-driven when the stakes and budgets are high.</p></div>
-                    <div class="value-card"><div class="icon">⭐</div><h3>High Standards</h3><p>We hold ourselves to a higher bar than any client ever would.</p></div>
-                    <div class="value-card"><div class="icon">⚡</div><h3>Proactive Action</h3><p>We anticipate risks and bring solutions before they become problems.</p></div>
+        <!-- Portfolio Carousel Section -->
+        <div class="portfolio-section fade-in">
+            <div class="container">
+                <h2>The Work You'd Help Create</h2>
+                <p class="section-subtitle">These are the kinds of ads your visual directions would help feed. If this level of performance creative excites you, keep scrolling.</p>
+            </div>
+            <div class="vertical-scroll-wrapper">
+                <div class="vertical-col vertical-col-left">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Taxd_Comparisonad.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Dustro_Headline_GrossAngle.webp" alt="Dustro">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_Win_C1_01.jpg" alt="ES">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/PP_C4_Gift-25_1203-V3.webp" alt="Poppys">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video>
+                    <!-- Duplicate for seamless loop -->
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Cafely_TOFU_Toggle-Button_V1.webp" alt="Cafely">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-1-Headline_V1b.webp" alt="RifRuf">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Taxd_Comparisonad.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C1_V2.webp" alt="MIMY">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Dustro_Headline_GrossAngle.webp" alt="Dustro">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_Win_C1_01.jpg" alt="ES">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/PP_C4_Gift-25_1203-V3.webp" alt="Poppys">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/CAFELY_VIDEO_1x1_Squares_15sec.mp4" type="video/mp4"></video>
                 </div>
-            </section>
-
-            <section class="section container">
-                <div class="eyebrow">The caliber of work</div>
-                <h2>The creative supports real clients and real results.</h2>
-                <p class="lead">You will not be creating random visuals in isolation. The work supports client acquisition systems, paid campaigns, and creative tests where quality matters.</p>
-                <div class="proof-grid">
-                    <div class="video-card"><iframe src="https://www.youtube-nocookie.com/embed/XK0jDodO-VA?rel=0&modestbranding=1" title="Client interview: Josh, One Corp Australia" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div><h3>Josh, One Corp Australia</h3><p>Client caliber and execution standard.</p></div></div>
-                    <div class="video-card"><iframe src="https://www.youtube-nocookie.com/embed/ALok1V6TpdU?rel=0&modestbranding=1" title="Client interview: Vijay Singh" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div><h3>Vijay Singh</h3><p>Performance marketing work with measurable impact.</p></div></div>
-                    <div class="video-card"><iframe src="https://www.youtube-nocookie.com/embed/tCAQm8wHhg8?rel=0&modestbranding=1" title="Client interview: Sofia, Skinny Theory" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div><h3>Sofia, Skinny Theory</h3><p>Creative and advertising work tied to growth.</p></div></div>
+                <div class="vertical-col vertical-col-center">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C3_V1.webp" alt="MIMY 2">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C4_Grid-25_0129-V1.webp" alt="RR">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Cafely_Headline-Ad_New-Angles_01.webp" alt="Cafely 2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-4-ProblemSolution_V1-2.webp" alt="RifRuf 2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_BALANCE_A3_02_alt.webp" alt="ES Balance">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Ephemeris_AnimCollage_ver3_square.mp4" type="video/mp4"></video>
+                    <!-- Duplicate -->
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_MIMY_C3_V1.webp" alt="MIMY 2">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/RR_C4_Grid-25_0129-V1.webp" alt="RR">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Cafely_Headline-Ad_New-Angles_01.webp" alt="Cafely 2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_RIFRUF_Creative-4-ProblemSolution_V1-2.webp" alt="RifRuf 2">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_ES_TOF_BALANCE_A3_02_alt.webp" alt="ES Balance">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Ephemeris_AnimCollage_ver3_square.mp4" type="video/mp4"></video>
                 </div>
-            </section>
-
-            <section class="section narrow">
-                <div class="eyebrow">Good fit / bad fit</div>
-                <h2>This role is for AI-native visual thinkers.</h2>
-                <div class="grid-2">
-                    <div class="card"><h3>You might be a fit if...</h3><ul><li>You already use AI image tools every week for real work.</li><li>You can explain why an image works for an ad.</li><li>You enjoy high-volume visual exploration.</li><li>You organize prompts and outputs cleanly.</li><li>You can take feedback without getting defensive.</li></ul></div>
-                    <div class="card"><h3>You probably are not a fit if...</h3><ul><li>Your work looks like generic AI stock imagery.</li><li>You only want to make final polished layouts.</li><li>You need perfect briefs before starting.</li><li>You repeat the same style for every concept.</li><li>You cannot work consistent Eastern Time hours.</li></ul></div>
+                <div class="vertical-col vertical-col-right">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HTK-programs_01.webp" alt="HTK">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Dustro_C4_MythFact-25_0828-1.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HomeDesignAI-1x1-47.webp" alt="HomeDesign">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation-1.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Respira_TOF_Bundle_E1_01_ENG.webp" alt="Respira">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Exofreeze_JP_Speedometer-25_0304-V1.webp" alt="Exofreeze">
+                    <!-- Duplicate for seamless loop -->
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_V2Cloud_TOF_Caveman_V1.webp" alt="V2Cloud">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HTK-programs_01.webp" alt="HTK">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/Dustro_C4_MythFact-25_0828-1.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_SaphireRX_TOF_Set1_Headline.webp" alt="SaphireRX">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/HomeDesignAI-1x1-47.webp" alt="HomeDesign">
+                    <video autoplay muted loop playsinline><source src="https://macedomarketing.com/wp-content/uploads/2026/03/GlamBeauty_ComparisonAnimation-1.mp4" type="video/mp4"></video>
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/MM_Respira_TOF_Bundle_E1_01_ENG.webp" alt="Respira">
+                    <img src="https://macedomarketing.com/wp-content/uploads/2026/03/Exofreeze_JP_Speedometer-25_0304-V1.webp" alt="Exofreeze">
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <section class="final-cta">
-                <div class="narrow">
-                    <div class="eyebrow">Apply now</div>
-                    <h2>Show us how you think visually.</h2>
-                    <p>The application will ask for your portfolio, AI tool experience, schedule fit, and a few short questions about how you create ad imagery. Strong candidates may receive a paid test task.</p>
-                    <a href="https://mintsource.bamboohr.com/careers/163" class="cta-button">Apply for the AI Visual Creator Role</a>
-                    <div class="fine-print">Remote contractor role · Full-time · 9 AM-5 PM Eastern Time</div>
+        <div style="text-align: center; padding: 30px 20px 10px;">
+            <p style="color: #929292; font-size: 15px; margin-bottom: 16px;">Like what you see? Show us how you think visually.</p>
+            <a href="https://mintsource.bamboohr.com/careers/163" class="cta-button-hero">Apply Now</a>
+        </div>
+
+        <div class="section-divider"></div>
+
+
+        <!-- About Macedo Marketing -->
+        <div class="who-section fade-in">
+            <div class="about-us-card">
+                <div class="about-us-copy">
+                    <div class="eyebrow">About Macedo Marketing</div>
+                    <h2>Small team. High standards. Real ownership.</h2>
+                    <p>Macedo Marketing is a performance marketing agency led by Tiago Macedo. We help ambitious businesses grow through paid ads, sharp creative, and clear execution — but the way we work matters just as much as the results.</p>
+                    <p>We care about reliable performance, calm thinking, and people who take responsibility before they are asked. No hiding behind excuses. No corporate theatre. Just a focused team trying to get better every week.</p>
+                    <div class="values-list">
+                        <div class="value-pill"><strong><span class="value-emoji">📈</span>Consistent Performance</strong><span>Reliability over excitement. Systems that work month after month.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">🛠️</span>Extreme Ownership</strong><span>No excuses. We take full responsibility and fix what isn't working.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">🧠</span>Clear Thinking</strong><span>We stay calm and data-driven when the stakes and budgets are high.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">⭐</span>High Standards</strong><span>We hold ourselves to a higher bar than any client ever would.</span></div>
+                        <div class="value-pill"><strong><span class="value-emoji">⚡</span>Proactive Action</strong><span>We anticipate risks and bring solutions before they become problems.</span></div>
+                    </div>
                 </div>
-            </section>
-        </main>
+                <div class="founder-video-wrap">
+                    <iframe src="https://www.youtube.com/embed/50d5cK39Eik" title="Macedo Marketing Intro 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="founder-video-caption">
+                        <strong>Meet Tiago and Macedo Marketing</strong>
+                        <span>A quick intro to who we are and how we work.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <!-- Client Testimonials -->
+        <div class="who-section fade-in">
+            <h2>What Our Clients Are Saying</h2>
+            <p class="section-subtitle">Three client interviews that show the kind of results, trust, and standards behind the work.</p>
+            <div class="testimonials">
+                <a href="https://youtu.be/XK0jDodO-VA" target="_blank" class="testimonial-card">
+                    <img src="https://img.youtube.com/vi/XK0jDodO-VA/maxresdefault.jpg" alt="Josh from One Corp Australia client interview">
+                    <div class="play-btn"></div>
+                    <div class="thumb-label">Josh, One Corp Australia</div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=ALok1V6TpdU" target="_blank" class="testimonial-card">
+                    <img src="https://img.youtube.com/vi/ALok1V6TpdU/maxresdefault.jpg" alt="Vijay Singh client interview">
+                    <div class="play-btn"></div>
+                    <div class="thumb-label">Vijay Singh</div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=tCAQm8wHhg8" target="_blank" class="testimonial-card">
+                    <img src="https://img.youtube.com/vi/tCAQm8wHhg8/maxresdefault.jpg" alt="Sofia from Skinny Theory client interview">
+                    <div class="play-btn"></div>
+                    <div class="thumb-label">Sofia, Skinny Theory</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- CTA Section -->
+        <div class="cta-section fade-in" id="apply">
+            <div class="step-label">Step 2</div>
+            <h2>Ready to Show Us How You Think Visually?</h2>
+            <p>Takes about 15 minutes. We want to see your AI-generated visual work, the tools you use, and how you think through ad concepts. If there's a fit, we'll be in touch.</p>
+            <!-- REPLACE: Add your form URL below -->
+            <a href="https://mintsource.bamboohr.com/careers/163" class="cta-button">Apply Now</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <img src="../logo-svg-3.svg" alt="Macedo Marketing" style="width:175px; display:block; margin:0 auto;"><br>
+            <p>&copy; 2026 Macedo Marketing. All rights reserved.</p>
+            <p><a href="https://macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a> | <a href="https://macedomarketing.com">macedomarketing.com</a></p>
+            <p style="font-size:11px;color:#555;margin-top:12px;">Macedo Marketing is an equal opportunity employer. We do not discriminate based on race, color, religion, sex, national origin, age, disability, or any other legally protected status.</p>
+            <div class="disclaimer">
+                <p>This site is not a part of the YouTube, Bing, TikTok, Google or Facebook website; ByteDance Ltd., Google Inc, Microsoft INC or Meta Inc. Additionally, this site is NOT endorsed by YouTube, Google, Bing or Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.</p>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Scroll animation script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
 </body>
 </html>
