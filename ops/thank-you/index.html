@@ -242,9 +242,10 @@
         }
 
         .cover-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
+            display: grid;
+            grid-template-columns: 44px minmax(0, 1fr);
+            column-gap: 16px;
+            align-items: start;
             color: #d8d8d8;
             font-size: 16px;
             line-height: 1.65;
@@ -253,7 +254,6 @@
         .cover-number {
             width: 34px;
             height: 34px;
-            min-width: 34px;
             border-radius: 10px;
             background: rgba(242, 103, 69, 0.12);
             border: 1px solid rgba(242, 103, 69, 0.26);
@@ -267,11 +267,23 @@
         }
 
         .cover-text {
-            flex: 1;
+            display: block;
+            width: 100%;
             min-width: 0;
+            max-width: 100%;
         }
 
-        .cover-text strong { color: #fff; display: inline; }
+        .cover-text strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .cover-text span {
+            display: block;
+            color: #d8d8d8;
+            max-width: 100%;
+        }
 
         .rules-grid {
             max-width: 840px;
@@ -484,8 +496,8 @@
             .prompt-box { padding: 18px; }
             .prompt-box h3 { font-size: 21px; }
             .prompt-box p { font-size: 15px; overflow-wrap: anywhere; }
-            .cover-item { gap: 12px; font-size: 15px; align-items: flex-start; }
-            .cover-number { width: 30px; height: 30px; min-width: 30px; }
+            .cover-item { grid-template-columns: 38px minmax(0, 1fr); column-gap: 12px; font-size: 15px; }
+            .cover-number { width: 30px; height: 30px; }
             .cover-text { overflow-wrap: anywhere; }
             .rules-grid { grid-template-columns: 1fr; }
             .email-card { padding: 24px 18px; width: 100%; max-width: 100%; }
@@ -533,14 +545,14 @@
                 </div>
 
                 <div class="cover-list">
-                    <div class="cover-item"><div class="cover-number">1</div><div class="cover-text"><strong>What was broken or messy before?</strong> Give us the real context, not a generic summary.</div></div>
-                    <div class="cover-item"><div class="cover-number">2</div><div class="cover-text"><strong>What was your exact role in solving it?</strong> What did you personally own or drive?</div></div>
-                    <div class="cover-item"><div class="cover-number">3</div><div class="cover-text"><strong>Who was involved?</strong> Team members, clients, departments, contractors, leadership, or external partners.</div></div>
+                    <div class="cover-item"><div class="cover-number">1</div><div class="cover-text"><strong>What was broken or messy before?</strong><span>Give us the real context, not a generic summary.</span></div></div>
+                    <div class="cover-item"><div class="cover-number">2</div><div class="cover-text"><strong>What was your exact role in solving it?</strong><span>What did you personally own or drive?</span></div></div>
+                    <div class="cover-item"><div class="cover-number">3</div><div class="cover-text"><strong>Who was involved?</strong><span>Team members, clients, departments, contractors, leadership, or external partners.</span></div></div>
                     <div class="cover-item"><div class="cover-number">4</div><div class="cover-text"><strong>What system, cadence, dashboard, process, or workflow did you create or improve?</strong></div></div>
-                    <div class="cover-item"><div class="cover-number">5</div><div class="cover-text"><strong>If possible, show what the system looked like.</strong> A screen share is ideal if you can do it without sharing confidential information.</div></div>
-                    <div class="cover-item"><div class="cover-number">6</div><div class="cover-text"><strong>How did the team actually use it?</strong> Explain the rhythm, owners, handoffs, follow-up, or accountability loop.</div></div>
-                    <div class="cover-item"><div class="cover-number">7</div><div class="cover-text"><strong>What changed after you implemented it?</strong> Include numbers if you have them, or clear before/after examples if you do not.</div></div>
-                    <div class="cover-item"><div class="cover-number">8</div><div class="cover-text"><strong>What was hard about getting people to follow the system?</strong> Tell us how you handled resistance, confusion, or poor adoption.</div></div>
+                    <div class="cover-item"><div class="cover-number">5</div><div class="cover-text"><strong>If possible, show what the system looked like.</strong><span>A screen share is ideal if you can do it without sharing confidential information.</span></div></div>
+                    <div class="cover-item"><div class="cover-number">6</div><div class="cover-text"><strong>How did the team actually use it?</strong><span>Explain the rhythm, owners, handoffs, follow-up, or accountability loop.</span></div></div>
+                    <div class="cover-item"><div class="cover-number">7</div><div class="cover-text"><strong>What changed after you implemented it?</strong><span>Include numbers if you have them, or clear before/after examples if you do not.</span></div></div>
+                    <div class="cover-item"><div class="cover-number">8</div><div class="cover-text"><strong>What was hard about getting people to follow the system?</strong><span>Tell us how you handled resistance, confusion, or poor adoption.</span></div></div>
                 </div>
             </div>
 
