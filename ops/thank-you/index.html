@@ -245,17 +245,20 @@
 
         .cover-list li {
             counter-increment: item;
-            display: grid;
-            grid-template-columns: 34px 1fr;
-            gap: 14px;
-            align-items: flex-start;
+            position: relative;
+            display: block;
             color: #d8d8d8;
             font-size: 16px;
             line-height: 1.65;
+            padding-left: 50px;
+            min-height: 38px;
         }
 
         .cover-list li::before {
             content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 2px;
             width: 34px; height: 34px;
             border-radius: 10px;
             background: rgba(242, 103, 69, 0.12);
@@ -266,10 +269,9 @@
             color: #F26745;
             font-weight: 900;
             line-height: 1;
-            margin-top: 2px;
         }
 
-        .cover-list strong { color: #fff; }
+        .cover-list strong { color: #fff; display: inline; }
 
         .rules-grid {
             max-width: 840px;
@@ -472,7 +474,7 @@
             .selection-note { padding: 20px; }
             .task-section h2 { font-size: 28px; }
             .task-card { padding: 22px; }
-            .cover-list li { grid-template-columns: 30px 1fr; font-size: 15px; }
+            .cover-list li { padding-left: 44px; font-size: 15px; }
             .cover-list li::before { width: 30px; height: 30px; }
             .rules-grid { grid-template-columns: 1fr; }
             .email-card { padding: 24px 18px; }
