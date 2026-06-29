@@ -237,29 +237,23 @@
         }
 
         .cover-list {
-            counter-reset: item;
-            list-style: none;
             display: grid;
             gap: 14px;
         }
 
-        .cover-list li {
-            counter-increment: item;
-            position: relative;
-            display: block;
+        .cover-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
             color: #d8d8d8;
             font-size: 16px;
             line-height: 1.65;
-            padding-left: 50px;
-            min-height: 38px;
         }
 
-        .cover-list li::before {
-            content: counter(item);
-            position: absolute;
-            left: 0;
-            top: 2px;
-            width: 34px; height: 34px;
+        .cover-number {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
             border-radius: 10px;
             background: rgba(242, 103, 69, 0.12);
             border: 1px solid rgba(242, 103, 69, 0.26);
@@ -269,9 +263,15 @@
             color: #F26745;
             font-weight: 900;
             line-height: 1;
+            margin-top: 2px;
         }
 
-        .cover-list strong { color: #fff; display: inline; }
+        .cover-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cover-text strong { color: #fff; display: inline; }
 
         .rules-grid {
             max-width: 840px;
@@ -468,17 +468,29 @@
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 720px) {
-            .hero { padding-top: 42px; }
-            .hero h1 { font-size: 34px; }
-            .hero .subtitle { font-size: 17px; }
-            .selection-note { padding: 20px; }
-            .task-section h2 { font-size: 28px; }
-            .task-card { padding: 22px; }
-            .cover-list li { padding-left: 44px; font-size: 15px; }
-            .cover-list li::before { width: 30px; height: 30px; }
+            body { overflow-x: hidden; }
+            .content { width: 100%; overflow-x: hidden; }
+            .header { padding: 28px 14px 12px; }
+            .header img { width: 155px; }
+            .hero { padding: 36px 14px 44px; }
+            .hero h1 { font-size: 30px; line-height: 1.14; max-width: 330px; overflow-wrap: anywhere; }
+            .hero .subtitle { font-size: 16px; max-width: 330px; }
+            .hero .support { font-size: 15px; max-width: 330px; }
+            .selection-note { padding: 18px; max-width: 100%; font-size: 15px; }
+            .task-section { padding: 46px 14px; }
+            .task-section h2 { font-size: 27px; line-height: 1.18; max-width: 330px; margin-left: auto; margin-right: auto; }
+            .task-section .intro { font-size: 15px; max-width: 330px; }
+            .task-card { padding: 18px; width: 100%; max-width: 100%; }
+            .prompt-box { padding: 18px; }
+            .prompt-box h3 { font-size: 21px; }
+            .prompt-box p { font-size: 15px; overflow-wrap: anywhere; }
+            .cover-item { gap: 12px; font-size: 15px; align-items: flex-start; }
+            .cover-number { width: 30px; height: 30px; min-width: 30px; }
+            .cover-text { overflow-wrap: anywhere; }
             .rules-grid { grid-template-columns: 1fr; }
-            .email-card { padding: 24px 18px; }
-            .email-display a { font-size: 18px; }
+            .email-card { padding: 24px 18px; width: 100%; max-width: 100%; }
+            .email-display { width: 100%; padding: 14px 12px; }
+            .email-display a { font-size: 16px; overflow-wrap: anywhere; }
             .case-studies { grid-template-columns: 1fr; }
         }
     </style>
@@ -498,7 +510,7 @@
         <section class="hero fade-in">
             <div class="checkmark">&#10003;</div>
             <div class="round-badge">Round 2</div>
-            <h1>You made it to the <span>next stage.</span></h1>
+            <h1>You made it to the<br><span>next stage.</span></h1>
             <p class="subtitle">Most applicants do not reach this part of the process.</p>
             <p class="support">Based on your application, we think you may be a strong fit for the Head of Delivery &amp; Operations role at Macedo Marketing.</p>
             <div class="selection-note">
@@ -520,16 +532,16 @@
                     <p>If possible, show the actual system you built or improved — for example a ClickUp board, Asana setup, Notion page, Sheet, SOP, dashboard, report, workflow map, or operating cadence.</p>
                 </div>
 
-                <ol class="cover-list">
-                    <li><strong>What was broken or messy before?</strong> Give us the real context, not a generic summary.</li>
-                    <li><strong>What was your exact role in solving it?</strong> What did you personally own or drive?</li>
-                    <li><strong>Who was involved?</strong> Team members, clients, departments, contractors, leadership, or external partners.</li>
-                    <li><strong>What system, cadence, dashboard, process, or workflow did you create or improve?</strong></li>
-                    <li><strong>If possible, show what the system looked like.</strong> A screen share is ideal if you can do it without sharing confidential information.</li>
-                    <li><strong>How did the team actually use it?</strong> Explain the rhythm, owners, handoffs, follow-up, or accountability loop.</li>
-                    <li><strong>What changed after you implemented it?</strong> Include numbers if you have them, or clear before/after examples if you do not.</li>
-                    <li><strong>What was hard about getting people to follow the system?</strong> Tell us how you handled resistance, confusion, or poor adoption.</li>
-                </ol>
+                <div class="cover-list">
+                    <div class="cover-item"><div class="cover-number">1</div><div class="cover-text"><strong>What was broken or messy before?</strong> Give us the real context, not a generic summary.</div></div>
+                    <div class="cover-item"><div class="cover-number">2</div><div class="cover-text"><strong>What was your exact role in solving it?</strong> What did you personally own or drive?</div></div>
+                    <div class="cover-item"><div class="cover-number">3</div><div class="cover-text"><strong>Who was involved?</strong> Team members, clients, departments, contractors, leadership, or external partners.</div></div>
+                    <div class="cover-item"><div class="cover-number">4</div><div class="cover-text"><strong>What system, cadence, dashboard, process, or workflow did you create or improve?</strong></div></div>
+                    <div class="cover-item"><div class="cover-number">5</div><div class="cover-text"><strong>If possible, show what the system looked like.</strong> A screen share is ideal if you can do it without sharing confidential information.</div></div>
+                    <div class="cover-item"><div class="cover-number">6</div><div class="cover-text"><strong>How did the team actually use it?</strong> Explain the rhythm, owners, handoffs, follow-up, or accountability loop.</div></div>
+                    <div class="cover-item"><div class="cover-number">7</div><div class="cover-text"><strong>What changed after you implemented it?</strong> Include numbers if you have them, or clear before/after examples if you do not.</div></div>
+                    <div class="cover-item"><div class="cover-number">8</div><div class="cover-text"><strong>What was hard about getting people to follow the system?</strong> Tell us how you handled resistance, confusion, or poor adoption.</div></div>
+                </div>
             </div>
 
             <div class="rules-grid">
@@ -566,10 +578,12 @@
                 <div class="section-label">How to Submit</div>
                 <h2>Email Your Loom Link To:</h2>
                 <div class="email-display">
-                    <a href="mailto:virtualassistant@macedomarketing.com?subject=Ops/Loom%20-%20[Your%20Full%20Name]">virtualassistant@macedomarketing.com</a>
+                    <a href="mailto:virtualassistant@macedomarketing.com,tiago@macedomarketing.com?subject=Ops/Loom%20-%20[Your%20Full%20Name]">virtualassistant@macedomarketing.com</a>
+                    <span style="display:block;color:#666;font-size:14px;font-weight:700;margin:6px 0;">and</span>
+                    <a href="mailto:tiago@macedomarketing.com?subject=Ops/Loom%20-%20[Your%20Full%20Name]">tiago@macedomarketing.com</a>
                 </div>
                 <p class="email-note"><strong>Subject line:</strong> Ops/Loom - [Your Full Name]</p>
-                <p class="email-note" style="margin-top:8px;">Just send your Loom link to the email above with that subject line. Please make sure the link is viewable before sending it.</p>
+                <p class="email-note" style="margin-top:8px;">Just send your Loom link to both emails above with that subject line. Please make sure the link is viewable before sending it.</p>
             </div>
         </section>
 
