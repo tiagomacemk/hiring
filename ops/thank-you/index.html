@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Received | Macedo Marketing</title>
+    <title>Round 2: Video Submission | Macedo Marketing</title>
     <link rel="icon" href="../../favicon.png" type="image/png">
     <!-- Meta Pixel Code (Hiring) -->
     <script>
@@ -23,7 +23,7 @@
     src="https://www.facebook.com/tr?id=2336809396803762&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -48,285 +48,324 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(120px);
-            opacity: 0.12;
+            opacity: 0.14;
         }
 
         .bg-glow .orb-1 {
-            width: 500px; height: 500px;
+            width: 560px; height: 560px;
             background: #F26745;
-            top: -150px; right: -80px;
+            top: -170px; right: -90px;
             animation: float1 20s ease-in-out infinite;
         }
 
         .bg-glow .orb-2 {
-            width: 400px; height: 400px;
+            width: 430px; height: 430px;
             background: #F26745;
-            bottom: -100px; left: -60px;
+            bottom: -100px; left: -70px;
             animation: float2 25s ease-in-out infinite;
+        }
+
+        .bg-glow .orb-3 {
+            width: 300px; height: 300px;
+            background: #FFD230;
+            top: 42%; left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.07;
+            animation: pulse 18s ease-in-out infinite;
         }
 
         @keyframes float1 {
             0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-40px, 30px); }
+            50% { transform: translate(-50px, 35px); }
         }
 
         @keyframes float2 {
             0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(40px, -20px); }
+            50% { transform: translate(45px, -25px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.25); }
         }
 
         .content { position: relative; z-index: 1; }
+        .header { padding: 32px 20px 18px; text-align: center; }
+        .header img { width: 175px; display: block; margin: 0 auto; }
 
-        .header { padding: 32px 20px; text-align: center; }
+        .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
 
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(242,103,69,0.2), transparent);
-            max-width: 600px;
+            background: linear-gradient(90deg, transparent, rgba(242,103,69,0.24), transparent);
+            max-width: 680px;
             margin: 0 auto;
         }
 
-        .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
-
-        /* Confirmation */
-        .confirm-section {
-            padding: 70px 20px 50px;
+        .hero {
+            padding: 58px 20px 54px;
             text-align: center;
         }
 
+        .round-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(242, 103, 69, 0.12);
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 9px 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(242, 103, 69, 0.28);
+            margin-bottom: 26px;
+        }
+
         .checkmark {
-            width: 72px; height: 72px;
+            width: 78px; height: 78px;
             background: linear-gradient(135deg, #F26745, #e05535);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 28px;
-            font-size: 32px;
-            box-shadow: 0 8px 30px rgba(242, 103, 69, 0.3);
+            margin: 0 auto 24px;
+            font-size: 34px;
+            box-shadow: 0 10px 36px rgba(242, 103, 69, 0.32);
         }
 
-        .confirm-section h1 {
-            font-size: 38px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            max-width: 850px;
+            margin: 0 auto 18px;
+            line-height: 1.08;
+            letter-spacing: -1px;
         }
 
-        .confirm-section h1 span { color: #F26745; }
+        .hero h1 span { color: #F26745; }
 
-        .confirm-section .subtitle {
+        .hero .subtitle {
+            color: #c8c8c8;
+            font-size: 19px;
+            max-width: 700px;
+            margin: 0 auto 18px;
+            line-height: 1.7;
+        }
+
+        .hero .support {
             color: #929292;
-            font-size: 17px;
-            max-width: 540px;
-            margin: 0 auto 20px;
-            line-height: 1.7;
-        }
-
-        .confirm-section .honest-note {
-            display: inline-block;
-            background: rgba(242, 103, 69, 0.07);
-            border: 1px solid rgba(242, 103, 69, 0.18);
-            border-radius: 12px;
-            padding: 20px 28px;
-            max-width: 560px;
-            font-size: 15px;
-            color: #b0b0b0;
-            line-height: 1.7;
-            text-align: left;
-            margin-top: 8px;
-        }
-
-        .confirm-section .honest-note strong { color: #fff; }
-
-        /* What happens next */
-        .steps-section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .steps-section h2 {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 32px;
-        }
-
-        .steps-grid {
-            max-width: 680px;
+            font-size: 16px;
+            max-width: 650px;
             margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .selection-note {
+            max-width: 720px;
+            margin: 34px auto 0;
+            background: linear-gradient(135deg, rgba(242,103,69,0.10), rgba(255,255,255,0.035));
+            border: 1px solid rgba(242,103,69,0.22);
+            border-radius: 18px;
+            padding: 24px 28px;
+            color: #d6d6d6;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        .selection-note strong { color: #fff; }
+
+        .task-section { padding: 62px 20px; }
+
+        .section-label {
+            color: #F26745;
+            font-size: 13px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .task-section h2 {
+            font-size: 34px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -0.4px;
+        }
+
+        .task-section .intro {
+            color: #a8a8a8;
+            font-size: 17px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 34px;
+            line-height: 1.75;
+        }
+
+        .task-card {
+            max-width: 840px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 32px;
+            box-shadow: 0 22px 70px rgba(0,0,0,0.24);
+        }
+
+        .prompt-box {
+            background: rgba(242, 103, 69, 0.08);
+            border: 1px solid rgba(242, 103, 69, 0.22);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+
+        .prompt-box h3 {
+            font-size: 22px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .prompt-box p {
+            color: #d0d0d0;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .cover-list {
+            counter-reset: item;
+            list-style: none;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .cover-list li {
+            counter-increment: item;
+            display: grid;
+            grid-template-columns: 34px 1fr;
+            gap: 14px;
+            align-items: flex-start;
+            color: #d8d8d8;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .cover-list li::before {
+            content: counter(item);
+            width: 34px; height: 34px;
+            border-radius: 10px;
+            background: rgba(242, 103, 69, 0.12);
+            border: 1px solid rgba(242, 103, 69, 0.26);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F26745;
+            font-weight: 900;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        .cover-list strong { color: #fff; }
+
+        .rules-grid {
+            max-width: 840px;
+            margin: 22px auto 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px;
         }
 
-        .step-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 14px;
-            padding: 28px 18px;
-            text-align: center;
+        .rule-box {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 22px;
         }
 
-        .step-number {
-            width: 38px; height: 38px;
-            background: rgba(242, 103, 69, 0.12);
-            border: 1px solid rgba(242, 103, 69, 0.25);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 14px;
+        .rule-box h4 {
             color: #F26745;
-            font-weight: 700;
-            font-size: 15px;
-        }
-
-        .step-card h4 {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .step-card p {
             font-size: 13px;
-            color: #929292;
-            line-height: 1.5;
-        }
-
-        /* About Tiago */
-        .founder-section {
-            padding: 60px 20px;
-        }
-
-        .founder-card {
-            max-width: 900px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 22px;
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 1fr 0.92fr;
-            gap: 30px;
-            align-items: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.22);
-        }
-
-        .founder-copy .eyebrow {
-            color: #F26745;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.4px;
+            font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
             margin-bottom: 10px;
         }
 
-        .founder-copy h2 {
-            font-size: 30px;
-            line-height: 1.18;
-            margin-bottom: 14px;
-            letter-spacing: -0.3px;
-        }
-
-        .founder-copy p {
-            color: #b8b8b8;
+        .rule-box ul {
+            padding-left: 18px;
+            color: #bdbdbd;
             font-size: 15px;
             line-height: 1.75;
-            margin-bottom: 14px;
         }
 
-        .founder-points {
-            display: grid;
-            gap: 10px;
-            margin-top: 18px;
-        }
-
-        .founder-point {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            color: #d5d5d5;
-            font-size: 14px;
-            line-height: 1.55;
-        }
-
-        .founder-point span {
-            width: 25px;
-            height: 25px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 25px;
-            border-radius: 8px;
-            background: rgba(242, 103, 69, 0.12);
-            border: 1px solid rgba(242, 103, 69, 0.22);
-            font-size: 14px;
-        }
-
-        .founder-photo {
-            overflow: hidden;
-            border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(0,0,0,0.28);
-            box-shadow: 0 16px 50px rgba(0,0,0,0.24);
-        }
-
-        .founder-photo img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            display: block;
-        }
-
-        .founder-photo-caption {
-            padding: 14px 16px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            color: #F26745;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        /* Inbox notice */
-        .inbox-notice {
-            padding: 30px 20px;
+        .submit-section {
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .inbox-notice p {
-            color: #929292;
-            font-size: 14px;
-            max-width: 500px;
+        .deadline-box {
+            max-width: 680px;
+            margin: 0 auto 26px;
+            background: rgba(255, 210, 48, 0.08);
+            border: 1px solid rgba(255, 210, 48, 0.18);
+            border-radius: 18px;
+            padding: 24px;
+        }
+
+        .deadline-box h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .deadline-box h3 span { color: #FFD230; }
+        .deadline-box p { color: #b8b8b8; font-size: 15px; }
+
+        .email-card {
+            max-width: 760px;
             margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.028));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 32px;
+        }
+
+        .email-card h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .email-display {
+            display: inline-block;
+            background: rgba(242, 103, 69, 0.1);
+            border: 1px solid rgba(242, 103, 69, 0.32);
+            border-radius: 14px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+        }
+
+        .email-display a {
+            color: #F26745;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 900;
+            word-break: break-word;
+        }
+
+        .email-note {
+            color: #a8a8a8;
+            font-size: 15px;
             line-height: 1.7;
         }
 
-        .inbox-notice .label {
-            color: #F26745;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
+        .email-note strong { color: #fff; }
 
-        /* Case studies */
-        .proof-section {
-            padding: 60px 20px;
-        }
-
-        .proof-section h2 {
-            font-size: 26px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .proof-section .subtitle {
-            color: #929292;
-            font-size: 15px;
-            text-align: center;
-            margin-bottom: 32px;
-        }
+        .proof-section { padding: 58px 20px; }
+        .proof-section h2 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 10px; }
+        .proof-section .subtitle { color: #929292; font-size: 15px; text-align: center; margin-bottom: 32px; }
 
         .case-studies {
             max-width: 900px;
@@ -346,6 +385,7 @@
             border: 1px solid rgba(255,255,255,0.06);
             display: block;
             text-decoration: none;
+            background: #1a1a1a;
         }
 
         .case-study-thumb:hover {
@@ -354,10 +394,7 @@
             border-color: rgba(242, 103, 69, 0.3);
         }
 
-        .case-study-thumb img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-        }
+        .case-study-thumb img { width: 100%; height: 100%; object-fit: cover; }
 
         .case-study-thumb .play-btn {
             position: absolute;
@@ -373,10 +410,7 @@
             transition: all 0.3s ease;
         }
 
-        .case-study-thumb:hover .play-btn {
-            background: #F26745;
-            transform: translate(-50%, -50%) scale(1.1);
-        }
+        .case-study-thumb:hover .play-btn { background: #F26745; transform: translate(-50%, -50%) scale(1.1); }
 
         .play-btn::after {
             content: '';
@@ -394,62 +428,34 @@
             padding: 22px 12px 10px;
             background: linear-gradient(transparent, rgba(0,0,0,0.85));
             font-size: 12px;
-            font-weight: 700;
+            font-weight: 800;
             color: #fff;
             line-height: 1.3;
         }
 
-        /* Follow links */
-        .follow-section {
-            padding: 40px 20px 60px;
-            text-align: center;
-        }
-
-        .follow-section p {
-            color: #929292;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        .follow-links {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
+        .follow-section { padding: 40px 20px 60px; text-align: center; }
+        .follow-section p { color: #929292; font-size: 14px; margin-bottom: 18px; }
+        .follow-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
         .follow-link {
             display: inline-block;
             color: #F26745;
             text-decoration: none;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 800;
             padding: 9px 20px;
             border: 1px solid rgba(242, 103, 69, 0.3);
             border-radius: 8px;
             transition: all 0.3s ease;
         }
+        .follow-link:hover { background: rgba(242, 103, 69, 0.1); border-color: #F26745; }
 
-        .follow-link:hover {
-            background: rgba(242, 103, 69, 0.1);
-            border-color: #F26745;
-        }
-
-        /* Footer */
         .footer {
             padding: 30px 20px;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.06);
         }
-
         .footer p { color: #555; font-size: 13px; }
-
-        .footer a {
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
+        .footer a { color: #555; text-decoration: none; transition: color 0.3s; }
         .footer a:hover { color: #F26745; }
 
         .fade-in {
@@ -457,114 +463,119 @@
             transform: translateY(24px);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 600px) {
-            .confirm-section h1 { font-size: 28px; }
-            .confirm-section .honest-note {
-                width: 100%;
-                padding: 18px 20px;
-            }
-            .steps-grid { grid-template-columns: 1fr; gap: 12px; }
-            .founder-card {
-                grid-template-columns: 1fr;
-                padding: 22px;
-                gap: 22px;
-            }
-            .founder-copy h2 { font-size: 25px; }
+        @media (max-width: 720px) {
+            .hero { padding-top: 42px; }
+            .hero h1 { font-size: 34px; }
+            .hero .subtitle { font-size: 17px; }
+            .selection-note { padding: 20px; }
+            .task-section h2 { font-size: 28px; }
+            .task-card { padding: 22px; }
+            .cover-list li { grid-template-columns: 30px 1fr; font-size: 15px; }
+            .cover-list li::before { width: 30px; height: 30px; }
+            .rules-grid { grid-template-columns: 1fr; }
+            .email-card { padding: 24px 18px; }
+            .email-display a { font-size: 18px; }
             .case-studies { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-
     <div class="bg-glow">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
     <div class="content">
-
-        <!-- Header -->
         <div class="header">
-            <img src="../../logo-svg-3.svg" alt="Macedo Marketing" style="width:175px; display:block; margin:0 auto;">
+            <img src="../../logo-svg-3.svg" alt="Macedo Marketing">
         </div>
 
-        <!-- Confirmation -->
-        <div class="confirm-section fade-in">
+        <section class="hero fade-in">
             <div class="checkmark">&#10003;</div>
-            <h1>Application <span>Received.</span></h1>
-            <p class="subtitle">We read every application personally. If your background is a strong match, you'll hear from us within 3-5 business days.</p>
-            <div class="honest-note">
-                <strong>A note from Tiago:</strong> We're a growing agency that's been performing well for our clients. But operationally, we're not where we want to be yet. That's exactly why this role exists. If you joined us, you'd be building real structure in a business that genuinely needs it. Not maintaining a machine someone else already built.
+            <div class="round-badge">Round 2</div>
+            <h1>You made it to the <span>next stage.</span></h1>
+            <p class="subtitle">Most applicants do not reach this part of the process.</p>
+            <p class="support">Based on your application, we think you may be a strong fit for the Head of Delivery &amp; Operations role at Macedo Marketing.</p>
+            <div class="selection-note">
+                <strong>Before we schedule interviews, we want to understand how you think as an operator.</strong><br>
+                This next step is not about making a polished presentation. It is about showing clear thinking, ownership, specificity, and proof that you can turn messy delivery into a working system.
             </div>
-        </div>
+        </section>
 
         <div class="section-divider"></div>
 
-        <!-- What happens next -->
-        <div class="steps-section fade-in">
-            <h2>What Happens Next</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h4>We Review</h4>
-                    <p>Every application is reviewed personally. We look at your answers, not just your CV.</p>
+        <section class="task-section fade-in">
+            <div class="section-label">Your Next Step</div>
+            <h2>Record a 3–5 minute Loom</h2>
+            <p class="intro">Walk us through the biggest operational or delivery problem you personally helped solve. Be specific. We care more about how you think than how polished the video is.</p>
+
+            <div class="task-card">
+                <div class="prompt-box">
+                    <h3>Show us how you turn chaos into a system.</h3>
+                    <p>If possible, show the actual system you built or improved — for example a ClickUp board, Asana setup, Notion page, Sheet, SOP, dashboard, report, workflow map, or operating cadence.</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h4>First Interview</h4>
-                    <p>If shortlisted, we'll reach out to schedule a first interview to get to know you and your experience.</p>
+
+                <ol class="cover-list">
+                    <li><strong>What was broken or messy before?</strong> Give us the real context, not a generic summary.</li>
+                    <li><strong>What was your exact role in solving it?</strong> What did you personally own or drive?</li>
+                    <li><strong>Who was involved?</strong> Team members, clients, departments, contractors, leadership, or external partners.</li>
+                    <li><strong>What system, cadence, dashboard, process, or workflow did you create or improve?</strong></li>
+                    <li><strong>If possible, show what the system looked like.</strong> A screen share is ideal if you can do it without sharing confidential information.</li>
+                    <li><strong>How did the team actually use it?</strong> Explain the rhythm, owners, handoffs, follow-up, or accountability loop.</li>
+                    <li><strong>What changed after you implemented it?</strong> Include numbers if you have them, or clear before/after examples if you do not.</li>
+                    <li><strong>What was hard about getting people to follow the system?</strong> Tell us how you handled resistance, confusion, or poor adoption.</li>
+                </ol>
+            </div>
+
+            <div class="rules-grid">
+                <div class="rule-box">
+                    <h4>Video requirements</h4>
+                    <ul>
+                        <li>Use <a href="https://www.loom.com" target="_blank" style="color:#F26745;">Loom</a> or a similar screen-recording tool.</li>
+                        <li>Keep it between <strong>3–5 minutes</strong>.</li>
+                        <li>Screen share is encouraged if you can show the system safely.</li>
+                        <li>No script or slides needed. Just explain it clearly.</li>
+                    </ul>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h4>Founder Interview</h4>
-                    <p>Strong candidates move to a final interview directly with Tiago, our CEO.</p>
+                <div class="rule-box">
+                    <h4>Choose the best example</h4>
+                    <ul>
+                        <li>Pick a real operational or delivery problem.</li>
+                        <li>Agency, paid ads, creative production, client delivery, or performance marketing examples are ideal if you have them.</li>
+                        <li>Do not share confidential client data or private information.</li>
+                        <li>Make sure your Loom link is publicly viewable.</li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
 
         <div class="section-divider"></div>
 
-        <!-- About Tiago -->
-        <div class="founder-section fade-in">
-            <div class="founder-card">
-                <div class="founder-copy">
-                    <div class="eyebrow">About Tiago</div>
-                    <h2>Why I’m building this team differently.</h2>
-                    <p>I'm Tiago Macedo, founder of Macedo Marketing. I started this agency to help ambitious businesses grow with paid ads, better creative, and clearer execution, but the next chapter is about building the team and systems behind that growth.</p>
-                    <p>The people who do best here are not looking for a corporate environment where everything is already figured out. They want ownership, direct communication, high standards, and the chance to help build something that keeps getting better every month.</p>
-                    <div class="founder-points">
-                        <div class="founder-point"><span>🎯</span><div>We care about performance, but we care just as much about how consistently the work gets done.</div></div>
-                        <div class="founder-point"><span>🤝</span><div>You’ll work close to the founder and team, so clear thinking and honest communication matter.</div></div>
-                        <div class="founder-point"><span>🚀</span><div>If there’s a fit, this is a place where you can take real ownership instead of just completing tasks.</div></div>
-                    </div>
-                </div>
-                <div class="founder-photo">
-                    <img src="../../tiago-laptop.jpg" alt="Tiago Macedo working on a laptop">
-                    <div class="founder-photo-caption">Tiago Macedo, Founder of Macedo Marketing</div>
-                </div>
+        <section class="submit-section fade-in">
+            <div class="deadline-box">
+                <h3>Submit Within <span>24 Hours</span></h3>
+                <p>Speed matters. Candidates who complete this step quickly move to the front of the line.</p>
             </div>
-        </div>
+
+            <div class="email-card">
+                <div class="section-label">How to Submit</div>
+                <h2>Email Your Loom Link To:</h2>
+                <div class="email-display">
+                    <a href="mailto:virtualassistant@macedomarketing.com?subject=Ops/Loom%20-%20[Your%20Full%20Name]">virtualassistant@macedomarketing.com</a>
+                </div>
+                <p class="email-note"><strong>Subject line:</strong> Ops/Loom - [Your Full Name]</p>
+                <p class="email-note" style="margin-top:8px;">Just send your Loom link to the email above with that subject line. Please make sure the link is viewable before sending it.</p>
+            </div>
+        </section>
 
         <div class="section-divider"></div>
 
-        <!-- Inbox notice -->
-        <div class="inbox-notice fade-in">
-            <p class="label">Keep an eye on your inbox and your phone</p>
-            <p>We'll reach out by email from <strong style="color:#fff;">virtualassistant@macedomarketing.com</strong> or <strong style="color:#fff;">tiago@macedomarketing.com</strong>. Check your spam folder too. We may also give you a call directly, so make sure the number you provided is reachable.</p>
-        </div>
-
-        <div class="section-divider"></div>
-
-        <!-- Case studies -->
-        <div class="proof-section fade-in">
-            <h2>Results We've Achieved for Our Clients</h2>
-            <p class="subtitle">This is what consistent, well-run delivery looks like.</p>
+        <section class="proof-section fade-in">
+            <h2>What You'd Help Us Build Around</h2>
+            <p class="subtitle">These are the kinds of results strong delivery systems help protect and scale.</p>
             <div class="case-studies">
                 <a href="https://youtu.be/XK0jDodO-VA" target="_blank" class="case-study-thumb">
                     <img src="https://img.youtube.com/vi/XK0jDodO-VA/maxresdefault.jpg" alt="Josh, One Corp Case Study">
@@ -597,13 +608,12 @@
                     <div class="thumb-label">Hard To Kill Fitness</div>
                 </a>
             </div>
-        </div>
+        </section>
 
         <div class="section-divider"></div>
 
-        <!-- Follow links -->
-        <div class="follow-section fade-in">
-            <p>Get to know the business while you wait.</p>
+        <section class="follow-section fade-in">
+            <p>Get to know the business while you prepare your video.</p>
             <div class="follow-links">
                 <a href="https://www.youtube.com/@tiagomacedomarketing" target="_blank" class="follow-link">YouTube</a>
                 <a href="https://www.linkedin.com/company/macedomarketing/" target="_blank" class="follow-link">LinkedIn</a>
@@ -611,10 +621,9 @@
                 <a href="https://www.instagram.com/macedomarketing/" target="_blank" class="follow-link">Instagram</a>
                 <a href="https://macedomarketing.com" target="_blank" class="follow-link">Our Website</a>
             </div>
-        </div>
+        </section>
 
-        <!-- Footer -->
-        <div class="footer">
+        <footer class="footer">
             <img src="../../logo-svg-3.svg" alt="Macedo Marketing" style="width:175px; display:block; margin:0 auto; margin-bottom:10px;"><br>
             <p>&copy; 2026 Macedo Marketing. All rights reserved.</p>
             <p><a href="https://macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a> | <a href="https://macedomarketing.com">macedomarketing.com</a></p>
@@ -622,8 +631,7 @@
             <div style="max-width:700px;margin:20px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);">
                 <p style="font-size:11px;color:#444;line-height:1.5;">This site is not a part of the YouTube, Bing, TikTok, Google or Facebook website; ByteDance Ltd., Google Inc, Microsoft INC or Meta Inc. Additionally, this site is NOT endorsed by YouTube, Google, Bing or Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.</p>
             </div>
-        </div>
-
+        </footer>
     </div>
 
     <script>
@@ -633,10 +641,9 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.12 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>
