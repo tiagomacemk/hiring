@@ -22,15 +22,15 @@
     body { min-width:320px; overflow-x:hidden; background:var(--bg); color:var(--text); font-family:'Nunito Sans',system-ui,sans-serif; }
     body::before { content:''; position:fixed; z-index:-1; inset:0; background:radial-gradient(circle at 50% 0,rgba(246,103,69,.15),transparent 38%),linear-gradient(180deg,#130D0B 0,#0B0B0B 43%); }
     .shell { width:min(100% - 40px,1120px); margin:0 auto; }
-    header { display:flex; align-items:center; justify-content:flex-start; padding:28px 0; }
+    .shell > header { display:flex; align-items:center; justify-content:flex-start; padding:28px 0; }
     .logo { display:block; width:190px; height:auto; }
     .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
     a:focus-visible, button:focus-visible { outline:3px solid rgba(246,103,69,.55); outline-offset:4px; }
-    main { padding:48px 0 24px; text-align:center; }
+    .shell > main { padding:48px 0 24px; text-align:center; }
     .eyebrow { display:inline-flex; align-items:center; gap:9px; margin-bottom:24px; color:var(--accent); font-size:11px; font-weight:900; letter-spacing:1.7px; text-transform:uppercase; }
     .eyebrow::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 16px rgba(246,103,69,.8); }
-    h1 { max-width:870px; margin:0 auto; font-size:clamp(48px,7vw,86px); line-height:.98; letter-spacing:-3.6px; }
-    h1 span { background:linear-gradient(90deg,#F66745,#FFC12E); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .shell h1 { max-width:870px; margin:0 auto; font-size:clamp(48px,7vw,86px); line-height:.98; letter-spacing:-3.6px; }
+    .shell h1 span { background:linear-gradient(90deg,#F66745,#FFC12E); -webkit-background-clip:text; background-clip:text; color:transparent; }
     .subhead { max-width:690px; margin:26px auto 38px; color:#B9B5B0; font-size:18px; line-height:1.65; }
     .signup { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr) auto; gap:10px; width:min(100%,790px); margin:0 auto; padding:10px; border:1px solid var(--line); border-radius:15px; background:rgba(21,21,21,.9); box-shadow:0 22px 70px rgba(0,0,0,.4); }
     .signup input { min-width:0; min-height:54px; border:1px solid rgba(255,255,255,.11); border-radius:9px; outline:0; background:#202020; color:#fff; padding:0 16px; font:700 14px 'Nunito Sans',sans-serif; }
@@ -56,10 +56,10 @@
     .blur-lock { position:absolute; z-index:6; inset:auto 0 0; height:145px; display:grid; place-items:end center; padding-bottom:20px; background:linear-gradient(180deg,transparent 0,rgba(11,11,11,.35) 22%,rgba(11,11,11,.96) 86%); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); -webkit-mask-image:linear-gradient(transparent,#000 35%); mask-image:linear-gradient(transparent,#000 35%); }
     .lock-label { display:flex; align-items:center; gap:9px; padding:11px 16px; border:1px solid rgba(255,255,255,.13); border-radius:99px; background:rgba(20,20,20,.9); color:#fff; font-size:10px; font-weight:900; letter-spacing:1px; text-transform:uppercase; box-shadow:0 12px 30px rgba(0,0,0,.4); }
     .lock-label svg { width:14px; height:14px; color:var(--accent); }
-    footer { display:flex; align-items:center; justify-content:center; padding:34px 0; border-top:1px solid rgba(255,255,255,.06); color:#8F8B86; font-size:11px; }
+    .shell > footer { display:flex; align-items:center; justify-content:center; padding:34px 0; border-top:1px solid rgba(255,255,255,.06); color:#8F8B86; font-size:11px; }
     @media (max-width:800px) {
-      main { padding-top:42px; }
-      h1 { letter-spacing:-2.4px; }
+      .shell > main { padding-top:42px; }
+      .shell h1 { letter-spacing:-2.4px; }
       .signup { grid-template-columns:1fr 1fr; }
       .signup button { grid-column:1/-1; }
       .creative-stage { height:340px; margin-top:34px; }
@@ -67,10 +67,10 @@
     }
     @media (max-width:560px) {
       .shell { width:min(100% - 32px,1120px); }
-      header { padding:22px 0; }
+      .shell > header { padding:22px 0; }
       .logo { width:158px; }
-      main { padding-top:36px; }
-      h1 { font-size:45px; letter-spacing:-1.8px; }
+      .shell > main { padding-top:36px; }
+      .shell h1 { font-size:45px; letter-spacing:-1.8px; }
       .subhead { margin:23px auto 30px; font-size:16px; }
       .signup { grid-template-columns:1fr; padding:9px; }
       .signup button { grid-column:auto; }
