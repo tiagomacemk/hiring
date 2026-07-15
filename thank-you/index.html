@@ -64,18 +64,29 @@
     .mm-eyebrow { color:var(--accent); font-size:11px; font-weight:900; letter-spacing:1.7px; text-transform:uppercase; }
     .mm-section h2 { margin-top:13px; font-size:clamp(34px,5vw,56px); line-height:1.06; letter-spacing:-2px; }
     .mm-section-copy { max-width:650px; margin:16px auto 0; color:var(--muted); font-size:16px; }
-    .mm-stories { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .mm-story { overflow:hidden; border:1px solid var(--line); border-radius:17px; background:var(--surface); box-shadow:0 18px 55px rgba(0,0,0,.27); }
-    .mm-story-media { position:relative; display:block; width:100%; aspect-ratio:16/9; overflow:hidden; border:0; cursor:pointer; background:#111; color:#FFF; }
+    .mm-stories { display:grid; gap:30px; }
+    .mm-story { overflow:hidden; border:1px solid var(--line); border-radius:22px; background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); box-shadow:0 22px 65px rgba(0,0,0,.3); }
+    .mm-story-main { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); align-items:stretch; min-height:390px; }
+    .mm-story-main > p:empty { display:none; }
+    .mm-story:nth-child(even) .mm-story-media { order:2; }
+    .mm-story-media { position:relative; display:block; width:100%; min-height:390px; overflow:hidden; border:0; cursor:pointer; background:#111; color:#FFF; }
     .mm-story-media img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease,filter .35s ease; }
     .mm-story-media::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.65)); }
     .mm-story-media:hover img { transform:scale(1.025); filter:brightness(.86); }
     .mm-play { position:absolute; z-index:2; left:50%; top:50%; display:grid; place-items:center; width:58px; height:58px; border-radius:50%; background:rgba(246,103,69,.94); box-shadow:0 12px 30px rgba(0,0,0,.42); transform:translate(-50%,-50%); }
     .mm-play::before { content:''; margin-left:4px; border-top:8px solid transparent; border-bottom:8px solid transparent; border-left:13px solid #0B0B0B; }
-    .mm-story-body { padding:22px; }
-    .mm-result { color:var(--accent); font-size:13px; font-weight:900; }
-    .mm-story h3 { margin-top:7px; font-size:21px; }
-    .mm-story p { margin-top:2px; color:#97928C; font-size:13px; }
+    .mm-story-copy { display:flex; flex-direction:column; justify-content:center; padding:42px; }
+    .mm-story-meta { display:flex; flex-wrap:wrap; gap:8px 14px; color:#8F8A84; font-size:10px; font-weight:900; letter-spacing:1.35px; text-transform:uppercase; }
+    .mm-story-meta span:first-child { color:var(--accent); }
+    .mm-result { margin-top:23px; color:#FFF; font-size:clamp(29px,3.6vw,47px); font-weight:900; letter-spacing:-1.8px; line-height:1.02; }
+    .mm-story h3 { margin-top:18px; font-size:23px; line-height:1.2; letter-spacing:-.45px; }
+    .mm-story-byline { margin-top:8px; color:var(--accent); font-size:13px; font-weight:800; }
+    .mm-story-summary { margin-top:18px; color:#AAA59F; font-size:14px; line-height:1.7; }
+    .mm-story-details { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); background:rgba(8,8,8,.26); }
+    .mm-story-detail { padding:25px 28px 27px; }
+    .mm-story-detail + .mm-story-detail { border-left:1px solid var(--line); }
+    .mm-story-detail strong { display:block; color:#F4F1EC; font-size:11px; font-weight:900; letter-spacing:1.15px; text-transform:uppercase; }
+    .mm-story-detail p { margin-top:9px; color:#96918B; font-size:12.5px; line-height:1.62; }
     .mm-midcta { margin-top:34px; text-align:center; }
     .mm-fit { display:grid; grid-template-columns:.95fr 1.05fr; gap:22px; align-items:stretch; }
     .mm-fit-card,.mm-faq-wrap { border:1px solid var(--line); border-radius:21px; background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); }
@@ -105,7 +116,12 @@
     @media (max-width:820px) {
       .mm-hero { padding-top:46px; }
       .mm-hero h1 { letter-spacing:-2.3px; }
-      .mm-stories { grid-template-columns:1fr; max-width:600px; margin:0 auto; }
+      .mm-stories { max-width:680px; margin:0 auto; }
+      .mm-story-main { grid-template-columns:1fr; min-height:0; }
+      .mm-story:nth-child(even) .mm-story-media { order:0; }
+      .mm-story-media { min-height:0; aspect-ratio:16/9; }
+      .mm-story-details { grid-template-columns:1fr; }
+      .mm-story-detail + .mm-story-detail { border-left:0; border-top:1px solid var(--line); }
       .mm-fit { grid-template-columns:1fr; }
       .mm-fit-card { padding:30px; }
     }
@@ -130,7 +146,14 @@
       .mm-section-head { text-align:left; margin-bottom:27px; }
       .mm-section h2 { font-size:38px; letter-spacing:-1.5px; }
       .mm-section-copy { font-size:15px; }
-      .mm-story-body { padding:19px; }
+      .mm-stories { gap:22px; }
+      .mm-story { border-radius:17px; }
+      .mm-story-copy { padding:27px 21px 29px; }
+      .mm-story-meta { gap:6px 10px; }
+      .mm-result { margin-top:18px; font-size:34px; letter-spacing:-1.25px; }
+      .mm-story h3 { margin-top:14px; font-size:21px; }
+      .mm-story-summary { margin-top:14px; }
+      .mm-story-detail { padding:20px 21px 22px; }
       .mm-fit-card { padding:25px; }
       .mm-faq-wrap { padding:10px; }
       .mm-faq-wrap h2 { font-size:25px; }
@@ -193,30 +216,89 @@
           <div class="mm-section-head">
             <div class="mm-eyebrow">Hear it from the clients</div>
             <h2 id="mm-proof-title">Real businesses. Real ad spend. <span class="mm-gradient">Real growth.</span></h2>
-            <p class="mm-section-copy">Three founders explain what changed when strategy, creative, and media buying started working as one system.</p>
+            <p class="mm-section-copy">Four growth stories, unpacked beyond the headline result. See where each business started, what changed, and how the new system performed.</p>
           </div>
 
           <div class="mm-stories">
             <article class="mm-story">
-              <button class="mm-story-media js-video" type="button" data-video="1054419360" aria-label="Play Sofia Alonso client interview">
-                <img src="https://i.vimeocdn.com/video/1979780722-8fe6d264214c2a5a6db9326aa73148bb74e2b6f6cae10293ad6e3297d79c6565-d_1280x720?region=us" alt="Sofia Alonso client interview">
-                <span class="mm-play" aria-hidden="true"></span>
-              </button>
-              <div class="mm-story-body"><div class="mm-result">$0 → $282K+/mo in 90 days</div><h3>Sofia Alonso</h3><p>Elara</p></div>
+              <div class="mm-story-main">
+                <button class="mm-story-media js-video" type="button" data-provider="vimeo" data-video="1054419360" aria-label="Play Sofia Alonso client interview">
+                  <img loading="lazy" src="https://i.vimeocdn.com/video/1979780722-8fe6d264214c2a5a6db9326aa73148bb74e2b6f6cae10293ad6e3297d79c6565-d_1280x720?region=us" alt="Sofia Alonso client interview">
+                  <span class="mm-play" aria-hidden="true"></span>
+                </button>
+                <div class="mm-story-copy">
+                  <div class="mm-story-meta"><span>Case study 01</span><span>Health ecommerce</span></div>
+                  <div class="mm-result">$0 → $282K+/mo</div>
+                  <h3>A compliant growth engine built from scratch.</h3>
+                  <p class="mm-story-byline">Sofia Alonso · Elara</p>
+                  <p class="mm-story-summary">Elara needed more than ads. It needed the account structure, creative system, and funnel foundation required to scale a regulated health product without sacrificing profitability.</p>
+                </div>
+              </div>
+              <div class="mm-story-details">
+                <div class="mm-story-detail"><strong>Starting point</strong><p>A new brand with no historical data, no winning creative library, and strict healthcare advertising constraints.</p></div>
+                <div class="mm-story-detail"><strong>What changed</strong><p>Built compliant Meta infrastructure, a structured creative-testing process, and a purchase funnel designed around the real customer journey.</p></div>
+                <div class="mm-story-detail"><strong>Outcome</strong><p>$282K+ monthly revenue in month three on $17.7K ad spend, with CAC reduced from $200 to $60.70.</p></div>
+              </div>
             </article>
             <article class="mm-story">
-              <button class="mm-story-media js-video" type="button" data-video="1145606092" aria-label="Play Vijay Singh client interview">
-                <img src="https://i.vimeocdn.com/video/2094644543-2532bd6bec5c6576cb2e408d93959e92dfea412d3c67224b711da0da2496c43c-d_1280x720?region=us" alt="Vijay Singh client interview">
-                <span class="mm-play" aria-hidden="true"></span>
-              </button>
-              <div class="mm-story-body"><div class="mm-result">$30K → $100K/mo in 90 days</div><h3>Vijay Singh</h3><p>Talking Houses</p></div>
+              <div class="mm-story-main">
+                <button class="mm-story-media js-video" type="button" data-provider="vimeo" data-video="1145606092" aria-label="Play Vijay Singh client interview">
+                  <img loading="lazy" src="https://i.vimeocdn.com/video/2094644543-2532bd6bec5c6576cb2e408d93959e92dfea412d3c67224b711da0da2496c43c-d_1280x720?region=us" alt="Vijay Singh client interview">
+                  <span class="mm-play" aria-hidden="true"></span>
+                </button>
+                <div class="mm-story-copy">
+                  <div class="mm-story-meta"><span>Case study 02</span><span>Digital education</span></div>
+                  <div class="mm-result">£30K → £100K+/mo</div>
+                  <h3>More booked calls, stronger intent, cleaner scale.</h3>
+                  <p class="mm-story-byline">Vijay Singh · Talking Houses</p>
+                  <p class="mm-story-summary">The bottleneck was not simply lead volume. Broken tracking and weak intent signals made it difficult to know what was creating qualified conversations and what was only creating noise.</p>
+                </div>
+              </div>
+              <div class="mm-story-details">
+                <div class="mm-story-detail"><strong>Starting point</strong><p>Monthly revenue around £30K, unreliable tracking, and 66 booked calls without a dependable path to scale.</p></div>
+                <div class="mm-story-detail"><strong>What changed</strong><p>Rebuilt tracking, introduced intent-first optimization, improved video formats, and shifted to a webinar funnel as the account matured.</p></div>
+                <div class="mm-story-detail"><strong>Outcome</strong><p>£100K+ monthly revenue and 363 booked calls within six months, while scaling monthly ad spend to £25K.</p></div>
+              </div>
             </article>
             <article class="mm-story">
-              <button class="mm-story-media js-video" type="button" data-video="980526506" aria-label="Play Rory Tonkin client interview">
-                <img src="https://i.vimeocdn.com/video/1895661480-6700790ec5a941093fbdde7251b24d470264b6bf9bead7c21365c3776ee234aa-d_1280x720?region=us" alt="Rory Tonkin client interview">
-                <span class="mm-play" aria-hidden="true"></span>
-              </button>
-              <div class="mm-story-body"><div class="mm-result">$10K → $119K/mo in 120 days</div><h3>Rory Tonkin</h3><p>Hard To Kill Fitness</p></div>
+              <div class="mm-story-main">
+                <button class="mm-story-media js-video" type="button" data-provider="vimeo" data-video="980526506" aria-label="Play Rory Tonkin client interview">
+                  <img loading="lazy" src="https://i.vimeocdn.com/video/1895661480-6700790ec5a941093fbdde7251b24d470264b6bf9bead7c21365c3776ee234aa-d_1280x720?region=us" alt="Rory Tonkin client interview">
+                  <span class="mm-play" aria-hidden="true"></span>
+                </button>
+                <div class="mm-story-copy">
+                  <div class="mm-story-meta"><span>Case study 03</span><span>Digital fitness</span></div>
+                  <div class="mm-result">$106K in 90 days</div>
+                  <h3>Turning a low-ROAS account into a testing system.</h3>
+                  <p class="mm-story-byline">Rory Tonkin · Hard To Kill Fitness</p>
+                  <p class="mm-story-summary">After multiple agencies failed to move the account beyond a 1.2 ROAS, the priority was to stop guessing and rebuild the campaign structure around controlled testing and audience temperature.</p>
+                </div>
+              </div>
+              <div class="mm-story-details">
+                <div class="mm-story-detail"><strong>Starting point</strong><p>Repeated agency disappointments, expensive acquisition, and no reliable structure for testing or scaling.</p></div>
+                <div class="mm-story-detail"><strong>What changed</strong><p>Audited the account, rebuilt campaign and creative testing, then introduced retargeting tailored to each stage of awareness.</p></div>
+                <div class="mm-story-detail"><strong>Outcome</strong><p>$106K generated in 90 days while cost per acquisition fell by 54%.</p></div>
+              </div>
+            </article>
+            <article class="mm-story">
+              <div class="mm-story-main">
+                <button class="mm-story-media js-video" type="button" data-provider="youtube" data-video="kQFPTff-gMY" aria-label="Play anonymous ecommerce case study breakdown">
+                  <img loading="lazy" src="https://i.ytimg.com/vi/kQFPTff-gMY/maxresdefault.jpg" alt="Anonymous ecommerce case study showing monthly revenue growth from $176K to $616K">
+                  <span class="mm-play" aria-hidden="true"></span>
+                </button>
+                <div class="mm-story-copy">
+                  <div class="mm-story-meta"><span>Case study 04</span><span>Anonymous DTC brand</span></div>
+                  <div class="mm-result">$176K → $616K/mo</div>
+                  <h3>Scaling spend without letting efficiency collapse.</h3>
+                  <p class="mm-story-byline">Anonymous low-AOV ecommerce brand</p>
+                  <p class="mm-story-summary">Every attempt to increase spend had pushed performance backwards. The real constraint was creative fatigue, not inventory or demand, so the growth plan started with a faster and more disciplined creative engine.</p>
+                </div>
+              </div>
+              <div class="mm-story-details">
+                <div class="mm-story-detail"><strong>Starting point</strong><p>A low-AOV product, heavy monthly spend, exhausted ads, and no dedicated creative-testing campaign.</p></div>
+                <div class="mm-story-detail"><strong>What changed</strong><p>Used review mining, increased UGC and static production, refreshed offers and audiences, and introduced structured Advantage+ scaling.</p></div>
+                <div class="mm-story-detail"><strong>Outcome</strong><p>Monthly revenue grew from $176K to $616K in 76 days while ROAS reached 2.17.</p></div>
+              </div>
             </article>
           </div>
 
@@ -346,8 +428,11 @@
       document.querySelectorAll('.js-video').forEach(function(button){
         button.addEventListener('click',function(){
           var id=button.getAttribute('data-video');
+          var provider=button.getAttribute('data-provider')||'vimeo';
+          var amp=String.fromCharCode(38);
           var iframe=document.createElement('iframe');
-          iframe.src='https://player.vimeo.com/video/'+id+'?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1';
+          iframe.className='mm-story-media mm-story-player';
+          iframe.src=provider==='youtube'?'https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1'+amp+'rel=0':'https://player.vimeo.com/video/'+id+'?autoplay=1'+amp+'title=0'+amp+'byline=0'+amp+'portrait=0'+amp+'badge=0'+amp+'dnt=1';
           iframe.title=button.getAttribute('aria-label').replace('Play ','');
           iframe.allow='autoplay; fullscreen; picture-in-picture';
           iframe.allowFullscreen=true;
