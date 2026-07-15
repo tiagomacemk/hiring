@@ -35,6 +35,10 @@
     .signup input::placeholder { color:#817E7A; }
     .signup input:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(246,103,69,.12); }
     .signup button { min-height:54px; border:0; border-radius:9px; padding:0 24px; cursor:pointer; background:var(--accent); color:#fff; font:900 12px 'Nunito Sans',sans-serif; letter-spacing:.8px; text-transform:uppercase; box-shadow:0 10px 30px rgba(246,103,69,.26); white-space:nowrap; }
+    .signup .formkit-alert { grid-column:1/-1; margin:0; padding:10px 12px; border-radius:8px; list-style:none; font-size:12px; font-weight:800; }
+    .signup .formkit-alert:empty { display:none; }
+    .signup .formkit-alert-error { border:1px solid rgba(246,103,69,.35); background:rgba(246,103,69,.12); color:#FFB39F; }
+    .signup .formkit-alert-success { border:1px solid rgba(68,196,128,.35); background:rgba(68,196,128,.12); color:#8DE0B3; }
     .privacy { display:block; margin-top:13px; color:#716E6A; font-size:11px; }
     .creative-stage { position:relative; width:min(100%,980px); height:470px; margin:74px auto 10px; overflow:hidden; }
     .creative-card { position:absolute; top:28px; left:50%; width:250px; aspect-ratio:1; overflow:hidden; border:6px solid #202020; border-radius:19px; background:#1A1A1A; box-shadow:0 24px 55px rgba(0,0,0,.5); transform-origin:center bottom; }
@@ -83,22 +87,17 @@
   <div class="shell">
     <header>
       <a href="https://www.macedomarketing.com" aria-label="Macedo Marketing home"><img class="logo" src="../logo-svg-3.svg" alt="Macedo Marketing"></a>
-      <a class="archive" href="https://macedomarketing.beehiiv.com" target="_blank" rel="noopener">Read the archive</a>
+      <a class="archive" href="https://macedo-marketing.kit.com/profile" target="_blank" rel="noopener">Read the archive</a>
     </header>
     <main>
       <div class="eyebrow">Free weekly newsletter</div>
       <h1>The Meta ads newsletter for <span>ecommerce teams.</span></h1>
       <p class="subhead">Every week: real creative examples, the hook and angle behind them, what to test next, and how to diagnose rising CAC.</p>
-      <form class="signup" action="https://macedomarketing.beehiiv.com/create" method="post">
-        <input type="hidden" name="redirect_path" value="/">
-        <input type="hidden" name="sent_from_orchid" value="true">
-        <input type="hidden" name="fallback_path" value="/subscribe">
-        <input type="hidden" name="nectar_signup_url" value="https://macedomarketing.beehiiv.com/subscribe?utm_source=macedo_site&amp;utm_medium=landing_page&amp;utm_campaign=newsletter_subscribe">
-        <input type="hidden" name="double_opt" value="false">
-        <input type="hidden" name="trigger_redirect" value="false">
-        <input type="text" name="first_name" autocomplete="given-name" required placeholder="First name" aria-label="First name">
-        <input type="email" name="email" autocomplete="email" required placeholder="Email address" aria-label="Email address">
-        <button type="submit">Send me the next breakdown</button>
+      <form class="signup formkit-form" action="https://app.kit.com/forms/9004183/subscriptions" method="post" data-sv-form="9004183" data-uid="01da8d46b0" data-format="inline" data-version="5">
+        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+        <input class="formkit-input" type="text" name="fields[first_name]" autocomplete="given-name" required placeholder="First name" aria-label="First name">
+        <input class="formkit-input" type="email" name="email_address" autocomplete="email" required placeholder="Email address" aria-label="Email address">
+        <button class="formkit-submit" data-element="submit" type="submit"><span>Send me the next breakdown</span></button>
       </form>
       <span class="privacy">Free. No spam. Unsubscribe anytime.</span>
       <div class="creative-stage" aria-label="Preview of Macedo Marketing ecommerce ad creatives">
@@ -115,5 +114,6 @@
     </main>
     <footer>© 2026 Macedo Marketing</footer>
   </div>
+  <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 </body>
 </html>
