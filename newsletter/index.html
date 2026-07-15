@@ -7,22 +7,23 @@
   <meta property="og:title" content="Macedo Marketing Newsletter">
   <meta property="og:description" content="Better ads start with better decisions. Get practical creative strategy, testing, and CAC breakdowns for ecommerce teams.">
   <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.macedomarketing.com/newsletter/">
   <title>Macedo Marketing Newsletter | Better Ads Start With Better Decisions</title>
   <link rel="icon" href="../favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #F26745;
       --accent-deep: #E05535;
       --yellow: #FFD230;
       --bg: #0D0D0D;
-      --surface: rgba(255,255,255,.035);
-      --border: rgba(255,255,255,.075);
+      --surface: #151515;
+      --border: rgba(255,255,255,.09);
       --text: #FFFFFF;
-      --muted: #A0A0A0;
-      --faint: #666666;
+      --muted: #A7A7A7;
+      --faint: #686868;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,9 +36,7 @@
       overflow-x: hidden;
     }
     body.modal-open { overflow: hidden; }
-
-    a { color: inherit; }
-    button, input { font: inherit; }
+    button { font: inherit; }
 
     .bg-glow {
       position: fixed;
@@ -50,31 +49,10 @@
       position: absolute;
       border-radius: 50%;
       filter: blur(130px);
-      opacity: .14;
+      opacity: .13;
     }
-    .orb-1 {
-      width: 620px; height: 620px;
-      background: var(--accent);
-      top: -260px; right: -150px;
-      animation: drift-one 22s ease-in-out infinite;
-    }
-    .orb-2 {
-      width: 520px; height: 520px;
-      background: var(--accent);
-      left: -220px; top: 44%;
-      opacity: .09;
-      animation: drift-two 26s ease-in-out infinite;
-    }
-    .orb-3 {
-      width: 300px; height: 300px;
-      background: var(--yellow);
-      right: 15%; bottom: -120px;
-      opacity: .055;
-      animation: drift-three 18s ease-in-out infinite;
-    }
-    @keyframes drift-one { 50% { transform: translate(-65px, 45px); } }
-    @keyframes drift-two { 50% { transform: translate(60px, -40px); } }
-    @keyframes drift-three { 50% { transform: scale(1.25) translate(-20px, -15px); } }
+    .orb-1 { width: 620px; height: 620px; background: var(--accent); top: -280px; right: -160px; }
+    .orb-2 { width: 460px; height: 460px; background: var(--accent); left: -240px; top: 48%; opacity: .08; }
 
     .page { position: relative; z-index: 1; }
     .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
@@ -91,17 +69,17 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 700;
-      transition: color .25s ease;
+      transition: color .2s ease;
     }
     .header-link:hover { color: var(--accent); }
 
     .hero {
-      min-height: 660px;
+      min-height: 690px;
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(370px, .85fr);
       align-items: center;
       gap: 72px;
-      padding: 74px 0 92px;
+      padding: 76px 0 104px;
     }
     .badge {
       display: inline-flex;
@@ -129,7 +107,7 @@
       font-size: clamp(46px, 6vw, 72px);
       line-height: 1.02;
       letter-spacing: -2.2px;
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 25px;
     }
     h1 span {
@@ -152,17 +130,9 @@
       gap: 10px 22px;
       margin-bottom: 38px;
     }
-    .promise-list li {
-      color: #D0D0D0;
-      font-size: 14px;
-      font-weight: 700;
-    }
-    .promise-list li::before {
-      content: '✓';
-      color: var(--accent);
-      margin-right: 8px;
-      font-weight: 800;
-    }
+    .promise-list li { color: #D0D0D0; font-size: 14px; font-weight: 700; }
+    .promise-list li::before { content: '✓'; color: var(--accent); margin-right: 8px; font-weight: 900; }
+
     .primary-cta {
       border: 0;
       border-radius: 9px;
@@ -170,24 +140,19 @@
       color: #fff;
       padding: 17px 34px;
       cursor: pointer;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 15px;
       letter-spacing: 1px;
       text-transform: uppercase;
       box-shadow: 0 5px 30px rgba(242,103,69,.34);
-      transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
     }
     .primary-cta:hover {
       transform: translateY(-3px);
       background: var(--accent-deep);
       box-shadow: 0 10px 42px rgba(242,103,69,.48);
     }
-    .microcopy {
-      display: block;
-      margin-top: 14px;
-      color: var(--faint);
-      font-size: 13px;
-    }
+    .microcopy { display: block; margin-top: 14px; color: var(--faint); font-size: 13px; }
 
     .inbox-card {
       position: relative;
@@ -231,24 +196,14 @@
     .email-kicker {
       color: var(--accent);
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 1.7px;
       text-transform: uppercase;
       margin-bottom: 16px;
     }
-    .email-preview h2 {
-      font-size: 28px;
-      line-height: 1.14;
-      letter-spacing: -.6px;
-      margin-bottom: 14px;
-    }
+    .email-preview h2 { font-size: 28px; line-height: 1.14; letter-spacing: -.6px; margin-bottom: 14px; }
     .email-preview p { color: #8E8E8E; font-size: 14px; margin-bottom: 18px; }
-    .diagnostic {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 22px;
-    }
+    .diagnostic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 22px; }
     .diagnostic div {
       border-radius: 9px;
       border: 1px solid rgba(255,255,255,.07);
@@ -259,127 +214,161 @@
     .diagnostic strong { display: block; color: #fff; font-size: 13px; }
     .diagnostic span { color: #666; font-size: 10px; text-transform: uppercase; letter-spacing: .7px; }
 
-    .divider {
+    .section-divider {
       width: min(760px, 78%);
       height: 1px;
       margin: 0 auto;
       background: linear-gradient(90deg, transparent, rgba(242,103,69,.22), transparent);
     }
 
-    section { padding: 100px 0; }
-    .section-heading { text-align: center; max-width: 740px; margin: 0 auto 50px; }
+    .what-section { padding: 105px 0; }
+    .what-panel {
+      display: grid;
+      grid-template-columns: 1fr .92fr;
+      gap: 66px;
+      align-items: center;
+      padding: 62px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: linear-gradient(145deg, #191919, #111);
+      box-shadow: 0 28px 90px rgba(0,0,0,.35);
+    }
     .eyebrow {
       color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+    .what-panel h2,
+    .proof-heading h2 {
+      font-size: clamp(34px, 4.5vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -1.2px;
+    }
+    .what-panel h2 { margin-bottom: 25px; }
+    .what-panel h2 span { color: var(--accent); }
+    .what-list { list-style: none; margin: 0 0 30px; }
+    .what-list li {
+      position: relative;
+      padding: 0 0 15px 30px;
+      color: #D4D4D4;
+      font-size: 15px;
+    }
+    .what-list li::before {
+      content: '↗';
+      position: absolute;
+      left: 0; top: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+    .what-list strong { color: #fff; }
+    .what-visual {
+      position: relative;
+      min-height: 440px;
+      display: grid;
+      place-items: center;
+    }
+    .issue-sheet {
+      width: min(100%, 390px);
+      border-radius: 15px;
+      background: #F5F2ED;
+      color: #171717;
+      padding: 28px;
+      box-shadow: 0 28px 70px rgba(0,0,0,.45);
+      transform: rotate(2deg);
+    }
+    .sheet-top {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 17px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #D8D3CB;
+      color: #777069;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .issue-sheet h3 { font-size: 27px; line-height: 1.12; letter-spacing: -.55px; margin-bottom: 12px; }
+    .issue-sheet > p { color: #6E6964; font-size: 13px; line-height: 1.55; margin-bottom: 22px; }
+    .score-row {
+      display: grid;
+      grid-template-columns: 1fr 58px;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 0;
+      border-top: 1px solid #DED9D2;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 2.3px;
+    }
+    .score { padding: 5px 8px; border-radius: 5px; text-align: center; color: #fff; font-size: 10px; letter-spacing: .8px; }
+    .red { background: #C94732; }
+    .amber { background: #C9892B; }
+    .green { background: #4A8B59; }
+    .template-tab {
+      position: absolute;
+      right: -8px;
+      bottom: 20px;
+      padding: 12px 18px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      box-shadow: 0 12px 30px rgba(242,103,69,.32);
+      transform: rotate(-3deg);
     }
-    .section-heading h2 {
-      font-size: clamp(34px, 4.5vw, 48px);
-      line-height: 1.1;
-      letter-spacing: -1.2px;
-      margin-bottom: 16px;
-    }
-    .section-heading p { color: var(--muted); font-size: 17px; }
 
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .benefit-card {
-      min-height: 250px;
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--surface);
-      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-    }
-    .benefit-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(242,103,69,.33);
-      box-shadow: 0 16px 40px rgba(242,103,69,.07);
-    }
-    .number {
-      display: inline-grid;
-      place-items: center;
-      width: 38px; height: 38px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-      border: 1px solid rgba(242,103,69,.22);
-      background: rgba(242,103,69,.11);
-      color: var(--accent);
+    .proof-section { padding: 95px 0 110px; }
+    .proof-heading { max-width: 720px; margin: 0 auto 42px; text-align: center; }
+    .proof-heading h2 { margin-bottom: 14px; }
+    .proof-heading p { color: var(--muted); font-size: 16px; }
+    .rating-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px 24px;
+      margin: 0 auto 30px;
+      color: #D6D6D6;
       font-size: 13px;
       font-weight: 800;
     }
-    .benefit-card h3 { font-size: 21px; margin-bottom: 10px; }
-    .benefit-card p { color: #919191; font-size: 15px; }
-
-    .issues {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .issue-card {
+    .stars { color: var(--yellow); letter-spacing: 3px; font-size: 17px; }
+    .rating-strip i { width: 4px; height: 4px; border-radius: 50%; background: #4A4A4A; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .review-card {
       display: flex;
       flex-direction: column;
-      min-height: 290px;
-      padding: 28px;
+      min-height: 275px;
+      padding: 27px;
       border: 1px solid var(--border);
       border-radius: 15px;
-      background: linear-gradient(145deg, rgba(255,255,255,.052), rgba(255,255,255,.022));
-      text-decoration: none;
-      transition: transform .3s ease, border-color .3s ease;
+      background: rgba(255,255,255,.035);
     }
-    .issue-card:hover { transform: translateY(-5px); border-color: rgba(242,103,69,.33); }
-    .issue-type {
-      color: var(--accent);
+    .review-stars { color: var(--yellow); letter-spacing: 2px; font-size: 14px; margin-bottom: 18px; }
+    .review-card blockquote { color: #D7D7D7; font-size: 15px; line-height: 1.65; }
+    .review-source {
+      margin-top: auto;
+      padding-top: 20px;
+      color: #717171;
       font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+      font-weight: 900;
+      letter-spacing: 1.1px;
       text-transform: uppercase;
-      margin-bottom: 24px;
     }
-    .issue-card h3 { font-size: 23px; line-height: 1.2; letter-spacing: -.35px; margin-bottom: 15px; }
-    .issue-card p { color: #898989; font-size: 14px; margin-bottom: 28px; }
-    .read-link { margin-top: auto; color: #D6D6D6; font-weight: 800; font-size: 13px; }
-    .read-link span { color: var(--accent); margin-left: 5px; }
-
-    .final-cta {
-      padding: 40px 0 110px;
-    }
-    .cta-panel {
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      padding: 74px 28px;
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 24px;
-      background: linear-gradient(145deg, rgba(242,103,69,.11), rgba(255,255,255,.03));
-      box-shadow: 0 30px 80px rgba(0,0,0,.3);
-    }
-    .cta-panel::after {
-      content: '';
-      position: absolute;
-      width: 260px; height: 260px;
-      right: -100px; top: -120px;
-      border-radius: 50%;
-      background: var(--accent);
-      filter: blur(100px);
-      opacity: .18;
-    }
-    .cta-panel > * { position: relative; z-index: 1; }
-    .cta-panel h2 { font-size: clamp(34px, 4.7vw, 52px); line-height: 1.08; margin-bottom: 16px; }
-    .cta-panel p { max-width: 600px; margin: 0 auto 30px; color: #A6A6A6; font-size: 17px; }
+    .proof-cta { text-align: center; margin-top: 38px; }
 
     footer {
-      padding: 36px 0;
+      padding: 34px 0;
       border-top: 1px solid rgba(255,255,255,.06);
       text-align: center;
     }
-    footer .logo { width: 164px; margin: 0 auto 12px; opacity: .55; }
+    footer .logo { width: 155px; margin: 0 auto 12px; opacity: .5; }
     footer p, footer a { color: #555; font-size: 12px; text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
@@ -391,7 +380,7 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background: rgba(0,0,0,.78);
+      background: rgba(0,0,0,.8);
       backdrop-filter: blur(12px);
     }
     .modal.active { display: flex; }
@@ -415,37 +404,22 @@
       width: 38px; height: 38px;
       border: 1px solid rgba(0,0,0,.1);
       border-radius: 50%;
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.94);
       color: #111;
       cursor: pointer;
       font-size: 22px;
-      line-height: 1;
       box-shadow: 0 4px 16px rgba(0,0,0,.13);
     }
-    .modal-fallback {
-      position: absolute;
-      left: 0; right: 0; bottom: 10px;
-      z-index: 2;
-      text-align: center;
-      pointer-events: none;
-    }
-    .modal-fallback a {
-      pointer-events: auto;
-      color: #666;
-      font-size: 11px;
-      text-decoration: underline;
-    }
-
-    .fade-in { opacity: 1; transform: none; }
-    .fade-in.visible { opacity: 1; transform: none; }
 
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; gap: 56px; text-align: center; padding-top: 55px; }
+      .hero { grid-template-columns: 1fr; gap: 58px; text-align: center; padding-top: 56px; }
       .hero-copy { margin-left: auto; margin-right: auto; }
       .promise-list { justify-content: center; }
       .inbox-card { width: min(560px, 100%); margin: 0 auto; transform: none; }
-      .benefits, .issues { grid-template-columns: 1fr; max-width: 660px; margin: 0 auto; }
-      .benefit-card, .issue-card { min-height: 0; }
+      .what-panel { grid-template-columns: 1fr; gap: 36px; }
+      .what-visual { min-height: 410px; }
+      .review-grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
+      .review-card { min-height: 0; }
     }
 
     @media (max-width: 600px) {
@@ -453,7 +427,7 @@
       header { padding: 22px 0; }
       .logo { width: 148px; }
       .header-link { font-size: 12px; }
-      .hero { min-height: auto; padding: 54px 0 72px; }
+      .hero { min-height: auto; padding: 52px 0 76px; }
       h1 { font-size: clamp(38px, 12vw, 52px); letter-spacing: -1.5px; }
       .hero-copy { font-size: 17px; }
       .promise-list { display: grid; justify-content: center; }
@@ -461,17 +435,19 @@
       .email-preview { padding: 22px 18px; }
       .email-preview h2 { font-size: 23px; }
       .diagnostic { grid-template-columns: 1fr; }
-      section { padding: 78px 0; }
-      .section-heading { margin-bottom: 36px; }
-      .benefit-card, .issue-card { padding: 24px; }
-      .cta-panel { padding: 58px 20px; }
+      .what-section { padding: 72px 0; }
+      .what-panel { padding: 34px 22px; border-radius: 18px; }
+      .what-panel h2 { font-size: 34px; }
+      .what-visual { min-height: 380px; }
+      .issue-sheet { padding: 22px; }
+      .issue-sheet h3 { font-size: 23px; }
+      .template-tab { right: -2px; bottom: -2px; }
+      .proof-section { padding: 72px 0 80px; }
+      .rating-strip { display: grid; gap: 8px; }
+      .rating-strip i { display: none; }
+      .review-card { padding: 24px; }
       .modal { padding: 0; }
-      .modal-panel { width: 100%; height: 100%; border-radius: 0; border: 0; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
-      .fade-in { opacity: 1; transform: none; }
+      .modal-panel { width: 100%; height: 100%; border: 0; border-radius: 0; }
     }
   </style>
 </head>
@@ -479,13 +455,12 @@
   <div class="bg-glow" aria-hidden="true">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
   </div>
 
   <div class="page">
     <div class="shell">
       <header>
-        <a href="https://macedomarketing.com" aria-label="Macedo Marketing home">
+        <a href="https://www.macedomarketing.com" aria-label="Macedo Marketing home">
           <img src="../logo-svg-3.svg" alt="Macedo Marketing" class="logo">
         </a>
         <a href="https://macedomarketing.beehiiv.com" class="header-link" target="_blank" rel="noopener">Read the archive</a>
@@ -526,73 +501,77 @@
       </main>
     </div>
 
-    <div class="divider"></div>
+    <div class="section-divider"></div>
 
-    <section class="fade-in">
+    <section class="what-section">
       <div class="shell">
-        <div class="section-heading">
-          <div class="eyebrow">Built for operators</div>
-          <h2>What lands in your inbox</h2>
-          <p>Not vague marketing commentary. Each issue should help you see a problem more clearly or make a better decision.</p>
-        </div>
-        <div class="benefits">
-          <article class="benefit-card">
-            <div class="number">01</div>
-            <h3>See what actually broke</h3>
-            <p>Diagnose creative fatigue, bad tests, weak offers, funnel leaks, and misleading front-end metrics before you waste more spend.</p>
-          </article>
-          <article class="benefit-card">
-            <div class="number">02</div>
-            <h3>Know what to test next</h3>
-            <p>Turn account signals and customer insight into specific hooks, angles, concepts, and controlled testing decisions.</p>
-          </article>
-          <article class="benefit-card">
-            <div class="number">03</div>
-            <h3>Scale with less chaos</h3>
-            <p>Use practical systems for creative research, iteration, performance diagnosis, and growth without random acts of advertising.</p>
-          </article>
+        <div class="what-panel">
+          <div>
+            <div class="eyebrow">What you get</div>
+            <h2>Exactly what lands <span>in your inbox.</span></h2>
+            <ul class="what-list">
+              <li><strong>Real ad breakdowns</strong> showing the hook, angle, concept, proof, and reason an ad worked or failed.</li>
+              <li><strong>Creative testing frameworks</strong> that help you isolate variables and stop drawing conclusions from contaminated tests.</li>
+              <li><strong>CAC and profitability diagnosis</strong> so you can tell whether the real problem is creative, offer, funnel, tracking, or account structure.</li>
+              <li><strong>Reusable scorecards and templates</strong> for creative research, testing matrices, briefs, and performance reviews.</li>
+              <li><strong>Clear next actions</strong> you can take into the account or your next creative meeting without translating vague theory.</li>
+            </ul>
+            <button class="primary-cta open-subscribe" type="button">Get the next issue</button>
+          </div>
+
+          <div class="what-visual" aria-label="Example newsletter scorecard">
+            <div class="issue-sheet">
+              <div class="sheet-top"><span>Creative Test Integrity</span><span>Scorecard</span></div>
+              <h3>Did your test actually isolate the creative?</h3>
+              <p>A simple diagnosis before you call the winner, kill the loser, or spend another dollar.</p>
+              <div class="score-row"><span>One meaningful variable changed</span><span class="score green">CLEAN</span></div>
+              <div class="score-row"><span>Audience and placement stayed stable</span><span class="score amber">CHECK</span></div>
+              <div class="score-row"><span>Offer changed between variants</span><span class="score red">FAILED</span></div>
+            </div>
+            <div class="template-tab">Practical, not theoretical</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="divider"></div>
+    <div class="section-divider"></div>
 
-    <section class="fade-in">
+    <section class="proof-section">
       <div class="shell">
-        <div class="section-heading">
-          <div class="eyebrow">Read before you subscribe</div>
-          <h2>A few issues from the archive</h2>
-          <p>See the kind of problems we break down and decide if it belongs in your inbox.</p>
+        <div class="proof-heading">
+          <div class="eyebrow">Advice backed by the work</div>
+          <h2>Trusted when the ad decision matters.</h2>
+          <p>Independent client feedback from Tiago's public Upwork profile.</p>
         </div>
-        <div class="issues">
-          <a class="issue-card" href="https://macedomarketing.beehiiv.com/p/20-ads-1-message" target="_blank" rel="noopener">
-            <div class="issue-type">Creative strategy</div>
-            <h3>20 ads. 1 message.</h3>
-            <p>Why producing more assets does not mean you are testing more ideas.</p>
-            <div class="read-link">Read the issue <span>→</span></div>
-          </a>
-          <a class="issue-card" href="https://macedomarketing.beehiiv.com/p/your-ads-look-beautiful-your-cpa-is-terrible" target="_blank" rel="noopener">
-            <div class="issue-type">Performance diagnosis</div>
-            <h3>Your ads look beautiful. Your CPA is terrible.</h3>
-            <p>The gap between visual polish and an ad that earns attention and converts.</p>
-            <div class="read-link">Read the issue <span>→</span></div>
-          </a>
-          <a class="issue-card" href="https://macedomarketing.beehiiv.com/p/this-4-2x-roas-was-actually-losing-money" target="_blank" rel="noopener">
-            <div class="issue-type">Profitable growth</div>
-            <h3>This 4.2x ROAS was actually losing money.</h3>
-            <p>Why the number Ads Manager celebrates can hide what the business is really keeping.</p>
-            <div class="read-link">Read the issue <span>→</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <section class="final-cta fade-in">
-      <div class="shell">
-        <div class="cta-panel">
-          <div class="eyebrow">The next useful idea is free</div>
-          <h2>Make the next ad decision a better one.</h2>
-          <p>Join ecommerce founders, marketers, and operators reading Macedo Marketing's practical growth breakdowns.</p>
+        <div class="rating-strip" aria-label="Upwork ratings">
+          <span class="stars">★★★★★</span>
+          <span>5.0 from 120 Upwork reviews</span>
+          <i></i>
+          <span>100% Job Success</span>
+          <i></i>
+          <span>Top Rated Plus</span>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <blockquote>“He didn't overcomplicate anything and gave very clear recommendations that we could implement immediately. The session easily paid for itself.”</blockquote>
+            <div class="review-source">Verified Upwork client</div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <blockquote>“No fluff, just clear, strategic direction. Easily one of the most valuable consultations I've had.”</blockquote>
+            <div class="review-source">Verified Upwork client</div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <blockquote>“He set up and managed our Facebook ad campaigns flawlessly, bringing fresh ad creative ideas and a clear testing framework.”</blockquote>
+            <div class="review-source">Verified Upwork client</div>
+          </article>
+        </div>
+
+        <div class="proof-cta">
           <button class="primary-cta open-subscribe" type="button">Join the newsletter</button>
           <span class="microcopy">No spam. No vague guru advice.</span>
         </div>
@@ -603,7 +582,7 @@
       <div class="shell">
         <img src="../logo-svg-3.svg" alt="Macedo Marketing" class="logo">
         <p>© 2026 Macedo Marketing. All rights reserved.</p>
-        <p><a href="https://macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a> | <a href="https://macedomarketing.com">macedomarketing.com</a></p>
+        <p><a href="https://www.macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://www.macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a></p>
       </div>
     </footer>
   </div>
@@ -646,16 +625,6 @@
     closeButton.addEventListener('click', closeSubscribe);
     modal.addEventListener('click', event => { if (event.target === modal) closeSubscribe(); });
     document.addEventListener('keydown', event => { if (event.key === 'Escape' && modal.classList.contains('active')) closeSubscribe(); });
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: .12 });
-    document.querySelectorAll('.fade-in').forEach(element => observer.observe(element));
   </script>
 </body>
 </html>
