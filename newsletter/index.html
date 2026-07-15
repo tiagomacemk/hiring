@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Practical Meta ads, creative testing, and profitable growth breakdowns for ecommerce teams from Macedo Marketing.">
+  <meta property="og:title" content="Macedo Marketing Newsletter">
+  <meta property="og:description" content="Better ads start with better decisions. Get practical creative strategy, testing, and CAC breakdowns for ecommerce teams.">
+  <meta property="og:type" content="website">
+  <title>Macedo Marketing Newsletter | Better Ads Start With Better Decisions</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #F26745;
+      --accent-deep: #E05535;
+      --yellow: #FFD230;
+      --bg: #0D0D0D;
+      --surface: rgba(255,255,255,.035);
+      --border: rgba(255,255,255,.075);
+      --text: #FFFFFF;
+      --muted: #A0A0A0;
+      --faint: #666666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body.modal-open { overflow: hidden; }
+
+    a { color: inherit; }
+    button, input { font: inherit; }
+
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(130px);
+      opacity: .14;
+    }
+    .orb-1 {
+      width: 620px; height: 620px;
+      background: var(--accent);
+      top: -260px; right: -150px;
+      animation: drift-one 22s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 520px; height: 520px;
+      background: var(--accent);
+      left: -220px; top: 44%;
+      opacity: .09;
+      animation: drift-two 26s ease-in-out infinite;
+    }
+    .orb-3 {
+      width: 300px; height: 300px;
+      background: var(--yellow);
+      right: 15%; bottom: -120px;
+      opacity: .055;
+      animation: drift-three 18s ease-in-out infinite;
+    }
+    @keyframes drift-one { 50% { transform: translate(-65px, 45px); } }
+    @keyframes drift-two { 50% { transform: translate(60px, -40px); } }
+    @keyframes drift-three { 50% { transform: scale(1.25) translate(-20px, -15px); } }
+
+    .page { position: relative; z-index: 1; }
+    .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+    }
+    .logo { width: 176px; height: auto; display: block; }
+    .header-link {
+      color: #B8B8B8;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: color .25s ease;
+    }
+    .header-link:hover { color: var(--accent); }
+
+    .hero {
+      min-height: 660px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(370px, .85fr);
+      align-items: center;
+      gap: 72px;
+      padding: 74px 0 92px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 18px;
+      margin-bottom: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(242,103,69,.28);
+      background: rgba(242,103,69,.11);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 15px rgba(242,103,69,.8);
+    }
+    h1 {
+      max-width: 730px;
+      font-size: clamp(46px, 6vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -2.2px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+    h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--yellow));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-copy {
+      max-width: 650px;
+      color: #B1B1B1;
+      font-size: 19px;
+      line-height: 1.72;
+      margin-bottom: 34px;
+    }
+    .promise-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-bottom: 38px;
+    }
+    .promise-list li {
+      color: #D0D0D0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .promise-list li::before {
+      content: '✓';
+      color: var(--accent);
+      margin-right: 8px;
+      font-weight: 800;
+    }
+    .primary-cta {
+      border: 0;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      padding: 17px 34px;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 5px 30px rgba(242,103,69,.34);
+      transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+    }
+    .primary-cta:hover {
+      transform: translateY(-3px);
+      background: var(--accent-deep);
+      box-shadow: 0 10px 42px rgba(242,103,69,.48);
+    }
+    .microcopy {
+      display: block;
+      margin-top: 14px;
+      color: var(--faint);
+      font-size: 13px;
+    }
+
+    .inbox-card {
+      position: relative;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 22px;
+      padding: 22px;
+      background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      box-shadow: 0 30px 80px rgba(0,0,0,.38);
+      transform: rotate(1.25deg);
+    }
+    .inbox-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(140deg, rgba(242,103,69,.38), transparent 36%, rgba(255,210,48,.12));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .inbox-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 3px 18px;
+      color: #7D7D7D;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+    .inbox-dots { display: flex; gap: 6px; }
+    .inbox-dots i { width: 7px; height: 7px; border-radius: 50%; background: #3B3B3B; }
+    .email-preview {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      background: #121212;
+      padding: 28px;
+    }
+    .email-kicker {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .email-preview h2 {
+      font-size: 28px;
+      line-height: 1.14;
+      letter-spacing: -.6px;
+      margin-bottom: 14px;
+    }
+    .email-preview p { color: #8E8E8E; font-size: 14px; margin-bottom: 18px; }
+    .diagnostic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .diagnostic div {
+      border-radius: 9px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.035);
+      padding: 13px 10px;
+      text-align: center;
+    }
+    .diagnostic strong { display: block; color: #fff; font-size: 13px; }
+    .diagnostic span { color: #666; font-size: 10px; text-transform: uppercase; letter-spacing: .7px; }
+
+    .divider {
+      width: min(760px, 78%);
+      height: 1px;
+      margin: 0 auto;
+      background: linear-gradient(90deg, transparent, rgba(242,103,69,.22), transparent);
+    }
+
+    section { padding: 100px 0; }
+    .section-heading { text-align: center; max-width: 740px; margin: 0 auto 50px; }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-heading h2 {
+      font-size: clamp(34px, 4.5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+      margin-bottom: 16px;
+    }
+    .section-heading p { color: var(--muted); font-size: 17px; }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .benefit-card {
+      min-height: 250px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(242,103,69,.33);
+      box-shadow: 0 16px 40px rgba(242,103,69,.07);
+    }
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 38px; height: 38px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      border: 1px solid rgba(242,103,69,.22);
+      background: rgba(242,103,69,.11);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .benefit-card h3 { font-size: 21px; margin-bottom: 10px; }
+    .benefit-card p { color: #919191; font-size: 15px; }
+
+    .issues {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .issue-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 290px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: linear-gradient(145deg, rgba(255,255,255,.052), rgba(255,255,255,.022));
+      text-decoration: none;
+      transition: transform .3s ease, border-color .3s ease;
+    }
+    .issue-card:hover { transform: translateY(-5px); border-color: rgba(242,103,69,.33); }
+    .issue-type {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .issue-card h3 { font-size: 23px; line-height: 1.2; letter-spacing: -.35px; margin-bottom: 15px; }
+    .issue-card p { color: #898989; font-size: 14px; margin-bottom: 28px; }
+    .read-link { margin-top: auto; color: #D6D6D6; font-weight: 800; font-size: 13px; }
+    .read-link span { color: var(--accent); margin-left: 5px; }
+
+    .final-cta {
+      padding: 40px 0 110px;
+    }
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 74px 28px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(242,103,69,.11), rgba(255,255,255,.03));
+      box-shadow: 0 30px 80px rgba(0,0,0,.3);
+    }
+    .cta-panel::after {
+      content: '';
+      position: absolute;
+      width: 260px; height: 260px;
+      right: -100px; top: -120px;
+      border-radius: 50%;
+      background: var(--accent);
+      filter: blur(100px);
+      opacity: .18;
+    }
+    .cta-panel > * { position: relative; z-index: 1; }
+    .cta-panel h2 { font-size: clamp(34px, 4.7vw, 52px); line-height: 1.08; margin-bottom: 16px; }
+    .cta-panel p { max-width: 600px; margin: 0 auto 30px; color: #A6A6A6; font-size: 17px; }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid rgba(255,255,255,.06);
+      text-align: center;
+    }
+    footer .logo { width: 164px; margin: 0 auto 12px; opacity: .55; }
+    footer p, footer a { color: #555; font-size: 12px; text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,.78);
+      backdrop-filter: blur(12px);
+    }
+    .modal.active { display: flex; }
+    .modal-panel {
+      position: relative;
+      width: min(760px, 100%);
+      height: min(700px, calc(100vh - 40px));
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: #fff;
+      box-shadow: 0 30px 100px rgba(0,0,0,.65);
+    }
+    .modal iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+    .modal-close {
+      position: absolute;
+      z-index: 2;
+      top: 13px; right: 13px;
+      display: grid;
+      place-items: center;
+      width: 38px; height: 38px;
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      color: #111;
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+      box-shadow: 0 4px 16px rgba(0,0,0,.13);
+    }
+    .modal-fallback {
+      position: absolute;
+      left: 0; right: 0; bottom: 10px;
+      z-index: 2;
+      text-align: center;
+      pointer-events: none;
+    }
+    .modal-fallback a {
+      pointer-events: auto;
+      color: #666;
+      font-size: 11px;
+      text-decoration: underline;
+    }
+
+    .fade-in { opacity: 1; transform: none; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 56px; text-align: center; padding-top: 55px; }
+      .hero-copy { margin-left: auto; margin-right: auto; }
+      .promise-list { justify-content: center; }
+      .inbox-card { width: min(560px, 100%); margin: 0 auto; transform: none; }
+      .benefits, .issues { grid-template-columns: 1fr; max-width: 660px; margin: 0 auto; }
+      .benefit-card, .issue-card { min-height: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 32px, 1120px); }
+      header { padding: 22px 0; }
+      .logo { width: 148px; }
+      .header-link { font-size: 12px; }
+      .hero { min-height: auto; padding: 54px 0 72px; }
+      h1 { font-size: clamp(38px, 12vw, 52px); letter-spacing: -1.5px; }
+      .hero-copy { font-size: 17px; }
+      .promise-list { display: grid; justify-content: center; }
+      .primary-cta { width: 100%; max-width: 360px; }
+      .email-preview { padding: 22px 18px; }
+      .email-preview h2 { font-size: 23px; }
+      .diagnostic { grid-template-columns: 1fr; }
+      section { padding: 78px 0; }
+      .section-heading { margin-bottom: 36px; }
+      .benefit-card, .issue-card { padding: 24px; }
+      .cta-panel { padding: 58px 20px; }
+      .modal { padding: 0; }
+      .modal-panel { width: 100%; height: 100%; border-radius: 0; border: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+      .fade-in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="page">
+    <div class="shell">
+      <header>
+        <a href="https://macedomarketing.com" aria-label="Macedo Marketing home">
+          <img src="../logo-svg-3.svg" alt="Macedo Marketing" class="logo">
+        </a>
+        <a href="https://macedomarketing.beehiiv.com" class="header-link" target="_blank" rel="noopener">Read the archive</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <div class="badge"><span class="badge-dot"></span> Free ecommerce growth newsletter</div>
+            <h1>Better Ads Start With <span>Better Decisions.</span></h1>
+            <p class="hero-copy">Practical breakdowns for ecommerce teams scaling with Meta. Creative strategy, testing, CAC diagnosis, and the decisions behind profitable growth.</p>
+            <ul class="promise-list" aria-label="Newsletter benefits">
+              <li>Real campaign lessons</li>
+              <li>Clear testing frameworks</li>
+              <li>No recycled trend reports</li>
+            </ul>
+            <button class="primary-cta open-subscribe" type="button">Join the newsletter</button>
+            <span class="microcopy">Free. Useful. Unsubscribe whenever you want.</span>
+          </div>
+
+          <div class="inbox-card" aria-label="Example newsletter issue">
+            <div class="inbox-top">
+              <span>MACEDO MARKETING</span>
+              <div class="inbox-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="email-preview">
+              <div class="email-kicker">Inside the next issue</div>
+              <h2>Your creative test might not be testing the creative.</h2>
+              <p>Before you kill another ad, check whether the test actually isolated the variable you thought it did.</p>
+              <div class="diagnostic">
+                <div><strong>Hook</strong><span>Was it isolated?</span></div>
+                <div><strong>Audience</strong><span>Did it change?</span></div>
+                <div><strong>Offer</strong><span>Was it stable?</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="fade-in">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="eyebrow">Built for operators</div>
+          <h2>What lands in your inbox</h2>
+          <p>Not vague marketing commentary. Each issue should help you see a problem more clearly or make a better decision.</p>
+        </div>
+        <div class="benefits">
+          <article class="benefit-card">
+            <div class="number">01</div>
+            <h3>See what actually broke</h3>
+            <p>Diagnose creative fatigue, bad tests, weak offers, funnel leaks, and misleading front-end metrics before you waste more spend.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="number">02</div>
+            <h3>Know what to test next</h3>
+            <p>Turn account signals and customer insight into specific hooks, angles, concepts, and controlled testing decisions.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="number">03</div>
+            <h3>Scale with less chaos</h3>
+            <p>Use practical systems for creative research, iteration, performance diagnosis, and growth without random acts of advertising.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="fade-in">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="eyebrow">Read before you subscribe</div>
+          <h2>A few issues from the archive</h2>
+          <p>See the kind of problems we break down and decide if it belongs in your inbox.</p>
+        </div>
+        <div class="issues">
+          <a class="issue-card" href="https://macedomarketing.beehiiv.com/p/20-ads-1-message" target="_blank" rel="noopener">
+            <div class="issue-type">Creative strategy</div>
+            <h3>20 ads. 1 message.</h3>
+            <p>Why producing more assets does not mean you are testing more ideas.</p>
+            <div class="read-link">Read the issue <span>→</span></div>
+          </a>
+          <a class="issue-card" href="https://macedomarketing.beehiiv.com/p/your-ads-look-beautiful-your-cpa-is-terrible" target="_blank" rel="noopener">
+            <div class="issue-type">Performance diagnosis</div>
+            <h3>Your ads look beautiful. Your CPA is terrible.</h3>
+            <p>The gap between visual polish and an ad that earns attention and converts.</p>
+            <div class="read-link">Read the issue <span>→</span></div>
+          </a>
+          <a class="issue-card" href="https://macedomarketing.beehiiv.com/p/this-4-2x-roas-was-actually-losing-money" target="_blank" rel="noopener">
+            <div class="issue-type">Profitable growth</div>
+            <h3>This 4.2x ROAS was actually losing money.</h3>
+            <p>Why the number Ads Manager celebrates can hide what the business is really keeping.</p>
+            <div class="read-link">Read the issue <span>→</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta fade-in">
+      <div class="shell">
+        <div class="cta-panel">
+          <div class="eyebrow">The next useful idea is free</div>
+          <h2>Make the next ad decision a better one.</h2>
+          <p>Join ecommerce founders, marketers, and operators reading Macedo Marketing's practical growth breakdowns.</p>
+          <button class="primary-cta open-subscribe" type="button">Join the newsletter</button>
+          <span class="microcopy">No spam. No vague guru advice.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="shell">
+        <img src="../logo-svg-3.svg" alt="Macedo Marketing" class="logo">
+        <p>© 2026 Macedo Marketing. All rights reserved.</p>
+        <p><a href="https://macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a> | <a href="https://macedomarketing.com">macedomarketing.com</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal" id="subscribe-modal" role="dialog" aria-modal="true" aria-label="Subscribe to Macedo Marketing Newsletter" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" type="button" aria-label="Close subscribe form">×</button>
+      <iframe
+        id="subscribe-frame"
+        title="Macedo Marketing Newsletter subscription form"
+        loading="lazy"
+        data-src="https://macedomarketing.beehiiv.com/subscribe?utm_source=macedo_site&utm_medium=landing_page&utm_campaign=newsletter_subscribe">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('subscribe-modal');
+    const frame = document.getElementById('subscribe-frame');
+    const closeButton = modal.querySelector('.modal-close');
+    let lastFocused = null;
+
+    function openSubscribe() {
+      lastFocused = document.activeElement;
+      if (!frame.src) frame.src = frame.dataset.src;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      closeButton.focus();
+    }
+
+    function closeSubscribe() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll('.open-subscribe').forEach(button => button.addEventListener('click', openSubscribe));
+    closeButton.addEventListener('click', closeSubscribe);
+    modal.addEventListener('click', event => { if (event.target === modal) closeSubscribe(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && modal.classList.contains('active')) closeSubscribe(); });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.fade-in').forEach(element => observer.observe(element));
+  </script>
+</body>
+</html>
