@@ -80,13 +80,18 @@
     .mm-story-meta span:first-child { color:var(--accent); }
     .mm-result { margin-top:21px; color:#FFF; font-size:clamp(29px,3.6vw,47px); font-weight:900; letter-spacing:-1.8px; line-height:1.02; }
     .mm-story-byline { margin-top:13px; color:var(--accent); font-size:13px; font-weight:800; }
-    .mm-story-details { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); background:rgba(8,8,8,.26); }
-    .mm-story-detail { padding:21px 28px 23px; }
+    .mm-story-details { display:grid; grid-template-columns:1fr 1.2fr 1fr; border-top:1px solid var(--line); background:#0D0D0D; }
+    .mm-story-detail { min-height:178px; padding:27px 28px; }
     .mm-story-detail + .mm-story-detail { border-left:1px solid var(--line); }
-    .mm-story-detail-label { color:#F4F1EC; font-size:11px; font-weight:900; letter-spacing:1.15px; text-transform:uppercase; }
-    .mm-story-detail-copy { margin-top:9px; color:#AAA59F; font-size:13px; line-height:1.5; }
-    .mm-story-detail--outcome { background:rgba(246,103,69,.045); }
-    .mm-story-detail--outcome .mm-story-detail-copy { color:#D1CCC6; }
+    .mm-story-detail-label { color:#8F8A84; font-size:10px; font-weight:900; letter-spacing:1.25px; text-transform:uppercase; }
+    .mm-story-detail-metric { margin-top:15px; color:#FFF; font-size:30px; font-weight:900; letter-spacing:-1px; line-height:1.05; }
+    .mm-story-detail-copy { margin-top:8px; color:#AAA59F; font-size:12.5px; line-height:1.5; }
+    .mm-story-detail--changed { background:linear-gradient(145deg,rgba(246,103,69,.16),rgba(246,103,69,.055)); text-align:center; }
+    .mm-story-detail--changed .mm-story-detail-label { color:var(--accent); }
+    .mm-story-detail-icon { display:grid; place-items:center; width:43px; height:43px; margin:13px auto; border:1px solid rgba(246,103,69,.55); border-radius:50%; color:var(--accent); font-size:21px; font-weight:900; }
+    .mm-story-detail--changed .mm-story-detail-copy { margin-top:0; color:#D0CBC5; }
+    .mm-story-detail--outcome { background:rgba(246,103,69,.035); }
+    .mm-story-detail--outcome .mm-story-detail-metric { color:var(--accent); }
     .mm-midcta { margin-top:34px; text-align:center; }
     .mm-fit { display:grid; grid-template-columns:.95fr 1.05fr; gap:22px; align-items:stretch; }
     .mm-fit-card,.mm-faq-wrap { border:1px solid var(--line); border-radius:21px; background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); }
@@ -132,7 +137,12 @@
       .mm-story:nth-of-type(even) .mm-story-media { order:0; }
       .mm-story-media { min-height:0; aspect-ratio:16/9; }
       .mm-story-details { grid-template-columns:1fr; }
+      .mm-story-detail { min-height:0; }
       .mm-story-detail + .mm-story-detail { border-left:0; border-top:1px solid var(--line); }
+      .mm-story-detail--changed { display:grid; grid-template-columns:43px 1fr; column-gap:15px; text-align:left; }
+      .mm-story-detail--changed .mm-story-detail-label { grid-column:1/-1; }
+      .mm-story-detail--changed .mm-story-detail-icon { grid-column:1; grid-row:2; margin:12px 0 0; }
+      .mm-story-detail--changed .mm-story-detail-copy { grid-column:2; grid-row:2; margin-top:12px; align-self:center; }
       .mm-fit { grid-template-columns:1fr; }
       .mm-fit-card { padding:30px; }
     }
@@ -201,7 +211,7 @@
           </div>
         </div>
         <h1 id="mm-main-title">You're in. Now see how <span class="mm-gradient">profitable paid growth</span> is actually built.</h1>
-        <p class="mm-lede" id="mm-lede">Most brands don't need another random tactic. They need stronger creative, a clear acquisition strategy, and a scaling plan that protects margin. This short video shows how we put those pieces together.</p>
+        <p class="mm-lede" id="mm-lede">This short video shows how we connect creative, acquisition, and account structure to scale revenue without sacrificing margin.</p>
 
         <div class="mm-video-wrap" aria-label="Macedo Marketing growth strategy video">
           <div class="mm-video-frame">
@@ -218,7 +228,7 @@
 
         <div class="mm-proofbar" aria-label="Macedo Marketing proof">
           <div class="mm-proofstat"><strong>$28M+</strong><span>Revenue generated</span></div>
-          <div class="mm-proofstat"><strong>100+</strong><span>Happy clients</span></div>
+          <div class="mm-proofstat"><strong>100+</strong><span>Clients supported</span></div>
           <div class="mm-proofstat"><strong>15.91x</strong><span>Featured client ROAS</span></div>
         </div>
       </section>
@@ -227,7 +237,7 @@
         <div class="mm-shell">
           <div class="mm-section-head">
             <div class="mm-eyebrow">Client proof</div>
-            <h2 id="mm-proof-title">Four growth problems we fixed.</h2>
+            <h2 id="mm-proof-title">Four growth problems. Four fixes.</h2>
           </div>
 
           <div class="mm-stories">
@@ -244,9 +254,9 @@
                 </div>
               </div>
               <div class="mm-story-details">
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-copy">Launching from zero with $200 CAC in a regulated category.</div></div>
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Changed</div><div class="mm-story-detail-copy">Rebuilt tracking, compliant creative, and the purchase journey.</div></div>
-                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">Result</div><div class="mm-story-detail-copy">$282K+/mo by month three at $60.70 CAC on $17.7K spend.</div></div>
+                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-metric">$200 CAC</div><div class="mm-story-detail-copy">Launching from zero in a regulated category.</div></div>
+                <div class="mm-story-detail mm-story-detail--changed"><div class="mm-story-detail-label">What changed</div><div class="mm-story-detail-icon" aria-hidden="true">→</div><div class="mm-story-detail-copy">Rebuilt tracking, compliant creative, and the purchase journey.</div></div>
+                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">After</div><div class="mm-story-detail-metric">$60.70 CAC</div><div class="mm-story-detail-copy">Reached $282K+/mo by month three on $17.7K spend.</div></div>
               </div>
             </article>
             <article class="mm-story">
@@ -262,9 +272,9 @@
                 </div>
               </div>
               <div class="mm-story-details">
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-copy">£30K/mo and 66 booked calls, but attribution could not identify qualified demand.</div></div>
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Changed</div><div class="mm-story-detail-copy">Rebuilt tracking, optimized for intent, and moved the winning formats into a webinar funnel.</div></div>
-                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">Result</div><div class="mm-story-detail-copy">£100K+/mo and 363 booked calls within six months at £25K/mo ad spend.</div></div>
+                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-metric">66 booked calls</div><div class="mm-story-detail-copy">£30K/mo, but attribution could not identify qualified demand.</div></div>
+                <div class="mm-story-detail mm-story-detail--changed"><div class="mm-story-detail-label">What changed</div><div class="mm-story-detail-icon" aria-hidden="true">→</div><div class="mm-story-detail-copy">Rebuilt attribution, optimized for intent, and moved winning formats into a webinar funnel.</div></div>
+                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">After</div><div class="mm-story-detail-metric">363 booked calls</div><div class="mm-story-detail-copy">Reached £100K+/mo within six months on £25K/mo ad spend.</div></div>
               </div>
             </article>
             <article class="mm-story">
@@ -280,9 +290,9 @@
                 </div>
               </div>
               <div class="mm-story-details">
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-copy">1.2 ROAS after multiple agencies, with no repeatable scaling system.</div></div>
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Changed</div><div class="mm-story-detail-copy">Separated creative testing from scaling and rebuilt retargeting by awareness.</div></div>
-                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">Result</div><div class="mm-story-detail-copy">$106K in 90 days with CPA reduced by 54%.</div></div>
+                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-metric">1.2 ROAS</div><div class="mm-story-detail-copy">Multiple agencies. No repeatable scaling system.</div></div>
+                <div class="mm-story-detail mm-story-detail--changed"><div class="mm-story-detail-label">What changed</div><div class="mm-story-detail-icon" aria-hidden="true">→</div><div class="mm-story-detail-copy">Separated creative testing from scaling and rebuilt retargeting by awareness.</div></div>
+                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">After</div><div class="mm-story-detail-metric">CPA ↓ 54%</div><div class="mm-story-detail-copy">Generated $106K inside the verified 90-day window.</div></div>
               </div>
             </article>
             <article class="mm-story">
@@ -298,9 +308,9 @@
                 </div>
               </div>
               <div class="mm-story-details">
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-copy">Heavy spend, exhausted winning ads, and lower ROAS whenever budget increased.</div></div>
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Changed</div><div class="mm-story-detail-copy">Mined reviews, expanded UGC and static creative, then introduced structured Advantage+ scaling.</div></div>
-                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">Result</div><div class="mm-story-detail-copy">$176K → $616K/mo at 2.17 ROAS within 76 days.</div></div>
+                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-metric">$176K/mo</div><div class="mm-story-detail-copy">Heavy spend, exhausted winners, and lower ROAS whenever budget increased.</div></div>
+                <div class="mm-story-detail mm-story-detail--changed"><div class="mm-story-detail-label">What changed</div><div class="mm-story-detail-icon" aria-hidden="true">→</div><div class="mm-story-detail-copy">Mined reviews, expanded UGC and static creative, then scaled with Advantage+.</div></div>
+                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">After</div><div class="mm-story-detail-metric">2.17 ROAS</div><div class="mm-story-detail-copy">Reached $616K/mo within 76 days.</div></div>
               </div>
             </article>
           </div>
@@ -312,25 +322,25 @@
       <section class="mm-section" aria-labelledby="mm-fit-title">
         <div class="mm-shell mm-fit">
           <div class="mm-fit-card">
-            <div class="mm-eyebrow">A useful call, not a generic pitch</div>
+            <div class="mm-eyebrow">Built for established brands</div>
             <h2 id="mm-fit-title">Is this a fit?</h2>
-            <p>The best conversations happen when there is already a real product, real customer demand, and a serious goal to improve paid growth.</p>
+            <p>This call is most useful when you have a validated offer, real demand, and a paid-growth problem worth solving.</p>
             <ul class="mm-checks">
-              <li>You run an ecommerce, DTC, or digital-product business.</li>
-              <li>You want stronger creative, lower CAC, or a clearer scaling plan.</li>
-              <li>You are willing to test, measure, and improve instead of chasing shortcuts.</li>
-              <li>You want a partner who can connect strategy, creative, and media buying.</li>
+              <li>You run an ecommerce, DTC, or digital-product brand.</li>
+              <li>Your offer converts, but growth has stalled or become less efficient.</li>
+              <li>You need better creative, lower CAC, or a clearer scaling plan.</li>
+              <li>You want strategy, creative, and media buying connected.</li>
             </ul>
           </div>
 
           <div class="mm-faq-wrap" aria-labelledby="mm-faq-title">
             <h2 id="mm-faq-title">Frequently asked questions</h2>
-            <details class="mm-faq"><summary>What happens on the strategy call?</summary><p>We look at your current growth goals, paid acquisition, creative testing, and the bottleneck holding performance back. You leave with clearer next steps, whether or not we work together.</p></details>
-            <details class="mm-faq"><summary>Who is the call best suited for?</summary><p>Ecommerce, DTC, and digital-product brands that already have a validated offer and want to improve paid-media performance, creative output, or profitable scale.</p></details>
-            <details class="mm-faq"><summary>What can Macedo Marketing help with?</summary><p>Meta ads management, creative strategy and production, account audits, testing systems, and ongoing optimization. Google Ads can be included where it supports the wider acquisition plan.</p></details>
-            <details class="mm-faq"><summary>Do I need a certain level of ad spend?</summary><p>Consistent spend and enough conversion data make the call more useful, but fit depends on the business, margins, offer, and growth goal. If it is too early, we will tell you directly.</p></details>
-            <details class="mm-faq"><summary>Are results guaranteed?</summary><p>No responsible agency can guarantee a specific revenue or ROAS outcome. Performance depends on the product, offer, economics, creative, market, and execution. The results shown above are real client outcomes, not promises of future performance.</p></details>
-            <details class="mm-faq"><summary>What happens if we are a fit?</summary><p>We outline the recommended plan, scope, and onboarding steps. The call itself creates no obligation to move forward.</p></details>
+            <details class="mm-faq"><summary>What happens on the strategy call?</summary><p>We review your numbers, acquisition, creative, and biggest bottleneck. You leave with clear priorities, whether or not we work together.</p></details>
+            <details class="mm-faq"><summary>Who is the call best suited for?</summary><p>Established ecommerce, DTC, and digital-product brands with a validated offer and a paid-growth constraint to solve.</p></details>
+            <details class="mm-faq"><summary>What can Macedo Marketing help with?</summary><p>Meta ads, creative strategy and production, account audits, testing systems, and ongoing optimization. We add Google Ads when it supports the wider acquisition plan.</p></details>
+            <details class="mm-faq"><summary>Do I need a certain level of ad spend?</summary><p>There is no fixed minimum. Consistent spend and conversion data make the call more useful, but fit also depends on margins, offer, and growth goals.</p></details>
+            <details class="mm-faq"><summary>Are results guaranteed?</summary><p>No. These are verified client outcomes, not promises. Results depend on the product, offer, economics, creative, market, and execution.</p></details>
+            <details class="mm-faq"><summary>What happens if we are a fit?</summary><p>We agree on the plan, scope, and onboarding steps. The call creates no obligation to move forward.</p></details>
           </div>
         </div>
       </section>
@@ -338,9 +348,9 @@
       <section class="mm-final" id="book-call" aria-labelledby="mm-booking-title">
         <div class="mm-shell">
           <div class="mm-final-card">
-            <div class="mm-eyebrow">Ready when you are</div>
+            <div class="mm-eyebrow">Bring the numbers</div>
             <h2 id="mm-booking-title">Let’s find the next <span class="mm-gradient">profitable move.</span></h2>
-            <p>Bring your current numbers, your biggest growth bottleneck, and the outcome you want. We’ll bring a direct, practical perspective.</p>
+            <p>Bring your numbers and biggest bottleneck. We’ll identify the highest-leverage next step.</p>
             <div class="mm-calendly-wrap" aria-label="Book a Macedo Marketing strategy call">
               <div class="mm-calendly-loading" aria-hidden="true">Loading available times…</div>
               <div class="mm-calendly-inline" id="mm-calendly-inline" data-booking-url="https://calendly.com/macedomarketing/strategy"></div>
