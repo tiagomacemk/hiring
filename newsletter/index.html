@@ -74,9 +74,9 @@
     .header-link:hover { color: var(--accent); }
 
     .hero {
-      min-height: 690px;
+      min-height: 740px;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(370px, .85fr);
+      grid-template-columns: minmax(0, 1.16fr) minmax(390px, .84fr);
       align-items: center;
       gap: 72px;
       padding: 76px 0 104px;
@@ -153,6 +153,32 @@
       box-shadow: 0 10px 42px rgba(242,103,69,.48);
     }
     .microcopy { display: block; margin-top: 14px; color: var(--faint); font-size: 13px; }
+
+    .optin-card {
+      position: relative;
+      width: 100%;
+      height: 620px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 30px 90px rgba(0,0,0,.45), 0 0 70px rgba(242,103,69,.08);
+      transform: rotate(.65deg);
+    }
+    .optin-card::before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(140deg, rgba(242,103,69,.48), transparent 34%, rgba(255,210,48,.14));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .optin-frame { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
 
     .inbox-card {
       position: relative;
@@ -453,10 +479,11 @@
     }
 
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; gap: 58px; text-align: center; padding-top: 56px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 56px 0 90px; gap: 60px; text-align: center; }
       .hero-copy { margin-left: auto; margin-right: auto; }
       .promise-list { justify-content: center; }
       .inbox-card { width: min(560px, 100%); margin: 0 auto; transform: none; }
+      .optin-card { width: min(520px, 100%); height: 600px; margin: 0 auto; transform: none; }
       .what-panel { grid-template-columns: 1fr; gap: 36px; }
       .what-visual { min-height: 410px; }
       .video-grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
@@ -470,8 +497,9 @@
       .hero { min-height: auto; padding: 52px 0 76px; }
       h1 { font-size: clamp(38px, 12vw, 52px); letter-spacing: -1.5px; }
       .hero-copy { font-size: 17px; }
-      .promise-list { display: grid; justify-content: center; }
-      .primary-cta { width: 100%; max-width: 360px; }
+      .promise-list { display: grid; gap: 10px; justify-content: center; }
+      .primary-cta { width: 100%; }
+      .optin-card { height: 560px; }
       .email-preview { padding: 22px 18px; }
       .email-preview h2 { font-size: 23px; }
       .diagnostic { grid-template-columns: 1fr; }
@@ -515,25 +543,15 @@
               <li>Clear testing frameworks</li>
               <li>No recycled trend reports</li>
             </ul>
-            <button class="primary-cta open-subscribe" type="button">Join the newsletter</button>
-            <span class="microcopy">Free. Useful. Unsubscribe whenever you want.</span>
           </div>
 
-          <div class="inbox-card" aria-label="Example newsletter issue">
-            <div class="inbox-top">
-              <span>MACEDO MARKETING</span>
-              <div class="inbox-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-            </div>
-            <div class="email-preview">
-              <div class="email-kicker">Inside the next issue</div>
-              <h2>Your creative test might not be testing the creative.</h2>
-              <p>Before you kill another ad, check whether the test actually isolated the variable you thought it did.</p>
-              <div class="diagnostic">
-                <div><strong>Hook</strong><span>Was it isolated?</span></div>
-                <div><strong>Audience</strong><span>Did it change?</span></div>
-                <div><strong>Offer</strong><span>Was it stable?</span></div>
-              </div>
-            </div>
+          <div class="optin-card" aria-label="Subscribe to the Macedo Marketing Newsletter">
+            <iframe
+              class="optin-frame"
+              title="Macedo Marketing Newsletter subscription form"
+              src="https://macedomarketing.beehiiv.com/subscribe?utm_source=macedo_site&amp;utm_medium=landing_page&amp;utm_campaign=newsletter_subscribe"
+              loading="eager">
+            </iframe>
           </div>
         </section>
       </main>
