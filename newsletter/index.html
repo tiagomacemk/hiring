@@ -307,6 +307,38 @@
     .red { background: #C94732; }
     .amber { background: #C9892B; }
     .green { background: #4A8B59; }
+    .gated-preview { position: relative; overflow: hidden; margin-top: 4px; }
+    .gated-content {
+      filter: blur(5px);
+      opacity: .72;
+      user-select: none;
+      pointer-events: none;
+      transform: scale(1.015);
+    }
+    .gated-preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(245,242,237,.06), rgba(245,242,237,.3));
+      pointer-events: none;
+    }
+    .unlock-label {
+      position: absolute;
+      z-index: 2;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%) rotate(-2deg);
+      width: max-content;
+      max-width: 88%;
+      padding: 11px 16px;
+      border-radius: 8px;
+      background: rgba(18,18,18,.92);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
     .template-tab {
       position: absolute;
       right: -8px;
@@ -327,40 +359,49 @@
     .proof-heading { max-width: 720px; margin: 0 auto 42px; text-align: center; }
     .proof-heading h2 { margin-bottom: 14px; }
     .proof-heading p { color: var(--muted); font-size: 16px; }
-    .rating-strip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 13px 24px;
-      margin: 0 auto 30px;
-      color: #D6D6D6;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    .stars { color: var(--yellow); letter-spacing: 3px; font-size: 17px; }
-    .rating-strip i { width: 4px; height: 4px; border-radius: 50%; background: #4A4A4A; }
-    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .review-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 275px;
-      padding: 27px;
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .video-card {
+      overflow: hidden;
       border: 1px solid var(--border);
       border-radius: 15px;
       background: rgba(255,255,255,.035);
+      box-shadow: 0 16px 45px rgba(0,0,0,.22);
     }
-    .review-stars { color: var(--yellow); letter-spacing: 2px; font-size: 14px; margin-bottom: 18px; }
-    .review-card blockquote { color: #D7D7D7; font-size: 15px; line-height: 1.65; }
-    .review-source {
-      margin-top: auto;
-      padding-top: 20px;
-      color: #717171;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
+    .video-frame { position: relative; aspect-ratio: 16 / 9; background: #181818; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-play {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #181818;
+      cursor: pointer;
     }
+    .video-play img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease, opacity .3s ease; }
+    .video-play::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.48)); }
+    .video-play:hover img { transform: scale(1.025); opacity: .9; }
+    .play-icon {
+      position: absolute;
+      z-index: 2;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-items: center;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 35px rgba(0,0,0,.4);
+      font-size: 19px;
+      line-height: 1;
+      padding-left: 3px;
+    }
+    .video-meta { padding: 20px 22px 22px; }
+    .video-result { color: var(--accent); font-size: 11px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 7px; }
+    .video-meta h3 { font-size: 19px; line-height: 1.2; margin-bottom: 4px; }
+    .video-meta p { color: #777; font-size: 13px; }
     .proof-cta { text-align: center; margin-top: 38px; }
 
     footer {
@@ -418,8 +459,7 @@
       .inbox-card { width: min(560px, 100%); margin: 0 auto; transform: none; }
       .what-panel { grid-template-columns: 1fr; gap: 36px; }
       .what-visual { min-height: 410px; }
-      .review-grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
-      .review-card { min-height: 0; }
+      .video-grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
     }
 
     @media (max-width: 600px) {
@@ -443,9 +483,7 @@
       .issue-sheet h3 { font-size: 23px; }
       .template-tab { right: -2px; bottom: -2px; }
       .proof-section { padding: 72px 0 80px; }
-      .rating-strip { display: grid; gap: 8px; }
-      .rating-strip i { display: none; }
-      .review-card { padding: 24px; }
+      .video-meta { padding: 18px 20px 20px; }
       .modal { padding: 0; }
       .modal-panel { width: 100%; height: 100%; border: 0; border-radius: 0; }
     }
@@ -524,9 +562,14 @@
               <div class="sheet-top"><span>Creative Test Integrity</span><span>Scorecard</span></div>
               <h3>Did your test actually isolate the creative?</h3>
               <p>A simple diagnosis before you call the winner, kill the loser, or spend another dollar.</p>
-              <div class="score-row"><span>One meaningful variable changed</span><span class="score green">CLEAN</span></div>
-              <div class="score-row"><span>Audience and placement stayed stable</span><span class="score amber">CHECK</span></div>
-              <div class="score-row"><span>Offer changed between variants</span><span class="score red">FAILED</span></div>
+              <div class="gated-preview" aria-label="Scorecard details available to subscribers">
+                <div class="gated-content" aria-hidden="true">
+                  <div class="score-row"><span>One meaningful variable changed</span><span class="score green">CLEAN</span></div>
+                  <div class="score-row"><span>Audience and placement stayed stable</span><span class="score amber">CHECK</span></div>
+                  <div class="score-row"><span>Offer changed between variants</span><span class="score red">FAILED</span></div>
+                </div>
+                <div class="unlock-label">🔒 Full scorecard inside</div>
+              </div>
             </div>
             <div class="template-tab">Practical, not theoretical</div>
           </div>
@@ -539,35 +582,50 @@
     <section class="proof-section">
       <div class="shell">
         <div class="proof-heading">
-          <div class="eyebrow">Advice backed by the work</div>
-          <h2>Trusted when the ad decision matters.</h2>
-          <p>Independent client feedback from Tiago's public Upwork profile.</p>
+          <div class="eyebrow">Hear it from the clients</div>
+          <h2>Real results. In their own words.</h2>
+          <p>Full client testimonial interviews already published by Macedo Marketing.</p>
         </div>
 
-        <div class="rating-strip" aria-label="Upwork ratings">
-          <span class="stars">★★★★★</span>
-          <span>5.0 from 120 Upwork reviews</span>
-          <i></i>
-          <span>100% Job Success</span>
-          <i></i>
-          <span>Top Rated Plus</span>
-        </div>
-
-        <div class="review-grid">
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <blockquote>“He didn't overcomplicate anything and gave very clear recommendations that we could implement immediately. The session easily paid for itself.”</blockquote>
-            <div class="review-source">Verified Upwork client</div>
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-frame">
+              <button class="video-play" type="button" data-video-src="https://player.vimeo.com/video/1054419360?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1" aria-label="Play Sofia Alonso client testimonial interview">
+                <img loading="lazy" src="https://i.vimeocdn.com/video/1979780722-8fe6d264214c2a5a6db9326aa73148bb74e2b6f6cae10293ad6e3297d79c6565-d_1280x720?region=us" alt="Sofia Alonso client testimonial interview">
+                <span class="play-icon" aria-hidden="true">▶</span>
+              </button>
+            </div>
+            <div class="video-meta">
+              <div class="video-result">$0 to $282K+/mo in 90 days</div>
+              <h3>Sofia Alonso</h3>
+              <p>Elara</p>
+            </div>
           </article>
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <blockquote>“No fluff, just clear, strategic direction. Easily one of the most valuable consultations I've had.”</blockquote>
-            <div class="review-source">Verified Upwork client</div>
+          <article class="video-card">
+            <div class="video-frame">
+              <button class="video-play" type="button" data-video-src="https://player.vimeo.com/video/1145606092?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1" aria-label="Play Vijay Singh client testimonial interview">
+                <img loading="lazy" src="https://i.vimeocdn.com/video/2094644543-2532bd6bec5c6576cb2e408d93959e92dfea412d3c67224b711da0da2496c43c-d_1280x720?region=us" alt="Vijay Singh client testimonial interview">
+                <span class="play-icon" aria-hidden="true">▶</span>
+              </button>
+            </div>
+            <div class="video-meta">
+              <div class="video-result">$30K/mo to $100K/mo in 90 days</div>
+              <h3>Vijay Singh</h3>
+              <p>Talking Houses</p>
+            </div>
           </article>
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <blockquote>“He set up and managed our Facebook ad campaigns flawlessly, bringing fresh ad creative ideas and a clear testing framework.”</blockquote>
-            <div class="review-source">Verified Upwork client</div>
+          <article class="video-card">
+            <div class="video-frame">
+              <button class="video-play" type="button" data-video-src="https://player.vimeo.com/video/980526506?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1" aria-label="Play Rory Tonkin client testimonial interview">
+                <img loading="lazy" src="https://i.vimeocdn.com/video/1895661480-6700790ec5a941093fbdde7251b24d470264b6bf9bead7c21365c3776ee234aa-d_1280x720?region=us" alt="Rory Tonkin client testimonial interview">
+                <span class="play-icon" aria-hidden="true">▶</span>
+              </button>
+            </div>
+            <div class="video-meta">
+              <div class="video-result">$10K/mo to $119K/mo in 120 days</div>
+              <h3>Rory Tonkin</h3>
+              <p>Hard To Kill Fitness</p>
+            </div>
           </article>
         </div>
 
@@ -622,6 +680,14 @@
     }
 
     document.querySelectorAll('.open-subscribe').forEach(button => button.addEventListener('click', openSubscribe));
+    document.querySelectorAll('.video-play').forEach(button => button.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = button.dataset.videoSrc + '&autoplay=1';
+      iframe.title = button.getAttribute('aria-label').replace(/^Play /, '');
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      iframe.setAttribute('allowfullscreen', '');
+      button.replaceWith(iframe);
+    }));
     closeButton.addEventListener('click', closeSubscribe);
     modal.addEventListener('click', event => { if (event.target === modal) closeSubscribe(); });
     document.addEventListener('keydown', event => { if (event.key === 'Escape' && modal.classList.contains('active')) closeSubscribe(); });
