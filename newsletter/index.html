@@ -3,820 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Practical Meta ads, creative testing, and profitable growth breakdowns for ecommerce teams from Macedo Marketing.">
-  <meta property="og:title" content="Macedo Marketing Newsletter">
-  <meta property="og:description" content="Better ads start with better decisions. Get practical creative strategy, testing, and CAC breakdowns for ecommerce teams.">
+  <meta name="description" content="Weekly Meta ad creative breakdowns, testing ideas, and CAC diagnosis for ecommerce teams.">
+  <meta property="og:title" content="Know What to Test Next in Meta Ads | Macedo Marketing">
+  <meta property="og:description" content="Real creative examples, the thinking behind them, and what to test next.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.macedomarketing.com/newsletter/">
+  <meta name="theme-color" content="#0B0B0B">
   <link rel="canonical" href="https://www.macedomarketing.com/newsletter/">
-  <title>Macedo Marketing Newsletter | Better Ads Start With Better Decisions</title>
+  <title>What to Test Next in Meta Ads | Macedo Marketing</title>
   <link rel="icon" href="../favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
   <style>
-    :root {
-      --accent: #F26745;
-      --accent-deep: #E05535;
-      --yellow: #FFD230;
-      --bg: #0D0D0D;
-      --surface: #151515;
-      --border: rgba(255,255,255,.09);
-      --text: #FFFFFF;
-      --muted: #A7A7A7;
-      --faint: #686868;
+    :root { --bg:#0B0B0B; --surface:#151515; --text:#F8F6F2; --muted:#AAA6A1; --accent:#F66745; --line:rgba(255,255,255,.1); }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { min-width:320px; overflow-x:hidden; background:var(--bg); color:var(--text); font-family:'Nunito Sans',system-ui,sans-serif; }
+    body::before { content:''; position:fixed; z-index:-1; inset:0; background:radial-gradient(circle at 50% 0,rgba(246,103,69,.15),transparent 38%),linear-gradient(180deg,#130D0B 0,#0B0B0B 43%); }
+    .shell { width:min(100% - 40px,1120px); margin:0 auto; }
+    header { display:flex; align-items:center; justify-content:flex-start; padding:28px 0; }
+    .logo { display:block; width:190px; height:auto; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    a:focus-visible, button:focus-visible { outline:3px solid rgba(246,103,69,.55); outline-offset:4px; }
+    main { padding:48px 0 24px; text-align:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; margin-bottom:24px; color:var(--accent); font-size:11px; font-weight:900; letter-spacing:1.7px; text-transform:uppercase; }
+    .eyebrow::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 16px rgba(246,103,69,.8); }
+    h1 { max-width:870px; margin:0 auto; font-size:clamp(48px,7vw,86px); line-height:.98; letter-spacing:-3.6px; }
+    h1 span { background:linear-gradient(90deg,#F66745,#FFC12E); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .subhead { max-width:690px; margin:26px auto 38px; color:#B9B5B0; font-size:18px; line-height:1.65; }
+    .signup { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr) auto; gap:10px; width:min(100%,790px); margin:0 auto; padding:10px; border:1px solid var(--line); border-radius:15px; background:rgba(21,21,21,.9); box-shadow:0 22px 70px rgba(0,0,0,.4); }
+    .signup input { min-width:0; min-height:54px; border:1px solid rgba(255,255,255,.11); border-radius:9px; outline:0; background:#202020; color:#fff; padding:0 16px; font:700 14px 'Nunito Sans',sans-serif; }
+    .signup input::placeholder { color:#9A9691; }
+    .signup input:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(246,103,69,.12); }
+    .signup button { min-height:54px; border:0; border-radius:9px; padding:0 24px; cursor:pointer; background:var(--accent); color:#0B0B0B; font:800 14px 'Nunito Sans',sans-serif; letter-spacing:.1px; box-shadow:0 10px 30px rgba(246,103,69,.26); white-space:nowrap; }
+    .signup button:hover { background:#FF7453; }
+    .signup button:disabled { cursor:wait; opacity:.68; }
+    .signup .formkit-alert { grid-column:1/-1; margin:0; padding:10px 12px; border-radius:8px; list-style:none; font-size:12px; font-weight:800; }
+    .signup .formkit-alert:empty { display:none; }
+    .signup .formkit-alert-error { border:1px solid rgba(246,103,69,.35); background:rgba(246,103,69,.12); color:#FFB39F; }
+    .formkit-alert-success { width:min(100%,790px); margin:0 auto; padding:18px 22px; border:1px solid rgba(68,196,128,.35); border-radius:12px; background:rgba(68,196,128,.12); color:#8DE0B3; font-size:14px; font-weight:800; box-shadow:0 18px 50px rgba(0,0,0,.3); }
+    .privacy { display:block; margin-top:13px; color:#96918B; font-size:11px; }
+    .creative-stage { position:relative; width:min(100%,980px); height:360px; margin:34px auto 0; overflow:hidden; }
+    .creative-card { position:absolute; top:28px; left:50%; width:250px; aspect-ratio:1; overflow:hidden; border:6px solid #202020; border-radius:19px; background:#1A1A1A; box-shadow:0 24px 55px rgba(0,0,0,.5); transform-origin:center bottom; }
+    .creative-card img { width:100%; height:100%; object-fit:cover; display:block; }
+    .c1 { transform:translateX(-190%) rotate(-10deg) translateY(60px); filter:blur(2.4px) saturate(.7); opacity:.58; }
+    .c2 { transform:translateX(-132%) rotate(-6deg) translateY(28px); filter:blur(.7px); opacity:.82; }
+    .c3 { transform:translateX(-73%) rotate(-2.5deg); z-index:2; }
+    .c4 { transform:translateX(-27%) rotate(2.5deg); z-index:3; }
+    .c5 { transform:translateX(32%) rotate(6deg) translateY(28px); filter:blur(.7px); opacity:.82; }
+    .c6 { transform:translateX(90%) rotate(10deg) translateY(60px); filter:blur(2.4px) saturate(.7); opacity:.58; }
+    .blur-lock { position:absolute; z-index:6; inset:auto 0 0; height:145px; display:grid; place-items:end center; padding-bottom:20px; background:linear-gradient(180deg,transparent 0,rgba(11,11,11,.35) 22%,rgba(11,11,11,.96) 86%); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); -webkit-mask-image:linear-gradient(transparent,#000 35%); mask-image:linear-gradient(transparent,#000 35%); }
+    .lock-label { display:flex; align-items:center; gap:9px; padding:11px 16px; border:1px solid rgba(255,255,255,.13); border-radius:99px; background:rgba(20,20,20,.9); color:#fff; font-size:10px; font-weight:900; letter-spacing:1px; text-transform:uppercase; box-shadow:0 12px 30px rgba(0,0,0,.4); }
+    .lock-label svg { width:14px; height:14px; color:var(--accent); }
+    footer { display:flex; align-items:center; justify-content:center; padding:34px 0; border-top:1px solid rgba(255,255,255,.06); color:#8F8B86; font-size:11px; }
+    @media (max-width:800px) {
+      main { padding-top:42px; }
+      h1 { letter-spacing:-2.4px; }
+      .signup { grid-template-columns:1fr 1fr; }
+      .signup button { grid-column:1/-1; }
+      .creative-stage { height:340px; margin-top:34px; }
+      .creative-card { width:225px; }
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Nunito Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
+    @media (max-width:560px) {
+      .shell { width:min(100% - 32px,1120px); }
+      header { padding:22px 0; }
+      .logo { width:158px; }
+      main { padding-top:36px; }
+      h1 { font-size:45px; letter-spacing:-1.8px; }
+      .subhead { margin:23px auto 30px; font-size:16px; }
+      .signup { grid-template-columns:1fr; padding:9px; }
+      .signup button { grid-column:auto; }
+      .creative-stage { width:calc(100% + 32px); margin-left:-16px; height:300px; margin-top:28px; }
+      .creative-card { width:190px; top:20px; border-width:5px; border-radius:15px; }
+      .c1 { transform:translateX(-176%) rotate(-10deg) translateY(50px); }
+      .c2 { transform:translateX(-125%) rotate(-6deg) translateY(25px); }
+      .c3 { transform:translateX(-75%) rotate(-2.5deg); }
+      .c4 { transform:translateX(-25%) rotate(2.5deg); }
+      .c5 { transform:translateX(25%) rotate(6deg) translateY(25px); }
+      .c6 { transform:translateX(76%) rotate(10deg) translateY(50px); }
+      .blur-lock { height:125px; padding-bottom:18px; }
     }
-    body.modal-open { overflow: hidden; }
-    button { font: inherit; }
-
-    .bg-glow {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(130px);
-      opacity: .13;
-    }
-    .orb-1 { width: 620px; height: 620px; background: var(--accent); top: -280px; right: -160px; }
-    .orb-2 { width: 460px; height: 460px; background: var(--accent); left: -240px; top: 48%; opacity: .08; }
-
-    .page { position: relative; z-index: 1; }
-    .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 28px 0;
-    }
-    .logo { width: 176px; height: auto; display: block; }
-    .header-link {
-      color: #B8B8B8;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      transition: color .2s ease;
-    }
-    .header-link:hover { color: var(--accent); }
-
-    .hero {
-      min-height: 650px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(380px, .88fr);
-      align-items: center;
-      gap: 72px;
-      padding: 64px 0 92px;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 18px;
-      margin-bottom: 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(242,103,69,.28);
-      background: rgba(242,103,69,.11);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .badge-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 15px rgba(242,103,69,.8);
-    }
-    h1 {
-      max-width: 730px;
-      font-size: clamp(46px, 6vw, 72px);
-      line-height: 1.02;
-      letter-spacing: -2.2px;
-      font-weight: 900;
-      margin-bottom: 25px;
-    }
-    h1 span {
-      background: linear-gradient(135deg, var(--accent), var(--yellow));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-copy {
-      max-width: 580px;
-      color: #B1B1B1;
-      font-size: 19px;
-      line-height: 1.72;
-      margin-bottom: 0;
-    }
-    .promise-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 22px;
-      margin-bottom: 38px;
-    }
-    .promise-list li { color: #D0D0D0; font-size: 14px; font-weight: 700; }
-    .promise-list li::before { content: '✓'; color: var(--accent); margin-right: 8px; font-weight: 900; }
-
-    .primary-cta {
-      border: 0;
-      border-radius: 9px;
-      background: var(--accent);
-      color: #fff;
-      padding: 17px 34px;
-      cursor: pointer;
-      font-weight: 900;
-      font-size: 15px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      box-shadow: 0 5px 30px rgba(242,103,69,.34);
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-    }
-    .primary-cta:hover {
-      transform: translateY(-3px);
-      background: var(--accent-deep);
-      box-shadow: 0 10px 42px rgba(242,103,69,.48);
-    }
-    .microcopy { display: block; margin-top: 14px; color: var(--faint); font-size: 13px; }
-
-    .optin-card {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 22px;
-      padding: 44px;
-      background: #F5F2ED;
-      color: #171717;
-      box-shadow: 0 30px 90px rgba(0,0,0,.45), 0 0 70px rgba(242,103,69,.08);
-      transform: rotate(.65deg);
-    }
-    .optin-card::before {
-      content: '';
-      position: absolute;
-      z-index: 2;
-      inset: -1px;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(140deg, rgba(242,103,69,.48), transparent 34%, rgba(255,210,48,.14));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-    .form-icon {
-      display: grid;
-      place-items: center;
-      width: 52px; height: 52px;
-      margin-bottom: 28px;
-      border-radius: 14px;
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 10px 25px rgba(242,103,69,.3);
-    }
-    .form-icon svg { width: 25px; height: 25px; }
-    .form-eyebrow { color: var(--accent-deep); font-size: 11px; font-weight: 900; letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 10px; }
-    .optin-card h2 { max-width: 330px; font-size: 34px; line-height: 1.08; letter-spacing: -.8px; margin-bottom: 12px; }
-    .optin-card > p { color: #6B6762; font-size: 15px; margin-bottom: 28px; }
-    .brand-form { display: grid; gap: 11px; }
-    .brand-form input[type='email'] {
-      width: 100%;
-      min-height: 56px;
-      border: 1px solid #D8D2CA;
-      border-radius: 9px;
-      padding: 0 17px;
-      outline: none;
-      background: #fff;
-      color: #171717;
-      font: 700 15px 'Nunito Sans', sans-serif;
-      transition: border-color .2s ease, box-shadow .2s ease;
-    }
-    .brand-form input[type='email']:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(242,103,69,.14); }
-    .brand-form input[type='submit'] {
-      min-height: 56px;
-      border: 0;
-      border-radius: 9px;
-      background: var(--accent);
-      color: #fff;
-      cursor: pointer;
-      font: 900 14px 'Nunito Sans', sans-serif;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      box-shadow: 0 10px 26px rgba(242,103,69,.28);
-    }
-    .form-note { display: block; margin-top: 15px; color: #8D8780; font-size: 12px; }
-
-    .inbox-card {
-      position: relative;
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 22px;
-      padding: 22px;
-      background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
-      box-shadow: 0 30px 80px rgba(0,0,0,.38);
-      transform: rotate(1.25deg);
-    }
-    .inbox-card::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(140deg, rgba(242,103,69,.38), transparent 36%, rgba(255,210,48,.12));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-    .inbox-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 4px 3px 18px;
-      color: #7D7D7D;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .4px;
-    }
-    .inbox-dots { display: flex; gap: 6px; }
-    .inbox-dots i { width: 7px; height: 7px; border-radius: 50%; background: #3B3B3B; }
-    .email-preview {
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 14px;
-      background: #121212;
-      padding: 28px;
-    }
-    .email-kicker {
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1.7px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .email-preview h2 { font-size: 28px; line-height: 1.14; letter-spacing: -.6px; margin-bottom: 14px; }
-    .email-preview p { color: #8E8E8E; font-size: 14px; margin-bottom: 18px; }
-    .diagnostic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 22px; }
-    .diagnostic div {
-      border-radius: 9px;
-      border: 1px solid rgba(255,255,255,.07);
-      background: rgba(255,255,255,.035);
-      padding: 13px 10px;
-      text-align: center;
-    }
-    .diagnostic strong { display: block; color: #fff; font-size: 13px; }
-    .diagnostic span { color: #666; font-size: 10px; text-transform: uppercase; letter-spacing: .7px; }
-
-    .section-divider {
-      width: min(760px, 78%);
-      height: 1px;
-      margin: 0 auto;
-      background: linear-gradient(90deg, transparent, rgba(242,103,69,.22), transparent);
-    }
-
-    .what-section { padding: 105px 0; }
-    .what-panel {
-      display: grid;
-      grid-template-columns: 1fr .92fr;
-      gap: 66px;
-      align-items: center;
-      padding: 62px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.09);
-      background: linear-gradient(145deg, #191919, #111);
-      box-shadow: 0 28px 90px rgba(0,0,0,.35);
-    }
-    .eyebrow {
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-      margin-bottom: 13px;
-    }
-    .what-panel h2,
-    .proof-heading h2 {
-      font-size: clamp(34px, 4.5vw, 48px);
-      line-height: 1.08;
-      letter-spacing: -1.2px;
-    }
-    .what-panel h2 { margin-bottom: 25px; }
-    .what-panel h2 span { color: var(--accent); }
-    .what-list { list-style: none; margin: 0 0 30px; }
-    .what-list li {
-      position: relative;
-      padding: 0 0 15px 30px;
-      color: #D4D4D4;
-      font-size: 15px;
-    }
-    .what-list li::before {
-      content: '↗';
-      position: absolute;
-      left: 0; top: 0;
-      color: var(--accent);
-      font-weight: 900;
-    }
-    .what-list strong { color: #fff; }
-    .what-tiles { display: grid; gap: 12px; margin: 26px 0 30px; }
-    .what-tile { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
-    .what-tile:last-child { border-bottom: 0; }
-    .tile-icon { flex: 0 0 auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: rgba(242,103,69,.12); color: var(--accent); }
-    .tile-icon svg { width: 20px; height: 20px; }
-    .what-tile strong { display: block; color: #fff; font-size: 15px; }
-    .what-tile span { color: #8F8F8F; font-size: 13px; }
-    .what-visual {
-      position: relative;
-      min-height: 440px;
-      display: grid;
-      place-items: center;
-    }
-    .audit-window {
-      position: relative;
-      width: min(100%, 410px);
-      height: 440px;
-      overflow: hidden;
-      border: 7px solid #292929;
-      border-radius: 18px;
-      background: #ECE8E1;
-      box-shadow: 0 28px 70px rgba(0,0,0,.48);
-      transform: rotate(1.2deg);
-    }
-    .audit-toolbar { position: absolute; z-index: 3; inset: 0 0 auto; height: 42px; display: flex; align-items: center; gap: 6px; padding: 0 15px; background: #171717; }
-    .audit-toolbar i { width: 7px; height: 7px; border-radius: 50%; background: #555; }
-    .audit-track { position: absolute; inset: 42px 0 auto; padding: 14px; animation: audit-scroll 11s ease-in-out infinite; }
-    .audit-page { display: grid; gap: 12px; }
-    .audit-cover { height: 150px; border-radius: 10px; background: linear-gradient(135deg,#171717 0 58%,#F26745 58% 100%); padding: 22px; }
-    .audit-cover::before { content: ''; display: block; width: 55%; height: 10px; margin: 38px 0 12px; border-radius: 99px; background: #fff; box-shadow: 0 18px 0 rgba(255,255,255,.26), 0 36px 0 rgba(255,255,255,.14); }
-    .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .audit-block { min-height: 120px; padding: 16px; border-radius: 10px; background: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.07); }
-    .audit-lines::before { content: ''; display: block; width: 70%; height: 8px; margin-bottom: 18px; border-radius: 99px; background: #171717; box-shadow: 0 18px 0 #D7D1C8, 0 36px 0 #E2DDD5, 0 54px 0 #E2DDD5; }
-    .audit-chart { display: flex; align-items: end; justify-content: space-between; gap: 7px; padding-top: 28px; }
-    .audit-chart i { width: 17%; border-radius: 5px 5px 0 0; background: var(--accent); }
-    .audit-chart i:nth-child(1) { height: 35px; opacity: .45; } .audit-chart i:nth-child(2) { height: 62px; opacity: .65; } .audit-chart i:nth-child(3) { height: 48px; opacity: .8; } .audit-chart i:nth-child(4) { height: 84px; }
-    .audit-creatives { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; min-height: 175px; padding: 14px; border-radius: 10px; background: #fff; }
-    .audit-creatives i { border-radius: 8px; background: linear-gradient(160deg,#242424 0 55%,#F26745 55%); }
-    .audit-score { min-height: 150px; border-radius: 10px; background: linear-gradient(135deg,#fff 0 65%,#FFD230 65%); padding: 18px; }
-    .audit-score::before { content: ''; display: block; width: 62px; height: 62px; border: 13px solid #F26745; border-right-color: #EEE8DF; border-radius: 50%; }
-    .audit-fade { position: absolute; z-index: 2; inset: auto 0 0; height: 120px; background: linear-gradient(transparent,rgba(236,232,225,.96)); pointer-events: none; }
-    .audit-label { position: absolute; z-index: 4; left: 50%; bottom: 22px; transform: translateX(-50%); width: max-content; max-width: 88%; padding: 10px 15px; border-radius: 8px; background: rgba(18,18,18,.93); color: #fff; font-size: 10px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 10px 28px rgba(0,0,0,.28); }
-    @keyframes audit-scroll { 0%,12% { transform: translateY(0); } 48%,62% { transform: translateY(-250px); } 88%,100% { transform: translateY(-475px); } }
-    .issue-sheet {
-      width: min(100%, 390px);
-      border-radius: 15px;
-      background: #F5F2ED;
-      color: #171717;
-      padding: 28px;
-      box-shadow: 0 28px 70px rgba(0,0,0,.45);
-      transform: rotate(2deg);
-    }
-    .sheet-top {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 17px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid #D8D3CB;
-      color: #777069;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-    .issue-sheet h3 { font-size: 27px; line-height: 1.12; letter-spacing: -.55px; margin-bottom: 12px; }
-    .issue-sheet > p { color: #6E6964; font-size: 13px; line-height: 1.55; margin-bottom: 22px; }
-    .score-row {
-      display: grid;
-      grid-template-columns: 1fr 58px;
-      align-items: center;
-      gap: 12px;
-      padding: 11px 0;
-      border-top: 1px solid #DED9D2;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .score { padding: 5px 8px; border-radius: 5px; text-align: center; color: #fff; font-size: 10px; letter-spacing: .8px; }
-    .red { background: #C94732; }
-    .amber { background: #C9892B; }
-    .green { background: #4A8B59; }
-    .gated-preview { position: relative; overflow: hidden; margin-top: 4px; }
-    .gated-content {
-      filter: blur(5px);
-      opacity: .72;
-      user-select: none;
-      pointer-events: none;
-      transform: scale(1.015);
-    }
-    .gated-preview::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(245,242,237,.06), rgba(245,242,237,.3));
-      pointer-events: none;
-    }
-    .unlock-label {
-      position: absolute;
-      z-index: 2;
-      left: 50%; top: 50%;
-      transform: translate(-50%, -50%) rotate(-2deg);
-      width: max-content;
-      max-width: 88%;
-      padding: 11px 16px;
-      border-radius: 8px;
-      background: rgba(18,18,18,.92);
-      color: #fff;
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .template-tab {
-      position: absolute;
-      right: -8px;
-      bottom: 20px;
-      padding: 12px 18px;
-      border-radius: 9px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      box-shadow: 0 12px 30px rgba(242,103,69,.32);
-      transform: rotate(-3deg);
-    }
-
-    .proof-section { padding: 95px 0 110px; }
-    .proof-heading { max-width: 720px; margin: 0 auto 42px; text-align: center; }
-    .proof-heading h2 { margin-bottom: 14px; }
-    .proof-heading p { color: var(--muted); font-size: 16px; }
-    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .video-card {
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      background: rgba(255,255,255,.035);
-      box-shadow: 0 16px 45px rgba(0,0,0,.22);
-    }
-    .video-frame { position: relative; aspect-ratio: 16 / 9; background: #181818; }
-    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .video-play {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      border: 0;
-      padding: 0;
-      overflow: hidden;
-      background: #181818;
-      cursor: pointer;
-    }
-    .video-play img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease, opacity .3s ease; }
-    .video-play::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.48)); }
-    .video-play:hover img { transform: scale(1.025); opacity: .9; }
-    .play-icon {
-      position: absolute;
-      z-index: 2;
-      left: 50%; top: 50%;
-      transform: translate(-50%, -50%);
-      display: grid;
-      place-items: center;
-      width: 58px; height: 58px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 10px 35px rgba(0,0,0,.4);
-      font-size: 19px;
-      line-height: 1;
-      padding-left: 3px;
-    }
-    .video-meta { padding: 20px 22px 22px; }
-    .video-result { color: var(--accent); font-size: 11px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 7px; }
-    .video-meta h3 { font-size: 19px; line-height: 1.2; margin-bottom: 4px; }
-    .video-meta p { color: #777; font-size: 13px; }
-    .proof-cta { text-align: center; margin-top: 38px; }
-
-    footer {
-      padding: 34px 0;
-      border-top: 1px solid rgba(255,255,255,.06);
-      text-align: center;
-    }
-    footer .logo { width: 155px; margin: 0 auto 12px; opacity: .5; }
-    footer p, footer a { color: #555; font-size: 12px; text-decoration: none; }
-    footer a:hover { color: var(--accent); }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(0,0,0,.8);
-      backdrop-filter: blur(12px);
-    }
-    .modal.active { display: flex; }
-    .modal-panel {
-      position: relative;
-      width: min(760px, 100%);
-      height: min(700px, calc(100vh - 40px));
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: #fff;
-      box-shadow: 0 30px 100px rgba(0,0,0,.65);
-    }
-    .modal iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
-    .modal-close {
-      position: absolute;
-      z-index: 2;
-      top: 13px; right: 13px;
-      display: grid;
-      place-items: center;
-      width: 38px; height: 38px;
-      border: 1px solid rgba(0,0,0,.1);
-      border-radius: 50%;
-      background: rgba(255,255,255,.94);
-      color: #111;
-      cursor: pointer;
-      font-size: 22px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.13);
-    }
-
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; padding: 56px 0 90px; gap: 60px; text-align: center; }
-      .hero-copy { margin-left: auto; margin-right: auto; }
-      .promise-list { justify-content: center; }
-      .inbox-card { width: min(560px, 100%); margin: 0 auto; transform: none; }
-      .optin-card { width: min(500px, 100%); margin: 0 auto; transform: none; text-align: left; }
-      .what-panel { grid-template-columns: 1fr; gap: 36px; }
-      .what-visual { min-height: 410px; }
-      .video-grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
-    }
-
-    @media (max-width: 600px) {
-      .shell { width: min(100% - 32px, 1120px); }
-      header { padding: 22px 0; }
-      .logo { width: 148px; }
-      .header-link { font-size: 12px; }
-      .hero { min-height: auto; padding: 52px 0 76px; }
-      h1 { font-size: clamp(38px, 12vw, 52px); letter-spacing: -1.5px; }
-      .hero-copy { font-size: 17px; }
-      .promise-list { display: grid; gap: 10px; justify-content: center; }
-      .primary-cta { width: 100%; }
-      .optin-card { padding: 30px 24px; }
-      .optin-card h2 { font-size: 30px; }
-      .audit-window { height: 410px; }
-      .email-preview { padding: 22px 18px; }
-      .email-preview h2 { font-size: 23px; }
-      .diagnostic { grid-template-columns: 1fr; }
-      .what-section { padding: 72px 0; }
-      .what-panel { padding: 34px 22px; border-radius: 18px; }
-      .what-panel h2 { font-size: 34px; }
-      .what-visual { min-height: 380px; }
-      .issue-sheet { padding: 22px; }
-      .issue-sheet h3 { font-size: 23px; }
-      .template-tab { right: -2px; bottom: -2px; }
-      .proof-section { padding: 72px 0 80px; }
-      .video-meta { padding: 18px 20px 20px; }
-      .video-grid {
-        display: flex;
-        max-width: none;
-        overflow-x: auto;
-        gap: 14px;
-        padding: 0 0 12px;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-      }
-      .video-grid::-webkit-scrollbar { display: none; }
-      .video-card { flex: 0 0 88%; scroll-snap-align: start; }
-      .modal { padding: 0; }
-      .modal-panel { width: 100%; height: 100%; border: 0; border-radius: 0; }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
     }
   </style>
 </head>
 <body>
-  <div class="bg-glow" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-  </div>
-
-  <div class="page">
-    <div class="shell">
-      <header>
-        <a href="https://www.macedomarketing.com" aria-label="Macedo Marketing home">
-          <img src="../logo-svg-3.svg" alt="Macedo Marketing" class="logo">
-        </a>
-        <a href="https://macedomarketing.beehiiv.com" class="header-link" target="_blank" rel="noopener">Read the archive</a>
-      </header>
-
-      <main>
-        <section class="hero">
-          <div>
-            <div class="badge"><span class="badge-dot"></span> Free ecommerce growth newsletter</div>
-            <h1>Better Ads Start With <span>Better Decisions.</span></h1>
-            <p class="hero-copy">Sharp, practical breakdowns on creative, testing, and profitable Meta growth.</p>
-          </div>
-
-          <div class="optin-card" aria-label="Subscribe to the Macedo Marketing Newsletter">
-            <div class="form-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
-            </div>
-            <div class="form-eyebrow">The useful email</div>
-            <h2>Make your next ad decision better.</h2>
-            <p>One practical breakdown at a time.</p>
-            <form class="brand-form" action="https://macedomarketing.beehiiv.com/create" method="post">
-              <input type="hidden" name="redirect_path" value="/">
-              <input type="hidden" name="sent_from_orchid" value="true">
-              <input type="hidden" name="fallback_path" value="/subscribe">
-              <input type="hidden" name="nectar_signup_url" value="https://macedomarketing.beehiiv.com/subscribe?utm_source=macedo_site&amp;utm_medium=landing_page&amp;utm_campaign=newsletter_subscribe">
-              <input type="hidden" name="double_opt" value="false">
-              <input type="hidden" name="trigger_redirect" value="false">
-              <input type="hidden" name="subscribe_error_message" value="Oops, something went wrong.">
-              <input type="hidden" name="subscribe_success_message" value="Subscribed! You have successfully opted in">
-              <input type="email" name="email" autocomplete="email" required placeholder="Enter your email">
-              <input type="submit" value="Get the newsletter">
-            </form>
-            <span class="form-note">Free. No spam. Leave whenever you want.</span>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <div class="section-divider"></div>
-
-    <section class="what-section">
-      <div class="shell">
-        <div class="what-panel">
-          <div>
-            <div class="eyebrow">What you get</div>
-            <h2>Exactly what lands <span>in your inbox.</span></h2>
-            <div class="what-tiles">
-              <div class="what-tile">
-                <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9m6 10V5m6 14v-7m4 7V3"/></svg></div>
-                <div><strong>Better creative</strong><span>See what is worth testing.</span></div>
-              </div>
-              <div class="what-tile">
-                <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="m9 12 2 2 4-5"/></svg></div>
-                <div><strong>Cleaner tests</strong><span>Know what moved performance.</span></div>
-              </div>
-              <div class="what-tile">
-                <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 16 5-5 4 4 7-8"/><path d="M15 7h5v5"/></svg></div>
-                <div><strong>Smarter scaling</strong><span>Find the real CAC bottleneck.</span></div>
-              </div>
-            </div>
-            <button class="primary-cta open-subscribe" type="button">Get the next issue</button>
-          </div>
-
-          <div class="what-visual" aria-label="Scrolling preview of a Macedo audit">
-            <div class="audit-window">
-              <div class="audit-toolbar" aria-hidden="true"><i></i><i></i><i></i></div>
-              <div class="audit-track" aria-hidden="true">
-                <div class="audit-page">
-                  <div class="audit-cover"></div>
-                  <div class="audit-grid">
-                    <div class="audit-block audit-lines"></div>
-                    <div class="audit-block audit-chart"><i></i><i></i><i></i><i></i></div>
-                  </div>
-                  <div class="audit-creatives"><i></i><i></i><i></i></div>
-                  <div class="audit-grid">
-                    <div class="audit-score"></div>
-                    <div class="audit-block audit-lines"></div>
-                  </div>
-                  <div class="audit-creatives"><i></i><i></i><i></i></div>
-                </div>
-              </div>
-              <div class="audit-fade"></div>
-              <div class="audit-label">Preview the thinking, not just the theory</div>
-            </div>
-          </div>
+  <div class="shell">
+    <header>
+      <a href="https://www.macedomarketing.com" aria-label="Macedo Marketing home"><img class="logo" src="../logo-svg-3.svg" alt="Macedo Marketing"></a>
+    </header>
+    <main aria-labelledby="newsletter-title">
+      <div class="eyebrow">Weekly for ecommerce teams</div>
+      <h1 id="newsletter-title">Know <span>what to test next</span> in Meta ads.</h1>
+      <p class="subhead">Real ecommerce creatives, the hook and angle behind them, and how to diagnose rising CAC.</p>
+      <form class="signup formkit-form" action="https://app.kit.com/forms/9004183/subscriptions" method="post" data-sv-form="9004183" data-uid="01da8d46b0" data-format="inline" data-version="5" aria-describedby="privacy-note">
+        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" role="alert" aria-live="assertive"></ul>
+        <label class="sr-only" for="newsletter-first-name">First name</label>
+        <input id="newsletter-first-name" class="formkit-input" type="text" name="fields[first_name]" autocomplete="given-name" required placeholder="First name">
+        <label class="sr-only" for="newsletter-email">Email address</label>
+        <input id="newsletter-email" class="formkit-input" type="email" name="email_address" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" required placeholder="Email address">
+        <button class="formkit-submit" data-element="submit" type="submit"><span>Get the next breakdown</span></button>
+      </form>
+      <span class="privacy" id="privacy-note">Free. Unsubscribe anytime.</span>
+      <div class="creative-stage" role="img" aria-label="Collage of real Macedo Marketing ecommerce ad creative examples">
+        <div class="creative-card c1"><img src="./assets/creatives/12-urgency.webp" alt=""></div>
+        <div class="creative-card c2"><img src="./assets/creatives/08-bandana.webp" alt=""></div>
+        <div class="creative-card c3"><img src="./assets/creatives/03-moment-health.webp" alt=""></div>
+        <div class="creative-card c4"><img src="./assets/creatives/09-before-after.webp" alt=""></div>
+        <div class="creative-card c5"><img src="./assets/creatives/10-slimming.webp" alt=""></div>
+        <div class="creative-card c6"><img src="./assets/creatives/01-comparison.webp" alt=""></div>
+        <div class="blur-lock" aria-hidden="true">
+          <div class="lock-label">Creative examples from the newsletter</div>
         </div>
       </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section class="proof-section">
-      <div class="shell">
-        <div class="proof-heading">
-          <div class="eyebrow">Client interviews</div>
-          <h2>Hear it from them.</h2>
-        </div>
-
-        <div class="video-grid">
-          <article class="video-card">
-            <div class="video-frame">
-              <button class="video-play" type="button" data-video-src="https://player.vimeo.com/video/1054419360?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1" aria-label="Play Sofia Alonso client testimonial interview">
-                <img loading="lazy" src="https://i.vimeocdn.com/video/1979780722-8fe6d264214c2a5a6db9326aa73148bb74e2b6f6cae10293ad6e3297d79c6565-d_1280x720?region=us" alt="Sofia Alonso client testimonial interview">
-                <span class="play-icon" aria-hidden="true">▶</span>
-              </button>
-            </div>
-            <div class="video-meta">
-              <h3>Sofia Alonso</h3>
-              <p>Elara</p>
-            </div>
-          </article>
-          <article class="video-card">
-            <div class="video-frame">
-              <button class="video-play" type="button" data-video-src="https://player.vimeo.com/video/1145606092?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1" aria-label="Play Vijay Singh client testimonial interview">
-                <img loading="lazy" src="https://i.vimeocdn.com/video/2094644543-2532bd6bec5c6576cb2e408d93959e92dfea412d3c67224b711da0da2496c43c-d_1280x720?region=us" alt="Vijay Singh client testimonial interview">
-                <span class="play-icon" aria-hidden="true">▶</span>
-              </button>
-            </div>
-            <div class="video-meta">
-              <h3>Vijay Singh</h3>
-              <p>Talking Houses</p>
-            </div>
-          </article>
-          <article class="video-card">
-            <div class="video-frame">
-              <button class="video-play" type="button" data-video-src="https://player.vimeo.com/video/980526506?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1" aria-label="Play Rory Tonkin client testimonial interview">
-                <img loading="lazy" src="https://i.vimeocdn.com/video/1895661480-6700790ec5a941093fbdde7251b24d470264b6bf9bead7c21365c3776ee234aa-d_1280x720?region=us" alt="Rory Tonkin client testimonial interview">
-                <span class="play-icon" aria-hidden="true">▶</span>
-              </button>
-            </div>
-            <div class="video-meta">
-              <h3>Rory Tonkin</h3>
-              <p>Hard To Kill Fitness</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="proof-cta">
-          <button class="primary-cta open-subscribe" type="button">Join the newsletter</button>
-          <span class="microcopy">No spam. No vague guru advice.</span>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="shell">
-        <img src="../logo-svg-3.svg" alt="Macedo Marketing" class="logo">
-        <p>© 2026 Macedo Marketing. All rights reserved.</p>
-        <p><a href="https://www.macedomarketing.com/privacy-policy/">Privacy Policy</a> | <a href="https://www.macedomarketing.com/terms-and-condition/">Terms &amp; Conditions</a></p>
-      </div>
-    </footer>
+    </main>
+    <footer>© 2026 Macedo Marketing</footer>
   </div>
-
-  <div class="modal" id="subscribe-modal" role="dialog" aria-modal="true" aria-label="Subscribe to Macedo Marketing Newsletter" aria-hidden="true">
-    <div class="modal-panel">
-      <button class="modal-close" type="button" aria-label="Close subscribe form">×</button>
-      <iframe
-        id="subscribe-frame"
-        title="Macedo Marketing Newsletter subscription form"
-        loading="lazy"
-        data-src="https://macedomarketing.beehiiv.com/subscribe?utm_source=macedo_site&utm_medium=landing_page&utm_campaign=newsletter_subscribe">
-      </iframe>
-    </div>
-  </div>
-
   <script>
-    const modal = document.getElementById('subscribe-modal');
-    const frame = document.getElementById('subscribe-frame');
-    const closeButton = modal.querySelector('.modal-close');
-    let lastFocused = null;
-
-    function openSubscribe() {
-      lastFocused = document.activeElement;
-      if (!frame.src) frame.src = frame.dataset.src;
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
-      closeButton.focus();
-    }
-
-    function closeSubscribe() {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
-      if (lastFocused) lastFocused.focus();
-    }
-
-    document.querySelectorAll('.open-subscribe').forEach(button => button.addEventListener('click', openSubscribe));
-    document.querySelectorAll('.video-play').forEach(button => button.addEventListener('click', () => {
-      const iframe = document.createElement('iframe');
-      iframe.src = button.dataset.videoSrc + '&autoplay=1';
-      iframe.title = button.getAttribute('aria-label').replace(/^Play /, '');
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-      iframe.setAttribute('allowfullscreen', '');
-      button.replaceWith(iframe);
-    }));
-    closeButton.addEventListener('click', closeSubscribe);
-    modal.addEventListener('click', event => { if (event.target === modal) closeSubscribe(); });
-    document.addEventListener('keydown', event => { if (event.key === 'Escape' && modal.classList.contains('active')) closeSubscribe(); });
+    document.addEventListener('ckjs:submission:complete', function (event) {
+      window.setTimeout(function () {
+        var confirmation = document.getElementById(event.detail.uid);
+        if (!confirmation) return;
+        confirmation.textContent = "You're in. Check your inbox to confirm your subscription.";
+        confirmation.setAttribute('role', 'status');
+        confirmation.setAttribute('aria-live', 'polite');
+        confirmation.setAttribute('tabindex', '-1');
+        confirmation.focus();
+      }, 0);
+    });
   </script>
+  <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 </body>
 </html>
