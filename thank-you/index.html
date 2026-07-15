@@ -143,6 +143,9 @@
       .mm-mobile-cta .mm-button { min-height:59px; }
       .mm-mobile-cta .mm-button-main { font-size:13px; }
       .mm-mobile-cta .mm-button-sub { font-size:7.5px; }
+      html.mm-calendly-open .mm-mobile-cta { opacity:0!important; pointer-events:none!important; }
+      html.mm-calendly-open body .calendly-overlay .calendly-popup { top:50px!important; bottom:0!important; height:calc(100dvh - 50px)!important; max-height:none!important; }
+      html.mm-calendly-open body .calendly-overlay .calendly-popup-content { height:100%!important; max-height:none!important; }
     }
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto; }
@@ -281,6 +284,31 @@
         deliveryHelp.textContent="If you don't see it, check your Promotions or Spam folder.";
         title.innerHTML='While you wait, see how <span class="mm-gradient">profitable paid growth</span> is actually built.';
       }
+      var calendlyStateObserver=new MutationObserver(function(){
+        document.documentElement.classList.toggle('mm-calendly-open',!!document.querySelector('.calendly-overlay'));
+      });
+      calendlyStateObserver.observe(document.body,{childList:true});
+      var calendlyPromise;
+      var loadCalendly=function(){
+        if(window.Calendly) return Promise.resolve(window.Calendly);
+        if(calendlyPromise) return calendlyPromise;
+        calendlyPromise=new Promise(function(resolve,reject){
+          if(!document.querySelector('link[data-mm-calendly]')){
+            var stylesheet=document.createElement('link');
+            stylesheet.rel='stylesheet';
+            stylesheet.href='https://assets.calendly.com/assets/external/widget.css';
+            stylesheet.setAttribute('data-mm-calendly','');
+            document.head.appendChild(stylesheet);
+          }
+          var script=document.createElement('script');
+          script.src='https://assets.calendly.com/assets/external/widget.js';
+          script.async=true;
+          script.onload=function(){window.Calendly?resolve(window.Calendly):reject(new Error('Calendly unavailable'));};
+          script.onerror=reject;
+          document.head.appendChild(script);
+        });
+        return calendlyPromise;
+      };
       document.querySelectorAll('.js-book').forEach(function(link){
         var u=new URL(link.href);
         u.searchParams.set('utm_source','thank_you_page');
@@ -288,6 +316,15 @@
         u.searchParams.set('utm_campaign','post_optin');
         u.searchParams.set('utm_content',source);
         link.href=u.toString();
+        link.addEventListener('click',function(event){
+          if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey) return;
+          event.preventDefault();
+          link.setAttribute('aria-busy','true');
+          loadCalendly().then(function(Calendly){
+            link.removeAttribute('aria-busy');
+            Calendly.initPopupWidget({url:link.href});
+          }).catch(function(){window.location.assign(link.href);});
+        });
       });
       var sticky=document.querySelector('.mm-mobile-cta');
       var heroCta=document.querySelector('.mm-hero-cta');
