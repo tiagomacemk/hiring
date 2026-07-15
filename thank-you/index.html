@@ -37,13 +37,12 @@
     a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid rgba(246,103,69,.65); outline-offset:4px; }
     .mm-thankyou { overflow:hidden; }
     .mm-shell { width:min(100% - 40px,1120px); margin:0 auto; }
-    .mm-header { display:flex; align-items:center; justify-content:space-between; min-height:92px; }
-    .mm-logo { display:block; width:190px; height:auto; }
-    .mm-header-link { color:#D0CCC6; font-size:13px; font-weight:800; text-decoration:none; }
-    .mm-header-link:hover { color:var(--accent); }
-    .mm-hero { padding:64px 0 46px; text-align:center; }
-    .mm-status { display:inline-flex; align-items:center; gap:9px; margin-bottom:22px; color:var(--success); font-size:11px; font-weight:900; letter-spacing:1.6px; text-transform:uppercase; }
-    .mm-status::before { content:'✓'; display:grid; place-items:center; width:20px; height:20px; border:1px solid rgba(112,212,160,.45); border-radius:50%; background:rgba(112,212,160,.09); font-size:11px; }
+    .mm-hero { padding:62px 0 46px; text-align:center; }
+    .mm-delivery { display:flex; align-items:flex-start; gap:13px; width:min(100%,610px); margin:0 auto 28px; padding:15px 18px; border:1px solid rgba(112,212,160,.24); background:rgba(112,212,160,.07); text-align:left; }
+    .mm-delivery-icon { display:grid; place-items:center; flex:0 0 27px; width:27px; height:27px; margin-top:2px; border:1px solid rgba(112,212,160,.48); border-radius:50%; color:var(--success); font-size:13px; font-weight:900; }
+    .mm-delivery strong { display:block; color:#F6F3EE; font-size:15px; line-height:1.3; }
+    .mm-delivery p { margin-top:2px; color:#C2BEB8; font-size:13px; line-height:1.45; }
+    .mm-delivery small { display:block; margin-top:3px; color:#8E8983; font-size:11px; line-height:1.4; }
     .mm-hero h1 { max-width:920px; margin:0 auto; font-size:clamp(46px,7vw,82px); line-height:.98; letter-spacing:-3.4px; }
     .mm-gradient { background:linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
     .mm-lede { max-width:690px; margin:26px auto 0; color:#B9B5B0; font-size:18px; line-height:1.65; }
@@ -51,10 +50,10 @@
     .mm-video-frame { overflow:hidden; border-radius:14px; background:#050505; aspect-ratio:16/9; }
     .mm-video-frame wistia-player { width:100%; height:100%; display:block; }
     .mm-hero-cta { display:flex; flex-direction:column; align-items:center; gap:11px; margin-top:30px; }
-    .mm-button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:56px; padding:0 28px; border:0; border-radius:10px; background:var(--accent); color:#0B0B0B; box-shadow:0 14px 38px rgba(246,103,69,.27); font-size:14px; font-weight:900; text-decoration:none; transition:transform .2s ease,background .2s ease,box-shadow .2s ease; }
-    .mm-button:hover { transform:translateY(-2px); background:#FF7654; box-shadow:0 18px 46px rgba(246,103,69,.34); }
-    .mm-button::after { content:'→'; font-size:19px; }
-    .mm-microcopy { color:#8E8983; font-size:11px; }
+    .mm-button { display:inline-flex; flex-direction:column; align-items:center; justify-content:center; min-height:72px; padding:12px 32px; border:0; border-radius:0; background:var(--accent); color:#FFF; box-shadow:15px 15px 45px -15px rgba(246,103,69,.9); line-height:1.1; text-align:center; text-decoration:none; transition:transform .2s ease,background .2s ease,box-shadow .2s ease; }
+    .mm-button:hover { transform:translateY(-2px); background:#FF7654; box-shadow:18px 20px 48px -17px rgba(246,103,69,.95); }
+    .mm-button-main { font-size:18px; font-weight:900; letter-spacing:.2px; text-transform:uppercase; }
+    .mm-button-sub { margin-top:5px; font-size:9px; font-weight:800; letter-spacing:1px; text-transform:uppercase; opacity:.9; }
     .mm-proofbar { display:grid; grid-template-columns:repeat(3,1fr); max-width:930px; margin:56px auto 0; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:rgba(21,21,21,.76); }
     .mm-proofstat { padding:25px 20px; text-align:center; }
     .mm-proofstat + .mm-proofstat { border-left:1px solid var(--line); }
@@ -112,16 +111,17 @@
     }
     @media (max-width:560px) {
       .mm-shell { width:min(100% - 32px,1120px); }
-      .mm-header { min-height:76px; }
-      .mm-logo { width:158px; }
-      .mm-header-link { display:none; }
-      .mm-hero { padding:38px 0 36px; }
-      .mm-status { margin-bottom:18px; }
-      .mm-hero h1 { font-size:45px; letter-spacing:-1.8px; }
-      .mm-lede { margin-top:22px; font-size:16px; }
+      .mm-hero { padding:32px 0 36px; }
+      .mm-delivery { margin-bottom:23px; padding:13px 14px; }
+      .mm-delivery strong { font-size:14px; }
+      .mm-delivery p { font-size:12px; }
+      .mm-hero h1 { font-size:43px; letter-spacing:-1.8px; }
+      .mm-lede { margin-top:20px; font-size:16px; }
       .mm-video-wrap { width:calc(100% + 16px); margin-left:-8px; margin-top:31px; padding:6px; border-radius:15px; }
       .mm-video-frame { border-radius:10px; }
-      .mm-button { width:100%; min-height:58px; }
+      .mm-button { width:100%; min-height:70px; padding:11px 18px; }
+      .mm-button-main { font-size:16px; }
+      .mm-button-sub { font-size:8.5px; }
       .mm-proofbar { grid-template-columns:1fr; margin-top:42px; }
       .mm-proofstat { padding:18px; }
       .mm-proofstat + .mm-proofstat { border-left:0; border-top:1px solid var(--line); }
@@ -140,7 +140,9 @@
       .mm-footer { flex-direction:column; align-items:flex-start; padding-bottom:96px; }
       .mm-mobile-cta { position:fixed; z-index:20; left:0; right:0; bottom:0; display:block; padding:10px 16px max(10px,env(safe-area-inset-bottom)); border-top:1px solid rgba(255,255,255,.1); background:rgba(11,11,11,.93); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); opacity:0; pointer-events:none; transform:translateY(110%); transition:opacity .2s ease,transform .2s ease; }
       .mm-mobile-cta.is-visible { opacity:1; pointer-events:auto; transform:translateY(0); }
-      .mm-mobile-cta .mm-button { min-height:51px; font-size:13px; }
+      .mm-mobile-cta .mm-button { min-height:59px; }
+      .mm-mobile-cta .mm-button-main { font-size:13px; }
+      .mm-mobile-cta .mm-button-sub { font-size:7.5px; }
     }
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto; }
@@ -150,18 +152,18 @@
 </head>
 <body>
   <div class="mm-thankyou">
-    <header class="mm-header mm-shell">
-      <a href="https://macedomarketing.com/" aria-label="Macedo Marketing home">
-        <img class="mm-logo" src="https://macedomarketing.com/wp-content/uploads/2026/07/mm-newsletter-logo-svg-3.svg" alt="Macedo Marketing">
-      </a>
-      <a class="mm-header-link js-book" href="https://calendly.com/macedomarketing/strategy">Book a free strategy call →</a>
-    </header>
-
     <main>
       <section class="mm-hero mm-shell" aria-labelledby="mm-main-title">
-        <div class="mm-status" id="mm-status">You're subscribed</div>
-        <h1 id="mm-main-title">You're in. Now see how we turn <span class="mm-gradient">paid attention into revenue.</span></h1>
-        <p class="mm-lede" id="mm-lede">Watch the short breakdown below, see what clients achieved, and decide if a strategy call makes sense for your brand.</p>
+        <div class="mm-delivery" role="status" aria-live="polite">
+          <span class="mm-delivery-icon" aria-hidden="true">✓</span>
+          <div>
+            <strong id="mm-delivery-title">Great! You're subscribed.</strong>
+            <p id="mm-delivery-copy">The next email will come straight to your inbox.</p>
+            <small id="mm-delivery-help">If it lands in Promotions or Spam, move it to Primary so you don't miss the next one.</small>
+          </div>
+        </div>
+        <h1 id="mm-main-title">You're in. Now see how <span class="mm-gradient">profitable paid growth</span> is actually built.</h1>
+        <p class="mm-lede" id="mm-lede">Most brands don't need another random tactic. They need stronger creative, a clear acquisition strategy, and a scaling plan that protects margin. This short video shows how we put those pieces together.</p>
 
         <div class="mm-video-wrap" aria-label="Macedo Marketing growth strategy video">
           <div class="mm-video-frame">
@@ -173,14 +175,13 @@
         </div>
 
         <div class="mm-hero-cta">
-          <a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy">Book Your Free Strategy Call</a>
-          <span class="mm-microcopy">30 minutes. Clear next steps. No pressure.</span>
+          <a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy"><span class="mm-button-main">Book Your Strategy Call</span><span class="mm-button-sub">Free 30-minute growth plan</span></a>
         </div>
 
         <div class="mm-proofbar" aria-label="Macedo Marketing proof">
           <div class="mm-proofstat"><strong>$28M+</strong><span>Revenue generated</span></div>
-          <div class="mm-proofstat"><strong>100+</strong><span>Businesses supported</span></div>
-          <div class="mm-proofstat"><strong>5.0 / 120</strong><span>Upwork reviews</span></div>
+          <div class="mm-proofstat"><strong>100+</strong><span>Happy clients</span></div>
+          <div class="mm-proofstat"><strong>15.91x</strong><span>Featured client ROAS</span></div>
         </div>
       </section>
 
@@ -216,7 +217,7 @@
             </article>
           </div>
 
-          <div class="mm-midcta"><a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy">See What We Would Do for Your Brand</a></div>
+          <div class="mm-midcta"><a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy"><span class="mm-button-main">See What We Would Do for Your Brand</span><span class="mm-button-sub">Free 30-minute growth plan</span></a></div>
         </div>
       </section>
 
@@ -252,7 +253,7 @@
             <div class="mm-eyebrow">Ready when you are</div>
             <h2>Let’s find the next <span class="mm-gradient">profitable move.</span></h2>
             <p>Bring your current numbers, your biggest growth bottleneck, and the outcome you want. We’ll bring a direct, practical perspective.</p>
-            <a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy">Book Your Free Strategy Call</a>
+            <a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy"><span class="mm-button-main">Book Your Strategy Call</span><span class="mm-button-sub">Free 30-minute growth plan</span></a>
           </div>
         </div>
       </section>
@@ -263,20 +264,22 @@
       <div class="mm-footer-links"><a href="https://macedomarketing.com/privacy-policy/">Privacy</a><a href="https://macedomarketing.com/terms-and-condition/">Terms</a></div>
     </footer>
 
-    <div class="mm-mobile-cta"><a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy">Book Your Free Strategy Call</a></div>
+    <div class="mm-mobile-cta"><a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy"><span class="mm-button-main">Book Your Strategy Call</span><span class="mm-button-sub">Free 30-minute growth plan</span></a></div>
   </div>
 
   <script>
     (function(){
       var params=new URLSearchParams(window.location.search);
       var source=(params.get('source')||'newsletter').toLowerCase();
-      var status=document.getElementById('mm-status');
+      var deliveryTitle=document.getElementById('mm-delivery-title');
+      var deliveryCopy=document.getElementById('mm-delivery-copy');
+      var deliveryHelp=document.getElementById('mm-delivery-help');
       var title=document.getElementById('mm-main-title');
-      var lede=document.getElementById('mm-lede');
       if(source==='resource'||source==='lead-magnet'||source==='leadmagnet'){
-        status.textContent='Your resource is on the way';
-        title.innerHTML='Before you dive in, see what <span class="mm-gradient">profitable paid growth</span> looks like.';
-        lede.textContent='Watch the short breakdown below, see what clients achieved, and decide if a strategy call makes sense for your brand.';
+        deliveryTitle.textContent='Great! Your resource is on the way.';
+        deliveryCopy.textContent='Give it 1–2 minutes to land in your inbox.';
+        deliveryHelp.textContent="If you don't see it, check your Promotions or Spam folder.";
+        title.innerHTML='While you wait, see how <span class="mm-gradient">profitable paid growth</span> is actually built.';
       }
       document.querySelectorAll('.js-book').forEach(function(link){
         var u=new URL(link.href);
@@ -290,12 +293,12 @@
       var heroCta=document.querySelector('.mm-hero-cta');
       var finalCta=document.querySelector('.mm-final-card');
       if(sticky&&heroCta&&finalCta&&'IntersectionObserver' in window){
-        var heroVisible=true;
+        var heroPassed=false;
         var finalVisible=false;
-        var updateSticky=function(){sticky.classList.toggle('is-visible',!heroVisible&&!finalVisible);};
+        var updateSticky=function(){sticky.classList.toggle('is-visible',heroPassed&&!finalVisible);};
         var observer=new IntersectionObserver(function(entries){
           entries.forEach(function(entry){
-            if(entry.target===heroCta) heroVisible=entry.isIntersecting;
+            if(entry.target===heroCta) heroPassed=!entry.isIntersecting&&entry.boundingClientRect.bottom<0;
             if(entry.target===finalCta) finalVisible=entry.isIntersecting;
           });
           updateSticky();
