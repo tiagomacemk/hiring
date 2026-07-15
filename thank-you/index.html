@@ -108,10 +108,17 @@
     .mm-faq summary::after { content:'+'; position:absolute; top:18px; right:17px; display:grid; place-items:center; width:25px; height:25px; border-radius:50%; background:rgba(246,103,69,.12); color:var(--accent); font-size:18px; }
     .mm-faq[open] summary::after { content:'−'; }
     .mm-faq p { padding:0 48px 21px 17px; color:#A7A29C; font-size:14px; line-height:1.65; }
-    .mm-final { padding:80px 0 92px; text-align:center; }
-    .mm-final-card { position:relative; overflow:hidden; padding:64px 30px; border:1px solid rgba(246,103,69,.22); border-radius:24px; background:radial-gradient(circle at 50% 0,rgba(246,103,69,.2),transparent 52%),#141414; box-shadow:0 28px 80px rgba(0,0,0,.34); }
+    .mm-final { padding:80px 0 92px; scroll-margin-top:18px; text-align:center; }
+    .mm-final-card { position:relative; overflow:hidden; padding:64px 30px 34px; border:1px solid rgba(246,103,69,.22); border-radius:24px; background:radial-gradient(circle at 50% 0,rgba(246,103,69,.2),transparent 52%),#141414; box-shadow:0 28px 80px rgba(0,0,0,.34); }
     .mm-final h2 { max-width:780px; margin:0 auto; font-size:clamp(38px,5.5vw,64px); line-height:1.02; letter-spacing:-2.5px; }
-    .mm-final p { max-width:590px; margin:19px auto 28px; color:#AAA59F; }
+    .mm-final > .mm-shell > .mm-final-card > p { max-width:590px; margin:19px auto 31px; color:#AAA59F; }
+    .mm-calendly-wrap { position:relative; width:min(100%,940px); min-height:720px; margin:0 auto; overflow:hidden; border:1px solid rgba(255,255,255,.14); border-radius:16px; background:#FFF; }
+    .mm-calendly-inline { position:relative; z-index:1; min-width:320px; height:720px; }
+    .mm-calendly-inline iframe { width:100%!important; min-height:720px!important; }
+    .mm-calendly-loading { position:absolute; z-index:0; inset:0; display:grid; place-items:center; color:#555; font-size:14px; }
+    .mm-calendly-fallback { margin:15px auto 0; color:#8F8A84; font-size:12px; }
+    .mm-calendly-fallback a { color:#D0CBC5; }
+    .mm-calendly-fallback a:hover { color:var(--accent); }
     .mm-footer { padding:38px 20px 116px; border-top:1px solid rgba(255,255,255,.06); color:#555; text-align:center; }
     .mm-footer-logo { display:block; width:175px; height:auto; margin:0 auto 10px; opacity:.5; }
     .mm-footer p { color:#555; font-size:13px; }
@@ -166,17 +173,19 @@
       .mm-faq-wrap { padding:10px; }
       .mm-faq-wrap h2 { font-size:25px; }
       .mm-final { padding:58px 0 62px; }
-      .mm-final-card { padding:48px 21px; }
+      .mm-final-card { padding:48px 12px 20px; }
       .mm-final h2 { font-size:40px; letter-spacing:-1.7px; }
+      .mm-final > .mm-shell > .mm-final-card > p { padding:0 10px; }
+      .mm-calendly-wrap { min-height:760px; border-radius:12px; }
+      .mm-calendly-inline { height:760px; }
+      .mm-calendly-inline iframe { min-height:760px!important; }
+      .mm-calendly-fallback { padding:0 12px; }
       .mm-footer { padding:34px 16px 104px; }
       .mm-mobile-cta { position:fixed; z-index:20; left:0; right:0; bottom:0; display:block; padding:10px 16px max(10px,env(safe-area-inset-bottom)); border-top:1px solid rgba(255,255,255,.1); background:rgba(11,11,11,.93); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); opacity:0; pointer-events:none; transform:translateY(110%); transition:opacity .2s ease,transform .2s ease; }
       .mm-mobile-cta.is-visible { opacity:1; pointer-events:auto; transform:translateY(0); }
       .mm-mobile-cta .mm-button { min-height:59px; }
       .mm-mobile-cta .mm-button-main { font-size:13px; }
       .mm-mobile-cta .mm-button-sub { font-size:7.5px; }
-      html.mm-calendly-open .mm-mobile-cta { opacity:0!important; pointer-events:none!important; }
-      html.mm-calendly-open body .calendly-overlay .calendly-popup { top:50px!important; bottom:0!important; height:calc(100dvh - 50px)!important; max-height:none!important; }
-      html.mm-calendly-open body .calendly-overlay .calendly-popup-content { height:100%!important; max-height:none!important; }
     }
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto; }
@@ -209,7 +218,7 @@
         </div>
 
         <div class="mm-hero-cta">
-          <a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy"><span class="mm-button-main">Book Your Strategy Call</span><span class="mm-button-sub">Free 30-minute growth plan</span></a>
+          <a class="mm-button js-book" href="#book-call"><span class="mm-button-main">Book Your Strategy Call</span><span class="mm-button-sub">Free 30-minute growth plan</span></a>
         </div>
 
         <div class="mm-proofbar" aria-label="Macedo Marketing proof">
@@ -310,7 +319,7 @@
             </article>
           </div>
 
-          <div class="mm-midcta"><a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy"><span class="mm-button-main">See What We Would Do for Your Brand</span><span class="mm-button-sub">Free 30-minute growth plan</span></a></div>
+          <div class="mm-midcta"><a class="mm-button js-book" href="#book-call"><span class="mm-button-main">See What We Would Do for Your Brand</span><span class="mm-button-sub">Free 30-minute growth plan</span></a></div>
         </div>
       </section>
 
@@ -340,13 +349,17 @@
         </div>
       </section>
 
-      <section class="mm-final">
+      <section class="mm-final" id="book-call" aria-labelledby="mm-booking-title">
         <div class="mm-shell">
           <div class="mm-final-card">
             <div class="mm-eyebrow">Ready when you are</div>
-            <h2>Let’s find the next <span class="mm-gradient">profitable move.</span></h2>
+            <h2 id="mm-booking-title">Let’s find the next <span class="mm-gradient">profitable move.</span></h2>
             <p>Bring your current numbers, your biggest growth bottleneck, and the outcome you want. We’ll bring a direct, practical perspective.</p>
-            <a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy"><span class="mm-button-main">Book Your Strategy Call</span><span class="mm-button-sub">Free 30-minute growth plan</span></a>
+            <div class="mm-calendly-wrap" aria-label="Book a Macedo Marketing strategy call">
+              <div class="mm-calendly-loading" aria-hidden="true">Loading available times…</div>
+              <div class="mm-calendly-inline" id="mm-calendly-inline" data-booking-url="https://calendly.com/macedomarketing/strategy"></div>
+            </div>
+            <p class="mm-calendly-fallback">Calendar not loading? <a id="mm-calendly-direct" href="https://calendly.com/macedomarketing/strategy" target="_blank" rel="noopener">Open available times directly</a>.</p>
           </div>
         </div>
       </section>
@@ -361,7 +374,7 @@
       </div>
     </footer>
 
-    <div class="mm-mobile-cta"><a class="mm-button js-book" href="https://calendly.com/macedomarketing/strategy"><span class="mm-button-main">Book Your Strategy Call</span><span class="mm-button-sub">Free 30-minute growth plan</span></a></div>
+    <div class="mm-mobile-cta"><a class="mm-button js-book" href="#book-call"><span class="mm-button-main">Book Your Strategy Call</span><span class="mm-button-sub">Free 30-minute growth plan</span></a></div>
   </div>
 
   <script>
@@ -378,48 +391,55 @@
         deliveryHelp.textContent="If you don't see it, check your Promotions or Spam folder.";
         title.innerHTML='While you wait, see how <span class="mm-gradient">profitable paid growth</span> is actually built.';
       }
-      var calendlyStateObserver=new MutationObserver(function(){
-        document.documentElement.classList.toggle('mm-calendly-open',!!document.querySelector('.calendly-overlay'));
-      });
-      calendlyStateObserver.observe(document.body,{childList:true});
-      var calendlyPromise;
+      var calendlyElement=document.getElementById('mm-calendly-inline');
+      var calendlyDirect=document.getElementById('mm-calendly-direct');
+      var calendlyStarted=false;
+      var bookingUrl=new URL(calendlyElement.getAttribute('data-booking-url'));
+      bookingUrl.searchParams.set('utm_source','confirmation_page');
+      bookingUrl.searchParams.set('utm_medium','website');
+      bookingUrl.searchParams.set('utm_campaign','post_optin');
+      bookingUrl.searchParams.set('utm_content',source);
+      calendlyDirect.href=bookingUrl.toString();
       var loadCalendly=function(){
-        if(window.Calendly) return Promise.resolve(window.Calendly);
-        if(calendlyPromise) return calendlyPromise;
-        calendlyPromise=new Promise(function(resolve,reject){
-          if(!document.querySelector('link[data-mm-calendly]')){
-            var stylesheet=document.createElement('link');
-            stylesheet.rel='stylesheet';
-            stylesheet.href='https://assets.calendly.com/assets/external/widget.css';
-            stylesheet.setAttribute('data-mm-calendly','');
-            document.head.appendChild(stylesheet);
-          }
-          var script=document.createElement('script');
-          script.src='https://assets.calendly.com/assets/external/widget.js';
-          script.async=true;
-          script.onload=function(){window.Calendly?resolve(window.Calendly):reject(new Error('Calendly unavailable'));};
-          script.onerror=reject;
-          document.head.appendChild(script);
-        });
-        return calendlyPromise;
+        if(calendlyStarted) return;
+        calendlyStarted=true;
+        var initialize=function(){
+          if(!window.Calendly){calendlyStarted=false;return;}
+          window.Calendly.initInlineWidget({url:bookingUrl.toString(),parentElement:calendlyElement});
+        };
+        if(window.Calendly){initialize();return;}
+        if(!document.querySelector('link[data-mm-calendly]')){
+          var stylesheet=document.createElement('link');
+          stylesheet.rel='stylesheet';
+          stylesheet.href='https://assets.calendly.com/assets/external/widget.css';
+          stylesheet.setAttribute('data-mm-calendly','');
+          document.head.appendChild(stylesheet);
+        }
+        var script=document.createElement('script');
+        script.src='https://assets.calendly.com/assets/external/widget.js';
+        script.async=true;
+        script.onload=initialize;
+        script.onerror=function(){calendlyStarted=false;};
+        document.head.appendChild(script);
       };
       document.querySelectorAll('.js-book').forEach(function(link){
-        var u=new URL(link.href);
-        u.searchParams.set('utm_source','confirmation_page');
-        u.searchParams.set('utm_medium','website');
-        u.searchParams.set('utm_campaign','post_optin');
-        u.searchParams.set('utm_content',source);
-        link.href=u.toString();
         link.addEventListener('click',function(event){
+          loadCalendly();
           if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey) return;
           event.preventDefault();
-          link.setAttribute('aria-busy','true');
-          loadCalendly().then(function(Calendly){
-            link.removeAttribute('aria-busy');
-            Calendly.initPopupWidget({url:link.href});
-          }).catch(function(){window.location.assign(link.href);});
+          history.replaceState(null,'','#book-call');
+          var bookingSection=document.getElementById('book-call');
+          var alignBooking=function(){window.scrollTo({top:bookingSection.offsetTop-18,behavior:'smooth'});};
+          alignBooking();
+          window.setTimeout(alignBooking,700);
         });
       });
+      if('IntersectionObserver' in window){
+        var calendlyObserver=new IntersectionObserver(function(entries){
+          if(entries.some(function(entry){return entry.isIntersecting;})){loadCalendly();calendlyObserver.disconnect();}
+        },{rootMargin:'900px 0px'});
+        calendlyObserver.observe(calendlyElement);
+      }else{loadCalendly();}
       var sticky=document.querySelector('.mm-mobile-cta');
       var heroCta=document.querySelector('.mm-hero-cta');
       var finalCta=document.querySelector('.mm-final-card');
