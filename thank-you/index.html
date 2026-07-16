@@ -36,7 +36,7 @@
     button,summary { font:inherit; }
     a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid rgba(246,103,69,.65); outline-offset:4px; }
     .mm-thankyou { overflow:hidden; }
-    .mm-thankyou > main > p:empty,.mm-thankyou > p:empty,.mm-story-main > p:empty,.mm-story-details > p:empty { display:none; }
+    .mm-thankyou > main > p:empty,.mm-thankyou > p:empty,.mm-story-main > p:empty,.mm-story-copy > p:empty,.mm-story-details > p:empty { display:none; }
     .mm-shell { width:min(100% - 40px,1120px); margin:0 auto; }
     .mm-hero { padding:62px 0 46px; text-align:center; }
     .mm-delivery { display:flex; align-items:flex-start; gap:13px; width:min(100%,610px); margin:0 auto 28px; padding:15px 18px; border:1px solid rgba(112,212,160,.24); background:rgba(112,212,160,.07); text-align:left; }
@@ -56,7 +56,7 @@
     .mm-button-main { font-size:18px; font-weight:900; letter-spacing:.2px; text-transform:uppercase; }
     .mm-button-sub { margin-top:5px; font-size:9px; font-weight:800; letter-spacing:1px; text-transform:uppercase; opacity:.9; }
     .mm-proofbar { display:grid; grid-template-columns:repeat(3,1fr); max-width:930px; margin:56px auto 0; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:rgba(21,21,21,.76); }
-    .mm-proofstat { padding:25px 20px; text-align:center; }
+    .mm-proofstat { display:flex; min-height:102px; flex-direction:column; align-items:center; justify-content:center; padding:25px 20px; text-align:center; }
     .mm-proofstat + .mm-proofstat { border-left:1px solid var(--line); }
     .mm-proofstat strong { display:block; color:#FFF; font-size:25px; line-height:1.1; }
     .mm-proofstat span { display:block; margin-top:7px; color:#9C9791; font-size:11px; font-weight:800; letter-spacing:.7px; text-transform:uppercase; }
@@ -69,7 +69,7 @@
     .mm-story { overflow:hidden; border:1px solid var(--line); border-radius:22px; background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); box-shadow:0 22px 65px rgba(0,0,0,.3); }
     .mm-story-main { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:center; }
     .mm-story:nth-of-type(even) .mm-story-media { order:2; }
-    .mm-story-media { position:relative; display:block; align-self:center; width:100%; min-height:0; aspect-ratio:16/9; overflow:hidden; border:0; cursor:pointer; background:#111; color:#FFF; }
+    .mm-story-media { position:relative; display:block; align-self:start; width:100%; min-height:0; aspect-ratio:16/9; overflow:hidden; border:0; cursor:pointer; background:#111; color:#FFF; }
     .mm-story-media img { width:100%; height:100%; object-fit:contain; object-position:center; display:block; transition:transform .35s ease,filter .35s ease; }
     .mm-story-media::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.42)); }
     .mm-story-media:hover img { transform:scale(1.015); filter:brightness(.88); }
@@ -79,9 +79,10 @@
     .mm-story-meta { display:flex; flex-wrap:wrap; gap:8px 14px; color:#8F8A84; font-size:10px; font-weight:900; letter-spacing:1.35px; text-transform:uppercase; }
     .mm-story-meta span:first-child { color:var(--accent); }
     .mm-fix-title { margin-top:18px; color:#FFF; font-size:27px; font-weight:900; letter-spacing:-.8px; line-height:1.18; }
-    .mm-fix-impact { margin-top:14px; color:#B8B3AD; font-size:18px; line-height:1.55; }
+    .mm-fix-impact { margin:14px 0 0; color:#B8B3AD; font-size:18px; line-height:1.55; }
     .mm-fix-impact strong { color:var(--accent); font-weight:900; }
-    .mm-story-byline { margin-top:18px; color:#8F8A84; font-size:13px; font-weight:800; }
+    .mm-story-byline { margin:18px 0 0; color:#8F8A84; font-size:13px; font-weight:800; }
+    .mm-heading-break { display:block; }
     .mm-midcta { margin-top:34px; text-align:center; }
     .mm-fit { display:grid; grid-template-columns:.95fr 1.05fr; gap:22px; align-items:stretch; }
     .mm-fit-card,.mm-faq-wrap { border:1px solid var(--line); border-radius:21px; background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); }
@@ -220,7 +221,7 @@
         <div class="mm-shell">
           <div class="mm-section-head">
             <div class="mm-eyebrow">Client proof</div>
-            <h2 id="mm-proof-title">Four growth problems. Four fixes.</h2>
+            <h2 id="mm-proof-title">Four growth problems. <span class="mm-heading-break">Four fixes.</span></h2>
           </div>
 
           <div class="mm-stories">
@@ -315,7 +316,7 @@
         <div class="mm-shell">
           <div class="mm-final-card">
             <div class="mm-eyebrow">Bring the numbers</div>
-            <h2 id="mm-booking-title">Let’s find the next <span class="mm-gradient">profitable move.</span></h2>
+            <h2 id="mm-booking-title">Let’s find the next <span class="mm-gradient mm-heading-break">profitable move.</span></h2>
             <p>We’ll use your numbers to identify the highest-leverage next step.</p>
             <div class="mm-calendly-wrap" aria-label="Book a Macedo Marketing strategy call">
               <div class="mm-calendly-loading" aria-hidden="true">Loading available times…</div>
