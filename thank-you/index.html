@@ -75,23 +75,13 @@
     .mm-story-media:hover img { transform:scale(1.015); filter:brightness(.88); }
     .mm-play { position:absolute; z-index:2; left:50%; top:50%; display:grid; place-items:center; width:58px; height:58px; border-radius:50%; background:rgba(246,103,69,.94); box-shadow:0 12px 30px rgba(0,0,0,.42); transform:translate(-50%,-50%); }
     .mm-play::before { content:''; margin-left:4px; border-top:8px solid transparent; border-bottom:8px solid transparent; border-left:13px solid #0B0B0B; }
-    .mm-story-copy { display:flex; flex-direction:column; justify-content:center; padding:38px 42px; }
+    .mm-story-copy { display:flex; flex-direction:column; justify-content:center; padding:36px 42px; }
     .mm-story-meta { display:flex; flex-wrap:wrap; gap:8px 14px; color:#8F8A84; font-size:10px; font-weight:900; letter-spacing:1.35px; text-transform:uppercase; }
     .mm-story-meta span:first-child { color:var(--accent); }
-    .mm-result { margin-top:21px; color:#FFF; font-size:clamp(29px,3.6vw,47px); font-weight:900; letter-spacing:-1.8px; line-height:1.02; }
-    .mm-story-byline { margin-top:13px; color:var(--accent); font-size:13px; font-weight:800; }
-    .mm-story-details { display:grid; grid-template-columns:1fr 1.2fr 1fr; border-top:1px solid var(--line); background:#0D0D0D; }
-    .mm-story-detail { min-height:178px; padding:27px 28px; }
-    .mm-story-detail + .mm-story-detail { border-left:1px solid var(--line); }
-    .mm-story-detail-label { color:#8F8A84; font-size:10px; font-weight:900; letter-spacing:1.25px; text-transform:uppercase; }
-    .mm-story-detail-metric { margin-top:15px; color:#FFF; font-size:30px; font-weight:900; letter-spacing:-1px; line-height:1.05; }
-    .mm-story-detail-copy { margin-top:8px; color:#AAA59F; font-size:12.5px; line-height:1.5; }
-    .mm-story-detail--changed { background:linear-gradient(145deg,rgba(246,103,69,.16),rgba(246,103,69,.055)); text-align:center; }
-    .mm-story-detail--changed .mm-story-detail-label { color:var(--accent); }
-    .mm-story-detail-icon { display:grid; place-items:center; width:43px; height:43px; margin:13px auto; border:1px solid rgba(246,103,69,.55); border-radius:50%; color:var(--accent); font-size:21px; font-weight:900; }
-    .mm-story-detail--changed .mm-story-detail-copy { margin-top:0; color:#D0CBC5; }
-    .mm-story-detail--outcome { background:rgba(246,103,69,.035); }
-    .mm-story-detail--outcome .mm-story-detail-metric { color:var(--accent); }
+    .mm-fix-title { margin-top:18px; color:#FFF; font-size:27px; font-weight:900; letter-spacing:-.8px; line-height:1.18; }
+    .mm-fix-impact { margin-top:14px; color:#B8B3AD; font-size:18px; line-height:1.55; }
+    .mm-fix-impact strong { color:var(--accent); font-weight:900; }
+    .mm-story-byline { margin-top:18px; color:#8F8A84; font-size:13px; font-weight:800; }
     .mm-midcta { margin-top:34px; text-align:center; }
     .mm-fit { display:grid; grid-template-columns:.95fr 1.05fr; gap:22px; align-items:stretch; }
     .mm-fit-card,.mm-faq-wrap { border:1px solid var(--line); border-radius:21px; background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); }
@@ -136,13 +126,6 @@
       .mm-story-main { grid-template-columns:1fr; min-height:0; }
       .mm-story:nth-of-type(even) .mm-story-media { order:0; }
       .mm-story-media { min-height:0; aspect-ratio:16/9; }
-      .mm-story-details { grid-template-columns:1fr; }
-      .mm-story-detail { min-height:0; }
-      .mm-story-detail + .mm-story-detail { border-left:0; border-top:1px solid var(--line); }
-      .mm-story-detail--changed { display:grid; grid-template-columns:43px 1fr; column-gap:15px; text-align:left; }
-      .mm-story-detail--changed .mm-story-detail-label { grid-column:1/-1; }
-      .mm-story-detail--changed .mm-story-detail-icon { grid-column:1; grid-row:2; margin:12px 0 0; }
-      .mm-story-detail--changed .mm-story-detail-copy { grid-column:2; grid-row:2; margin-top:12px; align-self:center; }
       .mm-fit { grid-template-columns:1fr; }
       .mm-fit-card { padding:30px; }
     }
@@ -171,9 +154,9 @@
       .mm-story { border-radius:17px; }
       .mm-story-copy { padding:25px 21px 27px; }
       .mm-story-meta { gap:6px 10px; }
-      .mm-result { margin-top:15px; font-size:34px; letter-spacing:-1.25px; }
-      .mm-story-byline { margin-top:10px; }
-      .mm-story-detail { padding:18px 21px 20px; }
+      .mm-fix-title { margin-top:14px; font-size:24px; letter-spacing:-.55px; }
+      .mm-fix-impact { margin-top:11px; font-size:16px; }
+      .mm-story-byline { margin-top:14px; }
       .mm-fit-card { padding:25px; }
       .mm-faq-wrap { padding:10px; }
       .mm-faq-wrap h2 { font-size:25px; }
@@ -248,15 +231,11 @@
                   <span class="mm-play" aria-hidden="true"></span>
                 </button>
                 <div class="mm-story-copy">
-                  <div class="mm-story-meta"><span>Case study 01</span><span>Health ecommerce</span></div>
-                  <div class="mm-result">$0 → $282K+/mo</div>
+                  <div class="mm-story-meta"><span>Fix 01</span><span>Health ecommerce</span></div>
+                  <h3 class="mm-fix-title">Rebuilt tracking, compliant creative, and the purchase journey</h3>
+                  <p class="mm-fix-impact"><strong>CAC fell from $200 to $60.70.</strong> The brand reached $282K+/mo by month three on $17.7K in ad spend.</p>
                   <p class="mm-story-byline">Sofia Alonso · Elara</p>
                 </div>
-              </div>
-              <div class="mm-story-details">
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-metric">$200 CAC</div><div class="mm-story-detail-copy">Launching from zero in a regulated category.</div></div>
-                <div class="mm-story-detail mm-story-detail--changed"><div class="mm-story-detail-label">What changed</div><div class="mm-story-detail-icon" aria-hidden="true">→</div><div class="mm-story-detail-copy">Rebuilt tracking, compliant creative, and the purchase journey.</div></div>
-                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">After</div><div class="mm-story-detail-metric">$60.70 CAC</div><div class="mm-story-detail-copy">Hit that run rate by month three on $17.7K in ad spend.</div></div>
               </div>
             </article>
             <article class="mm-story">
@@ -266,15 +245,11 @@
                   <span class="mm-play" aria-hidden="true"></span>
                 </button>
                 <div class="mm-story-copy">
-                  <div class="mm-story-meta"><span>Case study 02</span><span>Digital education</span></div>
-                  <div class="mm-result">£30K → £100K+/mo</div>
+                  <div class="mm-story-meta"><span>Fix 02</span><span>Digital education</span></div>
+                  <h3 class="mm-fix-title">Rebuilt attribution and moved winning formats into a webinar funnel</h3>
+                  <p class="mm-fix-impact"><strong>Booked calls grew from 66 to 363.</strong> Revenue reached £100K+/mo within six months on £25K/mo in ad spend.</p>
                   <p class="mm-story-byline">Vijay Singh · Talking Houses</p>
                 </div>
-              </div>
-              <div class="mm-story-details">
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-metric">66 booked calls</div><div class="mm-story-detail-copy">Attribution could not identify which calls came from qualified demand.</div></div>
-                <div class="mm-story-detail mm-story-detail--changed"><div class="mm-story-detail-label">What changed</div><div class="mm-story-detail-icon" aria-hidden="true">→</div><div class="mm-story-detail-copy">Rebuilt attribution, optimized for intent, and moved winning formats into a webinar funnel.</div></div>
-                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">After</div><div class="mm-story-detail-metric">363 booked calls</div><div class="mm-story-detail-copy">Hit that run rate within six months on £25K/mo in ad spend.</div></div>
               </div>
             </article>
             <article class="mm-story">
@@ -284,15 +259,11 @@
                   <span class="mm-play" aria-hidden="true"></span>
                 </button>
                 <div class="mm-story-copy">
-                  <div class="mm-story-meta"><span>Case study 03</span><span>Digital fitness</span></div>
-                  <div class="mm-result">$106K in 90 days</div>
+                  <div class="mm-story-meta"><span>Fix 03</span><span>Digital fitness</span></div>
+                  <h3 class="mm-fix-title">Separated creative testing from scaling and rebuilt retargeting</h3>
+                  <p class="mm-fix-impact"><strong>CPA fell 54%.</strong> The business generated $106K in 90 days after starting at 1.2 ROAS with no repeatable scaling system.</p>
                   <p class="mm-story-byline">Rory Tonkin · Hard To Kill Fitness</p>
                 </div>
-              </div>
-              <div class="mm-story-details">
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-metric">1.2 ROAS</div><div class="mm-story-detail-copy">Multiple agencies. No repeatable scaling system.</div></div>
-                <div class="mm-story-detail mm-story-detail--changed"><div class="mm-story-detail-label">What changed</div><div class="mm-story-detail-icon" aria-hidden="true">→</div><div class="mm-story-detail-copy">Separated creative testing from scaling and rebuilt retargeting by awareness.</div></div>
-                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">After</div><div class="mm-story-detail-metric">CPA ↓ 54%</div></div>
               </div>
             </article>
             <article class="mm-story">
@@ -302,15 +273,11 @@
                   <span class="mm-play" aria-hidden="true"></span>
                 </button>
                 <div class="mm-story-copy">
-                  <div class="mm-story-meta"><span>Case study 04</span><span>Anonymous DTC brand</span></div>
-                  <div class="mm-result">$176K → $616K/mo</div>
+                  <div class="mm-story-meta"><span>Fix 04</span><span>Anonymous DTC brand</span></div>
+                  <h3 class="mm-fix-title">Mined reviews, expanded UGC and statics, then scaled with Advantage+</h3>
+                  <p class="mm-fix-impact"><strong>ROAS reached 2.17 while spend scaled.</strong> Monthly revenue grew from $176K to $616K within 76 days.</p>
                   <p class="mm-story-byline">Anonymous low-AOV ecommerce brand</p>
                 </div>
-              </div>
-              <div class="mm-story-details">
-                <div class="mm-story-detail"><div class="mm-story-detail-label">Before</div><div class="mm-story-detail-metric">Creative fatigue</div><div class="mm-story-detail-copy">Winning ads were exhausted, and ROAS fell whenever budget increased.</div></div>
-                <div class="mm-story-detail mm-story-detail--changed"><div class="mm-story-detail-label">What changed</div><div class="mm-story-detail-icon" aria-hidden="true">→</div><div class="mm-story-detail-copy">Mined reviews, expanded UGC and static creative, then scaled with Advantage+.</div></div>
-                <div class="mm-story-detail mm-story-detail--outcome"><div class="mm-story-detail-label">After</div><div class="mm-story-detail-metric">2.17 ROAS</div><div class="mm-story-detail-copy">Hit that run rate within 76 days.</div></div>
               </div>
             </article>
           </div>
