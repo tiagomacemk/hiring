@@ -44,15 +44,21 @@
     .signup .formkit-alert-error { border:1px solid rgba(246,103,69,.35); background:rgba(246,103,69,.12); color:#FFB39F; }
     .formkit-alert-success { width:min(100%,790px); margin:0 auto; padding:18px 22px; border:1px solid rgba(68,196,128,.35); border-radius:12px; background:rgba(68,196,128,.12); color:#8DE0B3; font-size:14px; font-weight:800; box-shadow:0 18px 50px rgba(0,0,0,.3); }
     .privacy { display:block; margin-top:13px; color:#96918B; font-size:11px; }
-    .creative-stage { position:relative; width:min(100%,980px); height:360px; margin:34px auto 0; overflow:hidden; }
-    .creative-card { position:absolute; top:28px; left:50%; width:250px; aspect-ratio:1; overflow:hidden; border:6px solid #202020; border-radius:19px; background:#1A1A1A; box-shadow:0 24px 55px rgba(0,0,0,.5); transform-origin:center bottom; }
+    .creative-stage { position:relative; width:min(100%,980px); height:410px; margin:34px auto 0; overflow:hidden; }
+    .creative-card { position:absolute; left:50%; width:190px; aspect-ratio:1; overflow:hidden; border:5px solid #202020; border-radius:17px; background:#1A1A1A; box-shadow:0 24px 55px rgba(0,0,0,.5); transform-origin:center bottom; }
     .creative-card img { width:100%; height:100%; object-fit:cover; display:block; }
-    .c1 { transform:translateX(-190%) rotate(-10deg) translateY(60px); filter:blur(2.4px) saturate(.7); opacity:.58; }
-    .c2 { transform:translateX(-132%) rotate(-6deg) translateY(28px); filter:blur(.7px); opacity:.82; }
-    .c3 { transform:translateX(-73%) rotate(-2.5deg); z-index:2; }
-    .c4 { transform:translateX(-27%) rotate(2.5deg); z-index:3; }
-    .c5 { transform:translateX(32%) rotate(6deg) translateY(28px); filter:blur(.7px); opacity:.82; }
-    .c6 { transform:translateX(90%) rotate(10deg) translateY(60px); filter:blur(2.4px) saturate(.7); opacity:.58; }
+    .c1,.c2,.c3,.c4,.c5 { top:20px; }
+    .c6,.c7,.c8,.c9,.c10 { top:164px; z-index:3; }
+    .c1 { transform:translateX(-230%) rotate(-8deg) translateY(24px); filter:blur(2px) saturate(.76); opacity:.62; }
+    .c2 { transform:translateX(-130%) rotate(-4deg); filter:blur(.65px); opacity:.84; }
+    .c3 { transform:translateX(-30%) rotate(-1.5deg); z-index:2; }
+    .c4 { transform:translateX(70%) rotate(2deg); z-index:2; }
+    .c5 { transform:translateX(170%) rotate(7deg) translateY(22px); filter:blur(1.8px) saturate(.78); opacity:.66; }
+    .c6 { transform:translateX(-205%) rotate(-7deg) translateY(14px); filter:blur(1.4px); opacity:.75; }
+    .c7 { transform:translateX(-105%) rotate(-3deg); }
+    .c8 { transform:translateX(-5%) rotate(-.5deg); z-index:5; }
+    .c9 { transform:translateX(95%) rotate(3deg); z-index:4; }
+    .c10 { transform:translateX(195%) rotate(7deg) translateY(14px); filter:blur(1.2px); opacity:.78; }
     .blur-lock { position:absolute; z-index:6; inset:auto 0 0; height:145px; display:grid; place-items:end center; padding-bottom:20px; background:linear-gradient(180deg,transparent 0,rgba(11,11,11,.35) 22%,rgba(11,11,11,.96) 86%); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); -webkit-mask-image:linear-gradient(transparent,#000 35%); mask-image:linear-gradient(transparent,#000 35%); }
     .lock-label { display:flex; align-items:center; gap:9px; padding:11px 16px; border:1px solid rgba(255,255,255,.13); border-radius:99px; background:rgba(20,20,20,.9); color:#fff; font-size:10px; font-weight:900; letter-spacing:1px; text-transform:uppercase; box-shadow:0 12px 30px rgba(0,0,0,.4); }
     .lock-label svg { width:14px; height:14px; color:var(--accent); }
@@ -62,8 +68,8 @@
       .shell h1 { letter-spacing:-2.4px; }
       .signup { grid-template-columns:1fr 1fr; }
       .signup button { grid-column:1/-1; }
-      .creative-stage { height:340px; margin-top:34px; }
-      .creative-card { width:225px; }
+      .creative-stage { height:390px; margin-top:34px; }
+      .creative-card { width:175px; }
     }
     @media (max-width:560px) {
       .shell { width:min(100% - 32px,1120px); }
@@ -75,13 +81,19 @@
       .signup { grid-template-columns:1fr; padding:9px; }
       .signup button { grid-column:auto; }
       .creative-stage { width:calc(100% + 32px); margin-left:-16px; height:300px; margin-top:28px; }
-      .creative-card { width:190px; top:20px; border-width:5px; border-radius:15px; }
-      .c1 { transform:translateX(-176%) rotate(-10deg) translateY(50px); }
-      .c2 { transform:translateX(-125%) rotate(-6deg) translateY(25px); }
-      .c3 { transform:translateX(-75%) rotate(-2.5deg); }
-      .c4 { transform:translateX(-25%) rotate(2.5deg); }
-      .c5 { transform:translateX(25%) rotate(6deg) translateY(25px); }
-      .c6 { transform:translateX(76%) rotate(10deg) translateY(50px); }
+      .creative-card { width:132px; border-width:4px; border-radius:13px; }
+      .c1,.c2,.c3,.c4,.c5 { top:8px; }
+      .c6,.c7,.c8,.c9,.c10 { top:126px; }
+      .c1 { transform:translateX(-185%) rotate(-8deg) translateY(16px); }
+      .c2 { transform:translateX(-95%) rotate(-4deg); }
+      .c3 { transform:translateX(-5%) rotate(-1.5deg); }
+      .c4 { transform:translateX(85%) rotate(2deg); }
+      .c5 { transform:translateX(175%) rotate(7deg) translateY(15px); }
+      .c6 { transform:translateX(-150%) rotate(-7deg) translateY(10px); }
+      .c7 { transform:translateX(-70%) rotate(-3deg); }
+      .c8 { transform:translateX(10%) rotate(-.5deg); }
+      .c9 { transform:translateX(90%) rotate(3deg); }
+      .c10 { transform:translateX(170%) rotate(7deg) translateY(10px); }
       .blur-lock { height:125px; padding-bottom:18px; }
     }
     @media (prefers-reduced-motion:reduce) {
@@ -109,12 +121,16 @@
       </form>
       <span class="privacy" id="privacy-note">Free. Unsubscribe anytime.</span>
       <div class="creative-stage" role="img" aria-label="Collage of real Macedo Marketing ecommerce ad creative examples">
-        <div class="creative-card c1"><img src="./assets/creatives/12-urgency.webp" alt=""></div>
-        <div class="creative-card c2"><img src="./assets/creatives/08-bandana.webp" alt=""></div>
-        <div class="creative-card c3"><img src="./assets/creatives/03-moment-health.webp" alt=""></div>
-        <div class="creative-card c4"><img src="./assets/creatives/09-before-after.webp" alt=""></div>
-        <div class="creative-card c5"><img src="./assets/creatives/10-slimming.webp" alt=""></div>
-        <div class="creative-card c6"><img src="./assets/creatives/01-comparison.webp" alt=""></div>
+        <div class="creative-card c1"><img src="./assets/creatives/aleks-final/web/01-dripdrip_BOF_01-1.webp" alt="" decoding="async"></div>
+        <div class="creative-card c2"><img src="./assets/creatives/aleks-final/web/02-image-15.webp" alt="" decoding="async"></div>
+        <div class="creative-card c3"><img src="./assets/creatives/aleks-final/web/03-image-19.webp" alt="" decoding="async"></div>
+        <div class="creative-card c4"><img src="./assets/creatives/aleks-final/web/04-image-21.webp" alt="" decoding="async"></div>
+        <div class="creative-card c5"><img src="./assets/creatives/aleks-final/web/07-MM_ExoPod_-OldvsNew-1.webp" alt="" decoding="async"></div>
+        <div class="creative-card c6"><img src="./assets/creatives/aleks-final/web/06-MM_ES_TOF_Win_C1_05-1.webp" alt="" decoding="async"></div>
+        <div class="creative-card c7"><img src="./assets/creatives/aleks-final/web/05-MM_Cafely_TOFU_PointOut_V2-1.webp" alt="" decoding="async"></div>
+        <div class="creative-card c8"><img src="./assets/creatives/aleks-final/web/08-MM_MI-MY_C1_V3-2.webp" alt="" decoding="async"></div>
+        <div class="creative-card c9"><img src="./assets/creatives/aleks-final/web/09-MM_Poppy-sPatina_Wipe-On-Clear-Coat_03-1.webp" alt="" decoding="async"></div>
+        <div class="creative-card c10"><img src="./assets/creatives/aleks-final/web/10-MM_Respira_TOF_Bundle_B1_01-1.webp" alt="" decoding="async"></div>
         <div class="blur-lock" aria-hidden="true">
           <div class="lock-label">Creative examples from the newsletter</div>
         </div>
