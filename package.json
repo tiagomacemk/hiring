@@ -1,0 +1,19 @@
+{
+  "name": "macedo-marketing-site-handoff",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "qa:booking-thank-you": "node scripts/qa-booking-thank-you.mjs"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "playwright": "^1.54.2"
+  }
+}
